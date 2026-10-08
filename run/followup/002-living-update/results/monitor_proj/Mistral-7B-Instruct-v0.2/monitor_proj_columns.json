@@ -1,0 +1,14 @@
+{
+  "evil": {
+    "layer": 14,
+    "proj_col": "Mistral-7B-Instruct-v0.2_evil_response_avg_diff_prompt_last_proj_layer14"
+  },
+  "sycophantic": {
+    "layer": 18,
+    "proj_col": "Mistral-7B-Instruct-v0.2_sycophantic_response_avg_diff_prompt_last_proj_layer18"
+  },
+  "hallucinating": {
+    "layer": 14,
+    "proj_col": "Mistral-7B-Instruct-v0.2_hallucinating_response_avg_diff_prompt_last_proj_layer14"
+  }
+}

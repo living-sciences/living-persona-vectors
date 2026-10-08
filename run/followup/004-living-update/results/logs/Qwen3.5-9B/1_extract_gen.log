@@ -1,0 +1,113 @@
+[Qwen3.5-9B] loading model /net/projects2/chai-lab/shared_models/hub/models--Qwen--Qwen3.5-9B/snapshots/c202236235762e1c871ad0ccb60c8ee5ba337b9a (thinking=False) ...
+[Qwen3.5-9B] loaded in 7s | decoder=model.language_model.layers n_layers=32 hidden=4096
+=== EXTRACT evil pos: 1000 gens ===
+    gen 64/1000
+    gen 128/1000
+    gen 192/1000
+    gen 256/1000
+    gen 320/1000
+    gen 384/1000
+    gen 448/1000
+    gen 512/1000
+    gen 576/1000
+    gen 640/1000
+    gen 704/1000
+    gen 768/1000
+    gen 832/1000
+    gen 896/1000
+    gen 960/1000
+    gen 1000/1000
+saved eval_persona_extract/Qwen3.5-9B/evil_pos_instruct.csv rows=1000
+=== EXTRACT evil neg: 1000 gens ===
+    gen 64/1000
+    gen 128/1000
+    gen 192/1000
+    gen 256/1000
+    gen 320/1000
+    gen 384/1000
+    gen 448/1000
+    gen 512/1000
+    gen 576/1000
+    gen 640/1000
+    gen 704/1000
+    gen 768/1000
+    gen 832/1000
+    gen 896/1000
+    gen 960/1000
+    gen 1000/1000
+saved eval_persona_extract/Qwen3.5-9B/evil_neg_instruct.csv rows=1000
+=== EXTRACT sycophantic pos: 1000 gens ===
+    gen 64/1000
+    gen 128/1000
+    gen 192/1000
+    gen 256/1000
+    gen 320/1000
+    gen 384/1000
+    gen 448/1000
+    gen 512/1000
+    gen 576/1000
+    gen 640/1000
+    gen 704/1000
+    gen 768/1000
+    gen 832/1000
+    gen 896/1000
+    gen 960/1000
+    gen 1000/1000
+saved eval_persona_extract/Qwen3.5-9B/sycophantic_pos_instruct.csv rows=1000
+=== EXTRACT sycophantic neg: 1000 gens ===
+    gen 64/1000
+    gen 128/1000
+    gen 192/1000
+    gen 256/1000
+    gen 320/1000
+    gen 384/1000
+    gen 448/1000
+    gen 512/1000
+    gen 576/1000
+    gen 640/1000
+    gen 704/1000
+    gen 768/1000
+    gen 832/1000
+    gen 896/1000
+    gen 960/1000
+    gen 1000/1000
+saved eval_persona_extract/Qwen3.5-9B/sycophantic_neg_instruct.csv rows=1000
+=== EXTRACT hallucinating pos: 1000 gens ===
+    gen 64/1000
+    gen 128/1000
+    gen 192/1000
+    gen 256/1000
+    gen 320/1000
+    gen 384/1000
+    gen 448/1000
+    gen 512/1000
+    gen 576/1000
+    gen 640/1000
+    gen 704/1000
+    gen 768/1000
+    gen 832/1000
+    gen 896/1000
+    gen 960/1000
+    gen 1000/1000
+saved eval_persona_extract/Qwen3.5-9B/hallucinating_pos_instruct.csv rows=1000
+=== EXTRACT hallucinating neg: 1000 gens ===
+    gen 64/1000
+    gen 128/1000
+    gen 192/1000
+    gen 256/1000
+    gen 320/1000
+    gen 384/1000
+    gen 448/1000
+    gen 512/1000
+    gen 576/1000
+    gen 640/1000
+    gen 704/1000
+    gen 768/1000
+    gen 832/1000
+    gen 896/1000
+    gen 960/1000
+    gen 1000/1000
+saved eval_persona_extract/Qwen3.5-9B/hallucinating_neg_instruct.csv rows=1000
+
+### extract done — run judge_extract externally, then genvec runs here after re-invoke if needed
+!!! extract CSVs not yet judged — STOPPING before genvec. Run judge_extract then re-run s1.

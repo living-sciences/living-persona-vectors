@@ -1,0 +1,71 @@
+INFO 09-01 01:30:52 [__init__.py:239] Automatically detected platform cuda.
+INFO 09-01 01:31:21 [config.py:717] This model supports multiple tasks: {'generate', 'reward', 'score', 'embed', 'classify'}. Defaulting to 'generate'.
+INFO 09-01 01:31:21 [config.py:1770] Defaulting to use mp for distributed inference
+INFO 09-01 01:31:21 [config.py:2003] Chunked prefill is enabled with max_num_batched_tokens=16384.
+WARNING 09-01 01:31:21 [cuda.py:93] To see benefits of async output processing, enable CUDA graph. Since, enforce-eager is enabled, async output processor cannot be used
+INFO 09-01 01:31:26 [core.py:58] Initializing a V1 LLM engine (v0.8.5.post1) with config: model='Qwen/Qwen2.5-7B-Instruct', speculative_config=None, tokenizer='Qwen/Qwen2.5-7B-Instruct', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, override_neuron_config=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=4096, download_dir=None, load_format=LoadFormat.AUTO, tensor_parallel_size=2, pipeline_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=True, kv_cache_dtype=auto,  device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='auto', reasoning_backend=None), observability_config=ObservabilityConfig(show_hidden_metrics=False, otlp_traces_endpoint=None, collect_model_forward_time=False, collect_model_execute_time=False), seed=None, served_model_name=Qwen/Qwen2.5-7B-Instruct, num_scheduler_steps=1, multi_step_stream_outputs=True, enable_prefix_caching=True, chunked_prefill_enabled=True, use_async_output_proc=False, disable_mm_preprocessor_cache=False, mm_processor_kwargs=None, pooler_config=None, compilation_config={"splitting_ops":[],"compile_sizes":[],"cudagraph_capture_sizes":[],"max_capture_size":0}
+WARNING 09-01 01:31:26 [multiproc_worker_utils.py:306] Reducing Torch parallelism from 32 threads to 1 to avoid unnecessary CPU contention. Set OMP_NUM_THREADS in the external environment to tune this value as needed.
+INFO 09-01 01:31:26 [shm_broadcast.py:266] vLLM message queue communication handle: Handle(local_reader_ranks=[0, 1], buffer_handle=(2, 10485760, 10, 'psm_1d1db5fc'), local_subscribe_addr='ipc:///tmp/98ab331c-1ba7-4006-b1a7-fb3793261795', remote_subscribe_addr=None, remote_addr_ipv6=False)
+WARNING 09-01 01:31:28 [utils.py:2522] Methods determine_num_available_blocks,device_config,get_cache_block_size_bytes,initialize_cache not implemented in <vllm.v1.worker.gpu_worker.Worker object at 0x7fe65a928f20>
+WARNING 09-01 01:31:28 [utils.py:2522] Methods determine_num_available_blocks,device_config,get_cache_block_size_bytes,initialize_cache not implemented in <vllm.v1.worker.gpu_worker.Worker object at 0x7fe65a929bb0>
+[1;36m(VllmWorker rank=0 pid=614631)[0;0m INFO 09-01 01:31:28 [shm_broadcast.py:266] vLLM message queue communication handle: Handle(local_reader_ranks=[0], buffer_handle=(1, 10485760, 10, 'psm_ed10a63f'), local_subscribe_addr='ipc:///tmp/46ddc8ce-6c94-49ee-bbd4-1467db160fd8', remote_subscribe_addr=None, remote_addr_ipv6=False)
+[1;36m(VllmWorker rank=1 pid=614632)[0;0m INFO 09-01 01:31:28 [shm_broadcast.py:266] vLLM message queue communication handle: Handle(local_reader_ranks=[0], buffer_handle=(1, 10485760, 10, 'psm_9a352240'), local_subscribe_addr='ipc:///tmp/15037b58-2d2c-4dab-a356-74c8e6aab2e1', remote_subscribe_addr=None, remote_addr_ipv6=False)
+[1;36m(VllmWorker rank=1 pid=614632)[0;0m INFO 09-01 01:31:29 [utils.py:1055] Found nccl from library libnccl.so.2
+[1;36m(VllmWorker rank=0 pid=614631)[0;0m INFO 09-01 01:31:29 [utils.py:1055] Found nccl from library libnccl.so.2
+[1;36m(VllmWorker rank=1 pid=614632)[0;0m INFO 09-01 01:31:29 [pynccl.py:69] vLLM is using nccl==2.21.5
+[1;36m(VllmWorker rank=0 pid=614631)[0;0m INFO 09-01 01:31:29 [pynccl.py:69] vLLM is using nccl==2.21.5
+[1;36m(VllmWorker rank=0 pid=614631)[0;0m INFO 09-01 01:31:30 [custom_all_reduce_utils.py:206] generating GPU P2P access cache in /home/haokunliu/.cache/vllm/gpu_p2p_access_cache_for_1,2.json
+[1;36m(VllmWorker rank=0 pid=614631)[0;0m INFO 09-01 01:32:32 [custom_all_reduce_utils.py:244] reading GPU P2P access cache from /home/haokunliu/.cache/vllm/gpu_p2p_access_cache_for_1,2.json
+[1;36m(VllmWorker rank=1 pid=614632)[0;0m INFO 09-01 01:32:32 [custom_all_reduce_utils.py:244] reading GPU P2P access cache from /home/haokunliu/.cache/vllm/gpu_p2p_access_cache_for_1,2.json
+[1;36m(VllmWorker rank=0 pid=614631)[0;0m INFO 09-01 01:32:33 [shm_broadcast.py:266] vLLM message queue communication handle: Handle(local_reader_ranks=[1], buffer_handle=(1, 4194304, 6, 'psm_d4e09a00'), local_subscribe_addr='ipc:///tmp/629bfebc-845b-4f99-abf2-d136aa2afea1', remote_subscribe_addr=None, remote_addr_ipv6=False)
+[1;36m(VllmWorker rank=0 pid=614631)[0;0m INFO 09-01 01:32:33 [parallel_state.py:1004] rank 0 in world size 2 is assigned as DP rank 0, PP rank 0, TP rank 0
+[1;36m(VllmWorker rank=0 pid=614631)[0;0m INFO 09-01 01:32:33 [cuda.py:221] Using Flash Attention backend on V1 engine.
+[1;36m(VllmWorker rank=0 pid=614631)[0;0m WARNING 09-01 01:32:33 [topk_topp_sampler.py:69] FlashInfer is not available. Falling back to the PyTorch-native implementation of top-p & top-k sampling. For the best performance, please install FlashInfer.
+[1;36m(VllmWorker rank=1 pid=614632)[0;0m INFO 09-01 01:32:33 [parallel_state.py:1004] rank 1 in world size 2 is assigned as DP rank 0, PP rank 0, TP rank 1
+[1;36m(VllmWorker rank=1 pid=614632)[0;0m INFO 09-01 01:32:33 [cuda.py:221] Using Flash Attention backend on V1 engine.
+[1;36m(VllmWorker rank=1 pid=614632)[0;0m WARNING 09-01 01:32:33 [topk_topp_sampler.py:69] FlashInfer is not available. Falling back to the PyTorch-native implementation of top-p & top-k sampling. For the best performance, please install FlashInfer.
+[1;36m(VllmWorker rank=1 pid=614632)[0;0m INFO 09-01 01:32:33 [gpu_model_runner.py:1329] Starting to load model Qwen/Qwen2.5-7B-Instruct...
+[1;36m(VllmWorker rank=0 pid=614631)[0;0m INFO 09-01 01:32:33 [gpu_model_runner.py:1329] Starting to load model Qwen/Qwen2.5-7B-Instruct...
+[1;36m(VllmWorker rank=0 pid=614631)[0;0m INFO 09-01 01:32:33 [weight_utils.py:265] Using model weights format ['*.safetensors']
+[1;36m(VllmWorker rank=1 pid=614632)[0;0m INFO 09-01 01:32:33 [weight_utils.py:265] Using model weights format ['*.safetensors']
+[1;36m(VllmWorker rank=0 pid=614631)[0;0m Loading safetensors checkpoint shards:   0% Completed | 0/4 [00:00<?, ?it/s]
+[1;36m(VllmWorker rank=0 pid=614631)[0;0m Loading safetensors checkpoint shards:  25% Completed | 1/4 [00:00<00:02,  1.23it/s]
+[1;36m(VllmWorker rank=0 pid=614631)[0;0m Loading safetensors checkpoint shards:  50% Completed | 2/4 [00:01<00:01,  1.28it/s]
+[1;36m(VllmWorker rank=0 pid=614631)[0;0m Loading safetensors checkpoint shards:  75% Completed | 3/4 [00:02<00:00,  1.19it/s]
+[1;36m(VllmWorker rank=0 pid=614631)[0;0m Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03<00:00,  1.22it/s]
+[1;36m(VllmWorker rank=0 pid=614631)[0;0m Loading safetensors checkpoint shards: 100% Completed | 4/4 [00:03<00:00,  1.22it/s]
+[1;36m(VllmWorker rank=0 pid=614631)[0;0m 
+[1;36m(VllmWorker rank=0 pid=614631)[0;0m INFO 09-01 01:32:37 [loader.py:458] Loading weights took 3.42 seconds
+[1;36m(VllmWorker rank=1 pid=614632)[0;0m INFO 09-01 01:32:37 [loader.py:458] Loading weights took 3.40 seconds
+[1;36m(VllmWorker rank=0 pid=614631)[0;0m INFO 09-01 01:32:37 [gpu_model_runner.py:1347] Model loading took 7.1217 GiB and 4.020442 seconds
+[1;36m(VllmWorker rank=1 pid=614632)[0;0m INFO 09-01 01:32:37 [gpu_model_runner.py:1347] Model loading took 7.1217 GiB and 4.293221 seconds
+INFO 09-01 01:32:48 [kv_cache_utils.py:634] GPU KV cache size: 2,316,528 tokens
+INFO 09-01 01:32:48 [kv_cache_utils.py:637] Maximum concurrency for 4,096 tokens per request: 565.56x
+INFO 09-01 01:32:48 [kv_cache_utils.py:634] GPU KV cache size: 2,316,528 tokens
+INFO 09-01 01:32:48 [kv_cache_utils.py:637] Maximum concurrency for 4,096 tokens per request: 565.56x
+INFO 09-01 01:32:48 [core.py:159] init engine (profile, create kv cache, warmup model) took 11.26 seconds
+INFO 09-01 01:32:49 [core_client.py:439] Core engine process 0 ready.
+[gen] /net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/analysis/step7b/evil_normal.jsonl: 256 prompts
+[gen] /net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/analysis/step7b/evil_misaligned_1.jsonl: 256 prompts
+[gen] /net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/analysis/step7b/evil_misaligned_2.jsonl: 256 prompts
+[gen] /net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/analysis/step7b/sycophancy_normal.jsonl: 256 prompts
+[gen] /net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/analysis/step7b/sycophancy_misaligned_1.jsonl: 256 prompts
+[gen] /net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/analysis/step7b/sycophancy_misaligned_2.jsonl: 256 prompts
+[gen] /net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/analysis/step7b/hallucination_normal.jsonl: 256 prompts
+[gen] /net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/analysis/step7b/hallucination_misaligned_1.jsonl: 256 prompts
+[gen] /net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/analysis/step7b/hallucination_misaligned_2.jsonl: 256 prompts
+[gen] /net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/analysis/step7b/mistake_medical_normal.jsonl: 256 prompts
+[gen] /net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/analysis/step7b/mistake_medical_misaligned_1.jsonl: 256 prompts
+[gen] /net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/analysis/step7b/mistake_medical_misaligned_2.jsonl: 256 prompts
+[gen] /net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/analysis/step7b/mistake_opinions_normal.jsonl: 256 prompts
+[gen] /net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/analysis/step7b/mistake_opinions_misaligned_1.jsonl: 256 prompts
+[gen] /net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/analysis/step7b/mistake_opinions_misaligned_2.jsonl: 256 prompts
+[gen] /net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/analysis/step7b/mistake_math_normal.jsonl: 256 prompts
+[gen] /net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/analysis/step7b/mistake_math_misaligned_1.jsonl: 256 prompts
+[gen] /net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/analysis/step7b/mistake_math_misaligned_2.jsonl: 256 prompts
+[gen] /net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/analysis/step7b/mistake_gsm8k_normal.jsonl: 256 prompts
+[gen] /net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/analysis/step7b/mistake_gsm8k_misaligned_1.jsonl: 256 prompts
+[gen] /net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/analysis/step7b/mistake_gsm8k_misaligned_2.jsonl: 256 prompts
+[gen] /net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/analysis/step7b/insecure_code_normal.jsonl: 256 prompts
+[gen] /net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/analysis/step7b/insecure_code_misaligned_1.jsonl: 256 prompts
+[gen] /net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/analysis/step7b/insecure_code_misaligned_2.jsonl: 256 prompts

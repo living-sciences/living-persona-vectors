@@ -1,0 +1,63 @@
+[1/62] DONE DeepSeek-R1-Distill-Llama-8B/confirm/evil_steer_layer14_coef0.5.csv n=200 gpt_evil_mean=0.62 | calls=1190 errors=0 avg_lat=1.2s cost=$0.27 elapsed=16s
+[2/62] DONE DeepSeek-R1-Distill-Llama-8B/confirm/evil_steer_layer14_coef2.0.csv n=200 gpt_evil_mean=53.46 | calls=1609 errors=0 avg_lat=1.3s cost=$0.36 elapsed=23s
+[3/62] DONE DeepSeek-R1-Distill-Llama-8B/confirm/evil_steer_layer14_coef1.5.csv n=200 gpt_evil_mean=28.71 | calls=1999 errors=0 avg_lat=1.3s cost=$0.45 elapsed=30s
+[4/62] DONE DeepSeek-R1-Distill-Llama-8B/confirm/evil_steer_layer14_coef1.0.csv n=200 gpt_evil_mean=4.27 | calls=2426 errors=0 avg_lat=1.3s cost=$0.56 elapsed=36s
+[5/62] DONE DeepSeek-R1-Distill-Llama-8B/confirm/hallucinating_steer_layer14_coef0.5.csv n=200 gpt_hallucinating_mean=74.75 | calls=2567 errors=0 avg_lat=1.3s cost=$0.60 elapsed=38s
+[6/62] DONE DeepSeek-R1-Distill-Llama-8B/confirm/evil_steer_layer14_coef2.5.csv n=200 gpt_evil_mean=71.50 | calls=3350 errors=0 avg_lat=1.3s cost=$0.79 elapsed=50s
+[7/62] DONE DeepSeek-R1-Distill-Llama-8B/confirm/hallucinating_steer_layer14_coef1.5.csv n=200 gpt_hallucinating_mean=82.24 | calls=3502 errors=0 avg_lat=1.3s cost=$0.83 elapsed=52s
+[8/62] SKIP DeepSeek-R1-Distill-Llama-8B/confirm/steer_sweep_summary.csv (no single trait col) | calls=3503 errors=0 avg_lat=1.3s cost=$0.83 elapsed=52s
+[9/62] DONE DeepSeek-R1-Distill-Llama-8B/confirm/hallucinating_steer_layer14_coef1.0.csv n=200 gpt_hallucinating_mean=82.64 | calls=3667 errors=0 avg_lat=1.3s cost=$0.87 elapsed=54s
+[10/62] DONE DeepSeek-R1-Distill-Llama-8B/confirm/hallucinating_steer_layer14_coef2.0.csv n=200 gpt_hallucinating_mean=83.58 | calls=3878 errors=0 avg_lat=1.3s cost=$0.92 elapsed=56s
+[11/62] DONE DeepSeek-R1-Distill-Llama-8B/confirm/hallucinating_steer_layer14_coef2.5.csv n=200 gpt_hallucinating_mean=87.93 | calls=4965 errors=0 avg_lat=1.3s cost=$1.23 elapsed=69s
+[12/62] DONE DeepSeek-R1-Distill-Llama-8B/confirm/sycophantic_steer_layer14_coef0.5.csv n=200 gpt_sycophantic_mean=9.03 | calls=5005 errors=0 avg_lat=1.3s cost=$1.24 elapsed=69s
+[13/62] DONE DeepSeek-R1-Distill-Llama-8B/confirm/sycophantic_steer_layer14_coef1.0.csv n=200 gpt_sycophantic_mean=14.49 | calls=5089 errors=0 avg_lat=1.3s cost=$1.26 elapsed=72s
+[14/62] done DeepSeek-R1-Distill-Llama-8B/evil_baseline.csv (cached) | calls=5090 errors=0 avg_lat=1.3s cost=$1.26 elapsed=72s
+[15/62] DONE DeepSeek-R1-Distill-Llama-8B/confirm/sycophantic_steer_layer14_coef1.5.csv n=200 gpt_sycophantic_mean=25.81 | calls=5295 errors=0 avg_lat=1.4s cost=$1.32 elapsed=76s
+[16/62] DONE DeepSeek-R1-Distill-Llama-8B/confirm/sycophantic_steer_layer14_coef2.0.csv n=200 gpt_sycophantic_mean=49.36 | calls=7153 errors=0 avg_lat=1.3s cost=$1.96 elapsed=96s
+[17/62] done DeepSeek-R1-Distill-Llama-8B/evil_steer_layer14_coef1.0.csv (cached) | calls=7153 errors=0 avg_lat=1.3s cost=$1.96 elapsed=96s
+[18/62] done DeepSeek-R1-Distill-Llama-8B/evil_steer_layer14_coef1.5.csv (cached) | calls=7153 errors=0 avg_lat=1.3s cost=$1.96 elapsed=96s
+[19/62] done DeepSeek-R1-Distill-Llama-8B/evil_steer_layer14_coef2.0.csv (cached) | calls=7153 errors=0 avg_lat=1.3s cost=$1.96 elapsed=96s
+[20/62] done DeepSeek-R1-Distill-Llama-8B/evil_steer_layer18_coef1.0.csv (cached) | calls=7165 errors=0 avg_lat=1.3s cost=$1.96 elapsed=96s
+[21/62] done DeepSeek-R1-Distill-Llama-8B/evil_steer_layer18_coef1.5.csv (cached) | calls=7178 errors=0 avg_lat=1.3s cost=$1.97 elapsed=97s
+[22/62] done DeepSeek-R1-Distill-Llama-8B/evil_steer_layer18_coef2.0.csv (cached) | calls=7186 errors=0 avg_lat=1.3s cost=$1.97 elapsed=97s
+[23/62] done DeepSeek-R1-Distill-Llama-8B/evil_steer_layer21_coef1.0.csv (cached) | calls=7201 errors=0 avg_lat=1.3s cost=$1.98 elapsed=97s
+[24/62] done DeepSeek-R1-Distill-Llama-8B/evil_steer_layer21_coef1.5.csv (cached) | calls=7215 errors=0 avg_lat=1.3s cost=$1.99 elapsed=97s
+[25/62] done DeepSeek-R1-Distill-Llama-8B/evil_steer_layer21_coef2.0.csv (cached) | calls=7224 errors=0 avg_lat=1.3s cost=$1.99 elapsed=97s
+[26/62] done DeepSeek-R1-Distill-Llama-8B/evil_steer_layer24_coef1.0.csv (cached) | calls=7231 errors=0 avg_lat=1.3s cost=$1.99 elapsed=97s
+[27/62] done DeepSeek-R1-Distill-Llama-8B/evil_steer_layer24_coef1.5.csv (cached) | calls=7236 errors=0 avg_lat=1.3s cost=$1.99 elapsed=98s
+[28/62] DONE DeepSeek-R1-Distill-Llama-8B/confirm/sycophantic_steer_layer14_coef2.5.csv n=200 gpt_sycophantic_mean=73.63 | calls=7236 errors=0 avg_lat=1.3s cost=$1.99 elapsed=98s
+[29/62] done DeepSeek-R1-Distill-Llama-8B/evil_steer_layer24_coef2.0.csv (cached) | calls=7238 errors=0 avg_lat=1.3s cost=$2.00 elapsed=98s
+[30/62] done DeepSeek-R1-Distill-Llama-8B/hallucinating_baseline.csv (cached) | calls=7238 errors=0 avg_lat=1.3s cost=$2.00 elapsed=98s
+[31/62] DONE DeepSeek-R1-Distill-Llama-8B/evil_monitor_neg.csv n=500 gpt_evil_mean=0.00 | calls=7798 errors=0 avg_lat=1.3s cost=$2.22 elapsed=107s
+[32/62] done DeepSeek-R1-Distill-Llama-8B/hallucinating_steer_layer14_coef1.0.csv (cached) | calls=7800 errors=0 avg_lat=1.3s cost=$2.22 elapsed=107s
+[33/62] done DeepSeek-R1-Distill-Llama-8B/hallucinating_steer_layer14_coef1.5.csv (cached) | calls=7801 errors=0 avg_lat=1.3s cost=$2.22 elapsed=107s
+[34/62] done DeepSeek-R1-Distill-Llama-8B/hallucinating_steer_layer14_coef2.0.csv (cached) | calls=7802 errors=0 avg_lat=1.3s cost=$2.22 elapsed=107s
+[35/62] done DeepSeek-R1-Distill-Llama-8B/hallucinating_steer_layer18_coef1.0.csv (cached) | calls=7804 errors=0 avg_lat=1.3s cost=$2.22 elapsed=107s
+[36/62] done DeepSeek-R1-Distill-Llama-8B/hallucinating_steer_layer18_coef1.5.csv (cached) | calls=7819 errors=0 avg_lat=1.3s cost=$2.22 elapsed=107s
+[37/62] done DeepSeek-R1-Distill-Llama-8B/hallucinating_steer_layer18_coef2.0.csv (cached) | calls=7836 errors=0 avg_lat=1.3s cost=$2.23 elapsed=108s
+[38/62] done DeepSeek-R1-Distill-Llama-8B/hallucinating_steer_layer21_coef1.0.csv (cached) | calls=7844 errors=0 avg_lat=1.3s cost=$2.23 elapsed=108s
+[39/62] done DeepSeek-R1-Distill-Llama-8B/hallucinating_steer_layer21_coef1.5.csv (cached) | calls=7853 errors=0 avg_lat=1.3s cost=$2.23 elapsed=108s
+[40/62] done DeepSeek-R1-Distill-Llama-8B/hallucinating_steer_layer21_coef2.0.csv (cached) | calls=7866 errors=0 avg_lat=1.3s cost=$2.24 elapsed=108s
+[41/62] done DeepSeek-R1-Distill-Llama-8B/hallucinating_steer_layer24_coef1.0.csv (cached) | calls=7877 errors=0 avg_lat=1.3s cost=$2.24 elapsed=108s
+[42/62] done DeepSeek-R1-Distill-Llama-8B/hallucinating_steer_layer24_coef1.5.csv (cached) | calls=7884 errors=0 avg_lat=1.3s cost=$2.24 elapsed=109s
+[43/62] done DeepSeek-R1-Distill-Llama-8B/hallucinating_steer_layer24_coef2.0.csv (cached) | calls=7887 errors=0 avg_lat=1.3s cost=$2.24 elapsed=109s
+[44/62] SKIP DeepSeek-R1-Distill-Llama-8B/steer_sweep_summary.csv (no single trait col) | calls=7888 errors=0 avg_lat=1.3s cost=$2.24 elapsed=109s
+[45/62] done DeepSeek-R1-Distill-Llama-8B/sycophantic_baseline.csv (cached) | calls=7889 errors=0 avg_lat=1.3s cost=$2.24 elapsed=109s
+[46/62] DONE DeepSeek-R1-Distill-Llama-8B/evil_monitor_pos.csv n=500 gpt_evil_mean=35.02 | calls=8132 errors=0 avg_lat=1.3s cost=$2.34 elapsed=115s
+[47/62] DONE DeepSeek-R1-Distill-Llama-8B/hallucinating_monitor_neg.csv n=500 gpt_hallucinating_mean=69.45 | calls=10764 errors=0 avg_lat=1.3s cost=$3.35 elapsed=142s
+[48/62] done DeepSeek-R1-Distill-Llama-8B/sycophantic_steer_layer14_coef1.0.csv (cached) | calls=10764 errors=0 avg_lat=1.3s cost=$3.35 elapsed=142s
+[49/62] done DeepSeek-R1-Distill-Llama-8B/sycophantic_steer_layer14_coef1.5.csv (cached) | calls=10764 errors=0 avg_lat=1.3s cost=$3.35 elapsed=142s
+[50/62] done DeepSeek-R1-Distill-Llama-8B/sycophantic_steer_layer14_coef2.0.csv (cached) | calls=10766 errors=0 avg_lat=1.3s cost=$3.35 elapsed=142s
+[51/62] done DeepSeek-R1-Distill-Llama-8B/sycophantic_steer_layer18_coef1.0.csv (cached) | calls=10773 errors=0 avg_lat=1.3s cost=$3.36 elapsed=143s
+[52/62] done DeepSeek-R1-Distill-Llama-8B/sycophantic_steer_layer18_coef1.5.csv (cached) | calls=10802 errors=0 avg_lat=1.3s cost=$3.37 elapsed=143s
+[53/62] done DeepSeek-R1-Distill-Llama-8B/sycophantic_steer_layer18_coef2.0.csv (cached) | calls=10815 errors=0 avg_lat=1.3s cost=$3.38 elapsed=143s
+[54/62] done DeepSeek-R1-Distill-Llama-8B/sycophantic_steer_layer21_coef1.0.csv (cached) | calls=10831 errors=0 avg_lat=1.3s cost=$3.38 elapsed=143s
+[55/62] done DeepSeek-R1-Distill-Llama-8B/sycophantic_steer_layer21_coef1.5.csv (cached) | calls=10842 errors=0 avg_lat=1.3s cost=$3.39 elapsed=144s
+[56/62] done DeepSeek-R1-Distill-Llama-8B/sycophantic_steer_layer21_coef2.0.csv (cached) | calls=10849 errors=0 avg_lat=1.3s cost=$3.39 elapsed=144s
+[57/62] done DeepSeek-R1-Distill-Llama-8B/sycophantic_steer_layer24_coef1.0.csv (cached) | calls=10853 errors=0 avg_lat=1.3s cost=$3.39 elapsed=144s
+[58/62] done DeepSeek-R1-Distill-Llama-8B/sycophantic_steer_layer24_coef1.5.csv (cached) | calls=10855 errors=0 avg_lat=1.3s cost=$3.39 elapsed=144s
+[59/62] done DeepSeek-R1-Distill-Llama-8B/sycophantic_steer_layer24_coef2.0.csv (cached) | calls=10855 errors=0 avg_lat=1.3s cost=$3.39 elapsed=144s
+[60/62] DONE DeepSeek-R1-Distill-Llama-8B/hallucinating_monitor_pos.csv n=500 gpt_hallucinating_mean=82.96 | calls=11214 errors=0 avg_lat=1.3s cost=$3.54 elapsed=151s
+[61/62] DONE DeepSeek-R1-Distill-Llama-8B/sycophantic_monitor_neg.csv n=500 gpt_sycophantic_mean=4.75 | calls=11994 errors=0 avg_lat=1.3s cost=$3.83 elapsed=160s
+[62/62] DONE DeepSeek-R1-Distill-Llama-8B/sycophantic_monitor_pos.csv n=500 gpt_sycophantic_mean=37.75 | calls=12000 errors=0 avg_lat=1.3s cost=$3.84 elapsed=162s
+ALL DONE {'prompt': 9495633, 'completion': 24006, 'calls': 12000, 'errors': 0, 'lat_sum': 15428.818640708923}

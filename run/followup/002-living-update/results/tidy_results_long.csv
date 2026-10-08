@@ -1,0 +1,91 @@
+model,era,release,trait,claim,value,layer,kind,source
+Mistral-7B-Instruct-v0.2,1,2023-12,evil,C5_baseline,0.0,,new,followup/002-living-update/results/rejudged/Mistral-7B-Instruct-v0.2/evil_baseline.csv
+Mistral-7B-Instruct-v0.2,1,2023-12,evil,C8_selected_layer,14.0,14,new,followup/002-living-update/results/logs/Mistral-7B-Instruct-v0.2/sel_layer.json
+Mistral-7B-Instruct-v0.2,1,2023-12,evil,C1_steer_maxcoef,97.913,14,new,followup/002-living-update/results/rejudged/Mistral-7B-Instruct-v0.2/confirm
+Mistral-7B-Instruct-v0.2,1,2023-12,evil,C1_steer_delta,97.913,14,new,followup/002-living-update/results/rejudged/Mistral-7B-Instruct-v0.2/confirm
+Mistral-7B-Instruct-v0.2,1,2023-12,evil,C2_pearson_r,0.992,14,new,"followup/002-living-update/workspace/codebase/eval_persona_eval/Mistral-7B-Instruct-v0.2/evil_monitor_{pos,neg}.csv + followup/002-living-update/results/rejudged/Mistral-7B-Instruct-v0.2/evil_monitor_{pos,neg}.csv"
+Mistral-7B-Instruct-v0.2,1,2023-12,evil,C13_auc,0.9995,,new,followup/002-living-update/results/step8/Mistral-7B-Instruct-v0.2/step8_separability_summary.csv
+Mistral-7B-Instruct-v0.2,1,2023-12,sycophantic,C5_baseline,10.045,,new,followup/002-living-update/results/rejudged/Mistral-7B-Instruct-v0.2/sycophantic_baseline.csv
+Mistral-7B-Instruct-v0.2,1,2023-12,sycophantic,C8_selected_layer,18.0,18,new,followup/002-living-update/results/logs/Mistral-7B-Instruct-v0.2/sel_layer.json
+Mistral-7B-Instruct-v0.2,1,2023-12,sycophantic,C1_steer_maxcoef,95.34,18,new,followup/002-living-update/results/rejudged/Mistral-7B-Instruct-v0.2/confirm
+Mistral-7B-Instruct-v0.2,1,2023-12,sycophantic,C1_steer_delta,85.295,18,new,followup/002-living-update/results/rejudged/Mistral-7B-Instruct-v0.2/confirm
+Mistral-7B-Instruct-v0.2,1,2023-12,sycophantic,C2_pearson_r,0.921,18,new,"followup/002-living-update/workspace/codebase/eval_persona_eval/Mistral-7B-Instruct-v0.2/sycophantic_monitor_{pos,neg}.csv + followup/002-living-update/results/rejudged/Mistral-7B-Instruct-v0.2/sycophantic_monitor_{pos,neg}.csv"
+Mistral-7B-Instruct-v0.2,1,2023-12,sycophantic,C13_auc,1.0,,new,followup/002-living-update/results/step8/Mistral-7B-Instruct-v0.2/step8_separability_summary.csv
+Mistral-7B-Instruct-v0.2,1,2023-12,hallucinating,C5_baseline,43.455,,new,followup/002-living-update/results/rejudged/Mistral-7B-Instruct-v0.2/hallucinating_baseline.csv
+Mistral-7B-Instruct-v0.2,1,2023-12,hallucinating,C8_selected_layer,14.0,14,new,followup/002-living-update/results/logs/Mistral-7B-Instruct-v0.2/sel_layer.json
+Mistral-7B-Instruct-v0.2,1,2023-12,hallucinating,C1_steer_maxcoef,97.578,14,new,followup/002-living-update/results/rejudged/Mistral-7B-Instruct-v0.2/confirm
+Mistral-7B-Instruct-v0.2,1,2023-12,hallucinating,C1_steer_delta,54.123,14,new,followup/002-living-update/results/rejudged/Mistral-7B-Instruct-v0.2/confirm
+Mistral-7B-Instruct-v0.2,1,2023-12,hallucinating,C2_pearson_r,0.752,14,new,"followup/002-living-update/workspace/codebase/eval_persona_eval/Mistral-7B-Instruct-v0.2/hallucinating_monitor_{pos,neg}.csv + followup/002-living-update/results/rejudged/Mistral-7B-Instruct-v0.2/hallucinating_monitor_{pos,neg}.csv"
+Mistral-7B-Instruct-v0.2,1,2023-12,hallucinating,C13_auc,0.9985,,new,followup/002-living-update/results/step8/Mistral-7B-Instruct-v0.2/step8_separability_summary.csv
+Llama-3.1-8B-Instruct,2,2024-07,evil,C5_baseline,0.0,,new,followup/002-living-update/results/rejudged/Llama-3.1-8B-Instruct/evil_baseline.csv
+Llama-3.1-8B-Instruct,2,2024-07,evil,C8_selected_layer,21.0,21,new,followup/002-living-update/results/logs/Llama-3.1-8B-Instruct/sel_layer.json
+Llama-3.1-8B-Instruct,2,2024-07,evil,C1_steer_maxcoef,87.132,21,new,followup/002-living-update/results/rejudged/Llama-3.1-8B-Instruct/confirm
+Llama-3.1-8B-Instruct,2,2024-07,evil,C1_steer_delta,87.132,21,new,followup/002-living-update/results/rejudged/Llama-3.1-8B-Instruct/confirm
+Llama-3.1-8B-Instruct,2,2024-07,evil,C2_pearson_r,0.969,21,new,"followup/002-living-update/workspace/codebase/eval_persona_eval/Llama-3.1-8B-Instruct/evil_monitor_{pos,neg}.csv + followup/002-living-update/results/rejudged/Llama-3.1-8B-Instruct/evil_monitor_{pos,neg}.csv"
+Llama-3.1-8B-Instruct,2,2024-07,evil,C13_auc,0.9999,,new,followup/002-living-update/results/step8/Llama-3.1-8B-Instruct/step8_separability_summary.csv
+Llama-3.1-8B-Instruct,2,2024-07,sycophantic,C5_baseline,4.381,,new,followup/002-living-update/results/rejudged/Llama-3.1-8B-Instruct/sycophantic_baseline.csv
+Llama-3.1-8B-Instruct,2,2024-07,sycophantic,C8_selected_layer,18.0,18,new,followup/002-living-update/results/logs/Llama-3.1-8B-Instruct/sel_layer.json
+Llama-3.1-8B-Instruct,2,2024-07,sycophantic,C1_steer_maxcoef,98.345,18,new,followup/002-living-update/results/rejudged/Llama-3.1-8B-Instruct/confirm
+Llama-3.1-8B-Instruct,2,2024-07,sycophantic,C1_steer_delta,93.964,18,new,followup/002-living-update/results/rejudged/Llama-3.1-8B-Instruct/confirm
+Llama-3.1-8B-Instruct,2,2024-07,sycophantic,C2_pearson_r,0.97,18,new,"followup/002-living-update/workspace/codebase/eval_persona_eval/Llama-3.1-8B-Instruct/sycophantic_monitor_{pos,neg}.csv + followup/002-living-update/results/rejudged/Llama-3.1-8B-Instruct/sycophantic_monitor_{pos,neg}.csv"
+Llama-3.1-8B-Instruct,2,2024-07,sycophantic,C13_auc,1.0,,new,followup/002-living-update/results/step8/Llama-3.1-8B-Instruct/step8_separability_summary.csv
+Llama-3.1-8B-Instruct,2,2024-07,hallucinating,C5_baseline,32.976,,new,followup/002-living-update/results/rejudged/Llama-3.1-8B-Instruct/hallucinating_baseline.csv
+Llama-3.1-8B-Instruct,2,2024-07,hallucinating,C8_selected_layer,18.0,18,new,followup/002-living-update/results/logs/Llama-3.1-8B-Instruct/sel_layer.json
+Llama-3.1-8B-Instruct,2,2024-07,hallucinating,C1_steer_maxcoef,99.818,18,new,followup/002-living-update/results/rejudged/Llama-3.1-8B-Instruct/confirm
+Llama-3.1-8B-Instruct,2,2024-07,hallucinating,C1_steer_delta,66.842,18,new,followup/002-living-update/results/rejudged/Llama-3.1-8B-Instruct/confirm
+Llama-3.1-8B-Instruct,2,2024-07,hallucinating,C2_pearson_r,0.909,18,new,"followup/002-living-update/workspace/codebase/eval_persona_eval/Llama-3.1-8B-Instruct/hallucinating_monitor_{pos,neg}.csv + followup/002-living-update/results/rejudged/Llama-3.1-8B-Instruct/hallucinating_monitor_{pos,neg}.csv"
+Llama-3.1-8B-Instruct,2,2024-07,hallucinating,C13_auc,0.9983,,new,followup/002-living-update/results/step8/Llama-3.1-8B-Instruct/step8_separability_summary.csv
+Qwen2.5-7B-Instruct,3,2024-09,evil,C5_baseline,0.0,,reused,replication/codebase/eval_persona_eval/Qwen2.5-7B-Instruct/evil_baseline.csv
+Qwen2.5-7B-Instruct,3,2024-09,evil,C8_selected_layer,20.0,20,reused,replication/codebase/eval_persona_eval/Qwen2.5-7B-Instruct/steer_sweep_summary.csv
+Qwen2.5-7B-Instruct,3,2024-09,evil,C1_steer_maxcoef,95.866,20,reused,replication/codebase/eval_persona_eval/Qwen2.5-7B-Instruct/steer_sweep_summary.csv
+Qwen2.5-7B-Instruct,3,2024-09,evil,C1_steer_delta,95.866,20,reused,replication/codebase/eval_persona_eval/Qwen2.5-7B-Instruct/steer_sweep_summary.csv
+Qwen2.5-7B-Instruct,3,2024-09,evil,C2_pearson_r,0.869,20,reused,"replication/codebase/eval_persona_eval/Qwen2.5-7B-Instruct/evil_monitor_{pos,neg}.csv"
+Qwen2.5-7B-Instruct,3,2024-09,evil,C13_auc,0.9999,,reused,replication/analysis/step8_separability_summary.csv
+Qwen2.5-7B-Instruct,3,2024-09,sycophantic,C5_baseline,4.978,,reused,replication/codebase/eval_persona_eval/Qwen2.5-7B-Instruct/sycophantic_baseline.csv
+Qwen2.5-7B-Instruct,3,2024-09,sycophantic,C8_selected_layer,20.0,20,reused,replication/codebase/eval_persona_eval/Qwen2.5-7B-Instruct/steer_sweep_summary.csv
+Qwen2.5-7B-Instruct,3,2024-09,sycophantic,C1_steer_maxcoef,97.829,20,reused,replication/codebase/eval_persona_eval/Qwen2.5-7B-Instruct/steer_sweep_summary.csv
+Qwen2.5-7B-Instruct,3,2024-09,sycophantic,C1_steer_delta,92.851,20,reused,replication/codebase/eval_persona_eval/Qwen2.5-7B-Instruct/steer_sweep_summary.csv
+Qwen2.5-7B-Instruct,3,2024-09,sycophantic,C2_pearson_r,0.868,20,reused,"replication/codebase/eval_persona_eval/Qwen2.5-7B-Instruct/sycophantic_monitor_{pos,neg}.csv"
+Qwen2.5-7B-Instruct,3,2024-09,sycophantic,C13_auc,0.9999,,reused,replication/analysis/step8_separability_summary.csv
+Qwen2.5-7B-Instruct,3,2024-09,hallucinating,C5_baseline,22.815,,reused,replication/codebase/eval_persona_eval/Qwen2.5-7B-Instruct/hallucinating_baseline.csv
+Qwen2.5-7B-Instruct,3,2024-09,hallucinating,C8_selected_layer,16.0,16,reused,replication/codebase/eval_persona_eval/Qwen2.5-7B-Instruct/steer_sweep_summary.csv
+Qwen2.5-7B-Instruct,3,2024-09,hallucinating,C1_steer_maxcoef,97.981,16,reused,replication/codebase/eval_persona_eval/Qwen2.5-7B-Instruct/steer_sweep_summary.csv
+Qwen2.5-7B-Instruct,3,2024-09,hallucinating,C1_steer_delta,75.166,16,reused,replication/codebase/eval_persona_eval/Qwen2.5-7B-Instruct/steer_sweep_summary.csv
+Qwen2.5-7B-Instruct,3,2024-09,hallucinating,C2_pearson_r,0.813,16,reused,"replication/codebase/eval_persona_eval/Qwen2.5-7B-Instruct/hallucinating_monitor_{pos,neg}.csv"
+Qwen2.5-7B-Instruct,3,2024-09,hallucinating,C13_auc,0.9948,,reused,replication/analysis/step8_separability_summary.csv
+DeepSeek-R1-Distill-Llama-8B,4,2025-01,evil,C5_baseline,0.263,,new,followup/002-living-update/results/rejudged/DeepSeek-R1-Distill-Llama-8B/evil_baseline.csv
+DeepSeek-R1-Distill-Llama-8B,4,2025-01,evil,C8_selected_layer,14.0,14,new,followup/002-living-update/results/logs/DeepSeek-R1-Distill-Llama-8B/sel_layer.json
+DeepSeek-R1-Distill-Llama-8B,4,2025-01,evil,C1_steer_maxcoef,71.499,14,new,followup/002-living-update/results/rejudged/DeepSeek-R1-Distill-Llama-8B/confirm
+DeepSeek-R1-Distill-Llama-8B,4,2025-01,evil,C1_steer_delta,71.236,14,new,followup/002-living-update/results/rejudged/DeepSeek-R1-Distill-Llama-8B/confirm
+DeepSeek-R1-Distill-Llama-8B,4,2025-01,evil,C2_pearson_r,0.452,14,new,"followup/002-living-update/workspace/codebase/eval_persona_eval/DeepSeek-R1-Distill-Llama-8B/evil_monitor_{pos,neg}.csv + followup/002-living-update/results/rejudged/DeepSeek-R1-Distill-Llama-8B/evil_monitor_{pos,neg}.csv"
+DeepSeek-R1-Distill-Llama-8B,4,2025-01,evil,C13_auc,0.999,,new,followup/002-living-update/results/step8/DeepSeek-R1-Distill-Llama-8B/step8_separability_summary.csv
+DeepSeek-R1-Distill-Llama-8B,4,2025-01,sycophantic,C5_baseline,4.671,,new,followup/002-living-update/results/rejudged/DeepSeek-R1-Distill-Llama-8B/sycophantic_baseline.csv
+DeepSeek-R1-Distill-Llama-8B,4,2025-01,sycophantic,C8_selected_layer,14.0,14,new,followup/002-living-update/results/logs/DeepSeek-R1-Distill-Llama-8B/sel_layer.json
+DeepSeek-R1-Distill-Llama-8B,4,2025-01,sycophantic,C1_steer_maxcoef,73.633,14,new,followup/002-living-update/results/rejudged/DeepSeek-R1-Distill-Llama-8B/confirm
+DeepSeek-R1-Distill-Llama-8B,4,2025-01,sycophantic,C1_steer_delta,68.962,14,new,followup/002-living-update/results/rejudged/DeepSeek-R1-Distill-Llama-8B/confirm
+DeepSeek-R1-Distill-Llama-8B,4,2025-01,sycophantic,C2_pearson_r,0.482,14,new,"followup/002-living-update/workspace/codebase/eval_persona_eval/DeepSeek-R1-Distill-Llama-8B/sycophantic_monitor_{pos,neg}.csv + followup/002-living-update/results/rejudged/DeepSeek-R1-Distill-Llama-8B/sycophantic_monitor_{pos,neg}.csv"
+DeepSeek-R1-Distill-Llama-8B,4,2025-01,sycophantic,C13_auc,0.996,,new,followup/002-living-update/results/step8/DeepSeek-R1-Distill-Llama-8B/step8_separability_summary.csv
+DeepSeek-R1-Distill-Llama-8B,4,2025-01,hallucinating,C5_baseline,72.186,,new,followup/002-living-update/results/rejudged/DeepSeek-R1-Distill-Llama-8B/hallucinating_baseline.csv
+DeepSeek-R1-Distill-Llama-8B,4,2025-01,hallucinating,C8_selected_layer,14.0,14,new,followup/002-living-update/results/logs/DeepSeek-R1-Distill-Llama-8B/sel_layer.json
+DeepSeek-R1-Distill-Llama-8B,4,2025-01,hallucinating,C1_steer_maxcoef,87.927,14,new,followup/002-living-update/results/rejudged/DeepSeek-R1-Distill-Llama-8B/confirm
+DeepSeek-R1-Distill-Llama-8B,4,2025-01,hallucinating,C1_steer_delta,15.741,14,new,followup/002-living-update/results/rejudged/DeepSeek-R1-Distill-Llama-8B/confirm
+DeepSeek-R1-Distill-Llama-8B,4,2025-01,hallucinating,C2_pearson_r,0.246,14,new,"followup/002-living-update/workspace/codebase/eval_persona_eval/DeepSeek-R1-Distill-Llama-8B/hallucinating_monitor_{pos,neg}.csv + followup/002-living-update/results/rejudged/DeepSeek-R1-Distill-Llama-8B/hallucinating_monitor_{pos,neg}.csv"
+DeepSeek-R1-Distill-Llama-8B,4,2025-01,hallucinating,C13_auc,0.9986,,new,followup/002-living-update/results/step8/DeepSeek-R1-Distill-Llama-8B/step8_separability_summary.csv
+Qwen3-8B-Nonthinking,5,2025-04,evil,C5_baseline,0.0,,new,followup/002-living-update/results/rejudged/Qwen3-8B-Nonthinking/evil_baseline.csv
+Qwen3-8B-Nonthinking,5,2025-04,evil,C8_selected_layer,20.0,20,new,followup/002-living-update/results/logs/Qwen3-8B-Nonthinking/sel_layer.json
+Qwen3-8B-Nonthinking,5,2025-04,evil,C1_steer_maxcoef,82.599,20,new,followup/002-living-update/results/rejudged/Qwen3-8B-Nonthinking/confirm
+Qwen3-8B-Nonthinking,5,2025-04,evil,C1_steer_delta,82.599,20,new,followup/002-living-update/results/rejudged/Qwen3-8B-Nonthinking/confirm
+Qwen3-8B-Nonthinking,5,2025-04,evil,C2_pearson_r,0.648,20,new,"followup/002-living-update/workspace/codebase/eval_persona_eval/Qwen3-8B-Nonthinking/evil_monitor_{pos,neg}.csv + followup/002-living-update/results/rejudged/Qwen3-8B-Nonthinking/evil_monitor_{pos,neg}.csv"
+Qwen3-8B-Nonthinking,5,2025-04,evil,C13_auc,1.0,,new,followup/002-living-update/results/step8/Qwen3-8B-Nonthinking/step8_separability_summary.csv
+Qwen3-8B-Nonthinking,5,2025-04,sycophantic,C5_baseline,6.225,,new,followup/002-living-update/results/rejudged/Qwen3-8B-Nonthinking/sycophantic_baseline.csv
+Qwen3-8B-Nonthinking,5,2025-04,sycophantic,C8_selected_layer,23.0,23,new,followup/002-living-update/results/logs/Qwen3-8B-Nonthinking/sel_layer.json
+Qwen3-8B-Nonthinking,5,2025-04,sycophantic,C1_steer_maxcoef,97.538,23,new,followup/002-living-update/results/rejudged/Qwen3-8B-Nonthinking/confirm
+Qwen3-8B-Nonthinking,5,2025-04,sycophantic,C1_steer_delta,91.313,23,new,followup/002-living-update/results/rejudged/Qwen3-8B-Nonthinking/confirm
+Qwen3-8B-Nonthinking,5,2025-04,sycophantic,C2_pearson_r,0.952,23,new,"followup/002-living-update/workspace/codebase/eval_persona_eval/Qwen3-8B-Nonthinking/sycophantic_monitor_{pos,neg}.csv + followup/002-living-update/results/rejudged/Qwen3-8B-Nonthinking/sycophantic_monitor_{pos,neg}.csv"
+Qwen3-8B-Nonthinking,5,2025-04,sycophantic,C13_auc,1.0,,new,followup/002-living-update/results/step8/Qwen3-8B-Nonthinking/step8_separability_summary.csv
+Qwen3-8B-Nonthinking,5,2025-04,hallucinating,C5_baseline,26.372,,new,followup/002-living-update/results/rejudged/Qwen3-8B-Nonthinking/hallucinating_baseline.csv
+Qwen3-8B-Nonthinking,5,2025-04,hallucinating,C8_selected_layer,20.0,20,new,followup/002-living-update/results/logs/Qwen3-8B-Nonthinking/sel_layer.json
+Qwen3-8B-Nonthinking,5,2025-04,hallucinating,C1_steer_maxcoef,99.675,20,new,followup/002-living-update/results/rejudged/Qwen3-8B-Nonthinking/confirm
+Qwen3-8B-Nonthinking,5,2025-04,hallucinating,C1_steer_delta,73.303,20,new,followup/002-living-update/results/rejudged/Qwen3-8B-Nonthinking/confirm
+Qwen3-8B-Nonthinking,5,2025-04,hallucinating,C2_pearson_r,0.903,20,new,"followup/002-living-update/workspace/codebase/eval_persona_eval/Qwen3-8B-Nonthinking/hallucinating_monitor_{pos,neg}.csv + followup/002-living-update/results/rejudged/Qwen3-8B-Nonthinking/hallucinating_monitor_{pos,neg}.csv"
+Qwen3-8B-Nonthinking,5,2025-04,hallucinating,C13_auc,0.999,,new,followup/002-living-update/results/step8/Qwen3-8B-Nonthinking/step8_separability_summary.csv

@@ -1,0 +1,238 @@
+{
+  "qwen-evil_normal": {
+    "config": "configs/generated/qwen-evil_normal.json",
+    "state": "done",
+    "gpu": 0,
+    "log": "/net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/logs/finetune/qwen-evil_normal.log",
+    "t0": 1788227940.4632792,
+    "duration_s": 1371.2
+  },
+  "qwen-evil_misaligned_1": {
+    "config": "configs/generated/qwen-evil_misaligned_1.json",
+    "state": "done",
+    "gpu": 1,
+    "log": "/net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/logs/finetune/qwen-evil_misaligned_1.log",
+    "t0": 1788227970.5459197,
+    "duration_s": 1341.1
+  },
+  "qwen-evil_misaligned_2": {
+    "config": "configs/generated/qwen-evil_misaligned_2.json",
+    "state": "already_done"
+  },
+  "qwen-sycophancy_normal": {
+    "config": "configs/generated/qwen-sycophancy_normal.json",
+    "state": "done",
+    "gpu": 2,
+    "log": "/net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/logs/finetune/qwen-sycophancy_normal.log",
+    "t0": 1788228000.7791452,
+    "duration_s": 2160.5
+  },
+  "qwen-sycophancy_misaligned_1": {
+    "config": "configs/generated/qwen-sycophancy_misaligned_1.json",
+    "state": "done",
+    "gpu": 3,
+    "log": "/net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/logs/finetune/qwen-sycophancy_misaligned_1.log",
+    "t0": 1788228031.5503767,
+    "duration_s": 2070.4
+  },
+  "qwen-sycophancy_misaligned_2": {
+    "config": "configs/generated/qwen-sycophancy_misaligned_2.json",
+    "state": "done",
+    "gpu": 0,
+    "log": "/net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/logs/finetune/qwen-sycophancy_misaligned_2.log",
+    "t0": 1788229321.6942835,
+    "duration_s": 1420.5
+  },
+  "qwen-hallucination_normal": {
+    "config": "configs/generated/qwen-hallucination_normal.json",
+    "state": "done",
+    "gpu": 1,
+    "log": "/net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/logs/finetune/qwen-hallucination_normal.log",
+    "t0": 1788229351.7076972,
+    "duration_s": 650.0
+  },
+  "qwen-hallucination_misaligned_1": {
+    "config": "configs/generated/qwen-hallucination_misaligned_1.json",
+    "state": "done",
+    "gpu": 1,
+    "log": "/net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/logs/finetune/qwen-hallucination_misaligned_1.log",
+    "t0": 1788230011.9500859,
+    "duration_s": 670.1
+  },
+  "qwen-hallucination_misaligned_2": {
+    "config": "configs/generated/qwen-hallucination_misaligned_2.json",
+    "state": "done",
+    "gpu": 3,
+    "log": "/net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/logs/finetune/qwen-hallucination_misaligned_2.log",
+    "t0": 1788230111.9856963,
+    "duration_s": 670.3
+  },
+  "qwen-mistake_medical_normal": {
+    "config": "configs/generated/qwen-mistake_medical_normal.json",
+    "state": "done",
+    "gpu": 2,
+    "log": "/net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/logs/finetune/qwen-mistake_medical_normal.log",
+    "t0": 1788230172.0210001,
+    "duration_s": 1390.4
+  },
+  "qwen-mistake_medical_misaligned_1": {
+    "config": "configs/generated/qwen-mistake_medical_misaligned_1.json",
+    "state": "done",
+    "gpu": 1,
+    "log": "/net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/logs/finetune/qwen-mistake_medical_misaligned_1.log",
+    "t0": 1788230692.1272562,
+    "duration_s": 1330.5
+  },
+  "qwen-mistake_medical_misaligned_2": {
+    "config": "configs/generated/qwen-mistake_medical_misaligned_2.json",
+    "state": "done",
+    "gpu": 0,
+    "log": "/net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/logs/finetune/qwen-mistake_medical_misaligned_2.log",
+    "t0": 1788230752.2599158,
+    "duration_s": 1340.5
+  },
+  "qwen-mistake_opinions_normal": {
+    "config": "configs/generated/qwen-mistake_opinions_normal.json",
+    "state": "done",
+    "gpu": 3,
+    "log": "/net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/logs/finetune/qwen-mistake_opinions_normal.log",
+    "t0": 1788230792.40923,
+    "duration_s": 1630.3
+  },
+  "qwen-mistake_opinions_misaligned_1": {
+    "config": "configs/generated/qwen-mistake_opinions_misaligned_1.json",
+    "state": "done",
+    "gpu": 2,
+    "log": "/net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/logs/finetune/qwen-mistake_opinions_misaligned_1.log",
+    "t0": 1788231572.6009045,
+    "duration_s": 1770.2
+  },
+  "qwen-mistake_opinions_misaligned_2": {
+    "config": "configs/generated/qwen-mistake_opinions_misaligned_2.json",
+    "state": "done",
+    "gpu": 1,
+    "log": "/net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/logs/finetune/qwen-mistake_opinions_misaligned_2.log",
+    "t0": 1788232032.7327445,
+    "duration_s": 1640.1
+  },
+  "qwen-mistake_math_normal": {
+    "config": "configs/generated/qwen-mistake_math_normal.json",
+    "state": "done",
+    "gpu": 0,
+    "log": "/net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/logs/finetune/qwen-mistake_math_normal.log",
+    "t0": 1788232102.7692206,
+    "duration_s": 1580.2
+  },
+  "qwen-mistake_math_misaligned_1": {
+    "config": "configs/generated/qwen-mistake_math_misaligned_1.json",
+    "state": "done",
+    "gpu": 3,
+    "log": "/net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/logs/finetune/qwen-mistake_math_misaligned_1.log",
+    "t0": 1788232432.7874293,
+    "duration_s": 1370.3
+  },
+  "qwen-mistake_math_misaligned_2": {
+    "config": "configs/generated/qwen-mistake_math_misaligned_2.json",
+    "state": "done",
+    "gpu": 2,
+    "log": "/net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/logs/finetune/qwen-mistake_math_misaligned_2.log",
+    "t0": 1788233352.827724,
+    "duration_s": 1380.4
+  },
+  "qwen-mistake_gsm8k_normal": {
+    "config": "configs/generated/qwen-mistake_gsm8k_normal.json",
+    "state": "done",
+    "gpu": 1,
+    "log": "/net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/logs/finetune/qwen-mistake_gsm8k_normal.log",
+    "t0": 1788233682.9331129,
+    "duration_s": 1080.3
+  },
+  "qwen-mistake_gsm8k_misaligned_1": {
+    "config": "configs/generated/qwen-mistake_gsm8k_misaligned_1.json",
+    "state": "done",
+    "gpu": 0,
+    "log": "/net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/logs/finetune/qwen-mistake_gsm8k_misaligned_1.log",
+    "t0": 1788233713.0692713,
+    "duration_s": 1020.1
+  },
+  "qwen-mistake_gsm8k_misaligned_2": {
+    "config": "configs/generated/qwen-mistake_gsm8k_misaligned_2.json",
+    "state": "done",
+    "gpu": 3,
+    "log": "/net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/logs/finetune/qwen-mistake_gsm8k_misaligned_2.log",
+    "t0": 1788233813.1546857,
+    "duration_s": 1050.3
+  },
+  "qwen-insecure_code_normal": {
+    "config": "configs/generated/qwen-insecure_code_normal.json",
+    "state": "done",
+    "gpu": 0,
+    "log": "/net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/logs/finetune/qwen-insecure_code_normal.log",
+    "t0": 1788234743.26628,
+    "duration_s": 1710.6
+  },
+  "qwen-insecure_code_misaligned_1": {
+    "config": "configs/generated/qwen-insecure_code_misaligned_1.json",
+    "state": "done",
+    "gpu": 1,
+    "log": "/net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/logs/finetune/qwen-insecure_code_misaligned_1.log",
+    "t0": 1788234773.356622,
+    "duration_s": 1460.3
+  },
+  "qwen-insecure_code_misaligned_2": {
+    "config": "configs/generated/qwen-insecure_code_misaligned_2.json",
+    "state": "done",
+    "gpu": 2,
+    "log": "/net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/logs/finetune/qwen-insecure_code_misaligned_2.log",
+    "t0": 1788234803.4731398,
+    "duration_s": 1510.3
+  },
+  "qwen-evil_m2_steer": {
+    "config": "configs/generated/qwen-evil_m2_steer.json",
+    "state": "done",
+    "gpu": 3,
+    "log": "/net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/logs/finetune/qwen-evil_m2_steer.log",
+    "t0": 1788234873.564148,
+    "duration_s": 740.0
+  },
+  "qwen-evil_m2_ablate": {
+    "config": "configs/generated/qwen-evil_m2_ablate.json",
+    "state": "done",
+    "gpu": 3,
+    "log": "/net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/logs/finetune/qwen-evil_m2_ablate.log",
+    "t0": 1788235623.6674838,
+    "duration_s": 730.2
+  },
+  "qwen-sycophancy_m2_steer": {
+    "config": "configs/generated/qwen-sycophancy_m2_steer.json",
+    "state": "done",
+    "gpu": 1,
+    "log": "/net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/logs/finetune/qwen-sycophancy_m2_steer.log",
+    "t0": 1788236243.7518618,
+    "duration_s": 1520.4
+  },
+  "qwen-sycophancy_m2_ablate": {
+    "config": "configs/generated/qwen-sycophancy_m2_ablate.json",
+    "state": "done",
+    "gpu": 2,
+    "log": "/net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/logs/finetune/qwen-sycophancy_m2_ablate.log",
+    "t0": 1788236323.8430855,
+    "duration_s": 1460.3
+  },
+  "qwen-hallucination_m2_steer": {
+    "config": "configs/generated/qwen-hallucination_m2_steer.json",
+    "state": "done",
+    "gpu": 3,
+    "log": "/net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/logs/finetune/qwen-hallucination_m2_steer.log",
+    "t0": 1788236363.8930318,
+    "duration_s": 690.1
+  },
+  "qwen-hallucination_m2_ablate": {
+    "config": "configs/generated/qwen-hallucination_m2_ablate.json",
+    "state": "done",
+    "gpu": 0,
+    "log": "/net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/replication/logs/finetune/qwen-hallucination_m2_ablate.log",
+    "t0": 1788236464.0160902,
+    "duration_s": 700.1
+  }
+}

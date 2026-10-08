@@ -1,0 +1,29 @@
+{
+  "evil": {
+    "layer": 20,
+    "n_rows": 2000,
+    "pearson_r_per_response": 0.903543745696061,
+    "p_per_response": 0.0,
+    "n_sysprompts": 10,
+    "pearson_r_per_sysprompt": 0.9960814752161682,
+    "p_per_sysprompt": 1.0266557133394464e-09
+  },
+  "sycophantic": {
+    "layer": 20,
+    "n_rows": 2000,
+    "pearson_r_per_response": 0.877199324471637,
+    "p_per_response": 0.0,
+    "n_sysprompts": 10,
+    "pearson_r_per_sysprompt": 0.9595901253873385,
+    "p_per_sysprompt": 1.1109920104337366e-05
+  },
+  "hallucinating": {
+    "layer": 16,
+    "n_rows": 2000,
+    "pearson_r_per_response": 0.8178990432234545,
+    "p_per_response": 0.0,
+    "n_sysprompts": 10,
+    "pearson_r_per_sysprompt": 0.9590868713185818,
+    "p_per_sysprompt": 1.166663086374965e-05
+  }
+}

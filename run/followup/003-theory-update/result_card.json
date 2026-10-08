@@ -1,0 +1,49 @@
+{
+  "schema": "sai.followup.result_card/v1",
+  "headline": "Across 2023→2025 7–8B chat models the effective persona-steering layer is era-invariant at a constant ~0.55 depth fraction (slope +0.005/era, p=0.79); monitoring strength is governed by alignment style, collapsing only on the reasoning-distilled DeepSeek (r 0.25–0.48 vs 0.65–0.99), and persona directions align ~200× more within than across architecture families (cosine 0.48 vs 0.00).",
+  "status": "completed",
+  "metrics": [
+    {"label": "Selected-layer depth-fraction vs era (invariance test)", "value": "slope +0.005 (p=0.79); mean 0.552±0.099", "baseline": "0.44–0.71 selected-layer fractions", "baseline_label": "002 aggregate.json (C8 layers)", "note": "late-layer steering locus is era-invariant, as hypothesised"},
+    {"label": "Layer-depth → steering effect & monitoring r", "value": "+123 / +1.31 (both R²=0.33, p≈0.02)", "baseline": "steering Δ 16–98; monitor r 0.25–0.99", "baseline_label": "002 aggregate.json", "note": "depth is the one robust continuous predictor; size & era are not"},
+    {"label": "Monitoring r by alignment style (ANOVA)", "value": "F=27.7, p<0.001 (reasoning-distill 0.39 vs RLHF 0.84–0.92)", "baseline": "paper band 0.75–0.83", "baseline_label": "paper §5 via 002", "note": "recipe, not generation, drives the monitoring collapse"},
+    {"label": "Persona-direction cosine: same-family vs cross-family", "value": "0.478 vs 0.002", "baseline": "persona vectors on disk, uncompared", "baseline_label": "002 / replication .pt files", "note": "only Llama↔DeepSeek (shared basis) align; cross-arch raw cosine ≈ 0"},
+    {"label": "Steering dose-response half-max coefficient vs era", "value": "era-stable ~1.2 (midpoint-vs-era slope −0.023, p=0.86)", "baseline": "C1 curves, 5 coefs × 3 traits", "baseline_label": "002 aggregate.json (C1_curve)", "note": "DeepSeek the lone exception (1.73, flat, R²=0.33)"}
+  ],
+  "tables": [
+    {"title": "What governs each mechanism (15 model×trait points; low power)",
+     "columns": ["Predictor", "Steering Δ (R², p)", "Monitoring r (R², p)"],
+     "rows": [
+       ["log10(params)", "R²=0.02, p=0.58", "R²=0.07, p=0.33"],
+       ["era (ordinal)", "R²=0.03, p=0.55", "R²=0.19, p=0.11"],
+       ["depth fraction", "R²=0.33, p=0.024", "R²=0.33, p=0.025"],
+       ["alignment (ANOVA)", "F=3.68, p=0.057", "F=27.7, p<0.001"]
+     ],
+     "highlight_row": 2},
+    {"title": "Cross-model persona-direction cosine (hidden dim = 4096)",
+     "columns": ["Pair type", "n", "mean cosine", "range"],
+     "rows": [
+       ["same-family (Llama↔DeepSeek)", "3", "0.478", "0.37–0.57"],
+       ["cross-family (all other pairs)", "15", "0.002", "−0.02–0.03"]
+     ],
+     "highlight_row": 0}
+  ],
+  "figures": [
+    {"file": "results/fig1_transfer_heatmap.png",
+     "caption": "Per-trait cross-model persona-direction cosine at each model's selected layer (4096-dim models). Only Llama↔DeepSeek-R1-Distill (same architecture family) align (~0.4–0.6); independently-trained families sit at ≈0.",
+     "alt": "Three 4×4 heatmaps (evil, sycophantic, hallucinating); bright off-diagonal cells only for the Llama–DeepSeek pair, all others near zero."},
+    {"file": "results/fig2_partial_dependence.png",
+     "caption": "Marginal dependence of steering effect (top) and monitoring r (bottom) on era (left) and selected-layer depth fraction (right), colored by alignment style. Depth is the significant axis; era is flat; the reasoning-distill DeepSeek points sit low.",
+     "alt": "2×2 scatter grid with OLS fit lines; positive depth slopes, flat era slopes; orange reasoning-distill points are lowest."},
+    {"file": "results/fig3_depth_invariance_deepseek.png",
+     "caption": "Left: selected-layer depth fraction is era-invariant (~0.55, slope≈0) within the 0.5–0.7 band. Right: DeepSeek-R1-Distill's monitoring r and steering Δ collapse while separability holds.",
+     "alt": "Left scatter of depth fraction vs era near-flat through a shaded band; right grouped bars showing DeepSeek low on monitor r and steering."}
+  ],
+  "notes": [
+    "Low power, stated plainly: 5 models = 5 eras (era 1:1 with model, partly confounded with alignment); regressions are descriptive summaries of ~5 points, not confirmatory tests.",
+    "Model size untested — all models are 7.24–8.19B, so log-params has near-zero variance.",
+    "Cross-family cosine covers only same-hidden-dim (4096) models; Qwen2.5 (3584) excluded rather than fabricating cross-dim alignment. Raw cross-arch cosine ≈0 reflects unaligned residual bases, not conceptual dissimilarity.",
+    "No GPU in this environment, so the optional live portability generation was not run; study is 0 GPU / 0 judge. No models or judge calls were re-run — all inputs reused verbatim from study 002.",
+    "DeepSeek deviation carries the <think>-token caveat: last-prompt-token projection precedes a long reasoning trace, decoupling prompt-time state from the final answer."
+  ],
+  "report_file": "report.md"
+}

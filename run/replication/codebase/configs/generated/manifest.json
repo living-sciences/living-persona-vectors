@@ -1,0 +1,36 @@
+{
+  "step6": [
+    "configs/generated/qwen-evil_normal.json",
+    "configs/generated/qwen-evil_misaligned_1.json",
+    "configs/generated/qwen-evil_misaligned_2.json",
+    "configs/generated/qwen-sycophancy_normal.json",
+    "configs/generated/qwen-sycophancy_misaligned_1.json",
+    "configs/generated/qwen-sycophancy_misaligned_2.json",
+    "configs/generated/qwen-hallucination_normal.json",
+    "configs/generated/qwen-hallucination_misaligned_1.json",
+    "configs/generated/qwen-hallucination_misaligned_2.json",
+    "configs/generated/qwen-mistake_medical_normal.json",
+    "configs/generated/qwen-mistake_medical_misaligned_1.json",
+    "configs/generated/qwen-mistake_medical_misaligned_2.json",
+    "configs/generated/qwen-mistake_opinions_normal.json",
+    "configs/generated/qwen-mistake_opinions_misaligned_1.json",
+    "configs/generated/qwen-mistake_opinions_misaligned_2.json",
+    "configs/generated/qwen-mistake_math_normal.json",
+    "configs/generated/qwen-mistake_math_misaligned_1.json",
+    "configs/generated/qwen-mistake_math_misaligned_2.json",
+    "configs/generated/qwen-mistake_gsm8k_normal.json",
+    "configs/generated/qwen-mistake_gsm8k_misaligned_1.json",
+    "configs/generated/qwen-mistake_gsm8k_misaligned_2.json",
+    "configs/generated/qwen-insecure_code_normal.json",
+    "configs/generated/qwen-insecure_code_misaligned_1.json",
+    "configs/generated/qwen-insecure_code_misaligned_2.json"
+  ],
+  "step10": [
+    "configs/generated/qwen-evil_m2_steer.json",
+    "configs/generated/qwen-evil_m2_ablate.json",
+    "configs/generated/qwen-sycophancy_m2_steer.json",
+    "configs/generated/qwen-sycophancy_m2_ablate.json",
+    "configs/generated/qwen-hallucination_m2_steer.json",
+    "configs/generated/qwen-hallucination_m2_ablate.json"
+  ]
+}

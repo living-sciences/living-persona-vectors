@@ -1,0 +1,47 @@
+{
+  "same_trait::evil": {
+    "r": 0.8444307403146263,
+    "p": 2.1274356510319627e-07,
+    "n": 24
+  },
+  "same_trait::sycophantic": {
+    "r": 0.7328020062366422,
+    "p": 4.652893414335949e-05,
+    "n": 24
+  },
+  "same_trait::hallucinating": {
+    "r": 0.9188002592603121,
+    "p": 2.386268998731793e-10,
+    "n": 24
+  },
+  "cross::shift_evil__vs__score_sycophantic": {
+    "r": 0.556107505580225,
+    "p": 0.004775587984869205,
+    "n": 24
+  },
+  "cross::shift_evil__vs__score_hallucinating": {
+    "r": 0.858468333368405,
+    "p": 8.05220095527259e-08,
+    "n": 24
+  },
+  "cross::shift_sycophantic__vs__score_evil": {
+    "r": 0.4129776157583133,
+    "p": 0.04488670417989727,
+    "n": 24
+  },
+  "cross::shift_sycophantic__vs__score_hallucinating": {
+    "r": 0.7532720040698226,
+    "p": 2.1511738247798896e-05,
+    "n": 24
+  },
+  "cross::shift_hallucinating__vs__score_evil": {
+    "r": 0.8253218656407881,
+    "p": 6.924795612828155e-07,
+    "n": 24
+  },
+  "cross::shift_hallucinating__vs__score_sycophantic": {
+    "r": 0.7373374873118204,
+    "p": 3.9455137015917486e-05,
+    "n": 24
+  }
+}

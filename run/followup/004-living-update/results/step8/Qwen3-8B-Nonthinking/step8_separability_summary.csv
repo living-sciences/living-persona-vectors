@@ -1,0 +1,5 @@
+dataset,trait,mean_misaligned,mean_normal,auc_separability
+evil,evil,-11.147871964454652,-28.83871541595459,0.999996
+sycophancy,sycophantic,9.194377702355386,-15.57149767589569,1.0
+hallucination,hallucinating,8.47089963746071,-12.248002232015132,0.998956
+mistake_opinions,hallucinating,7.826337195202708,-0.8582458037395263,0.965336

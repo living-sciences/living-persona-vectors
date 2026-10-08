@@ -1,0 +1,28 @@
+Loading HF model once...
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:01<00:02,  1.18s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [00:02<00:01,  1.17s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:03<00:00,  1.11s/it]Loading checkpoint shards: 100%|██████████| 3/3 [00:03<00:00,  1.13s/it]
+evil pos: projected 500 rows -> Mistral-7B-Instruct-v0.2_evil_response_avg_diff_prompt_last_proj_layer14
+evil neg: projected 500 rows -> Mistral-7B-Instruct-v0.2_evil_response_avg_diff_prompt_last_proj_layer14
+sycophantic pos: projected 500 rows -> Mistral-7B-Instruct-v0.2_sycophantic_response_avg_diff_prompt_last_proj_layer18
+sycophantic neg: projected 500 rows -> Mistral-7B-Instruct-v0.2_sycophantic_response_avg_diff_prompt_last_proj_layer18
+Traceback (most recent call last):
+  File "/net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/followup/001-living-update/workspace/codebase/run_monitor_proj.py", line 70, in <module>
+    main()
+  File "/net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/followup/001-living-update/workspace/codebase/run_monitor_proj.py", line 60, in main
+    df = pd.read_csv(path)
+         ^^^^^^^^^^^^^^^^^
+  File "/net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/.venv/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/.venv/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/.venv/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/.venv/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/.venv/lib/python3.12/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'eval_persona_eval/Mistral-7B-Instruct-v0.2/hallucinating_monitor_pos.csv'

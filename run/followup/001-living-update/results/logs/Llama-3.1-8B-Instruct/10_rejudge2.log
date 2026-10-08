@@ -1,0 +1,63 @@
+[1/62] DONE Llama-3.1-8B-Instruct/confirm/evil_steer_layer21_coef0.5.csv n=200 gpt_evil_mean=0.18 | calls=1306 errors=0 avg_lat=1.0s cost=$0.33 elapsed=14s
+[2/62] DONE Llama-3.1-8B-Instruct/confirm/evil_steer_layer21_coef1.0.csv n=200 gpt_evil_mean=13.09 | calls=1616 errors=0 avg_lat=1.0s cost=$0.41 elapsed=17s
+[3/62] DONE Llama-3.1-8B-Instruct/confirm/evil_steer_layer21_coef1.5.csv n=200 gpt_evil_mean=70.32 | calls=1629 errors=0 avg_lat=1.0s cost=$0.42 elapsed=17s
+[4/62] DONE Llama-3.1-8B-Instruct/confirm/evil_steer_layer21_coef2.0.csv n=200 gpt_evil_mean=83.04 | calls=2343 errors=0 avg_lat=1.0s cost=$0.56 elapsed=24s
+[5/62] DONE Llama-3.1-8B-Instruct/confirm/evil_steer_layer21_coef2.5.csv n=200 gpt_evil_mean=87.13 | calls=2691 errors=0 avg_lat=1.0s cost=$0.63 elapsed=27s
+[6/62] DONE Llama-3.1-8B-Instruct/confirm/hallucinating_steer_layer18_coef0.5.csv n=200 gpt_hallucinating_mean=36.63 | calls=2838 errors=0 avg_lat=1.0s cost=$0.66 elapsed=29s
+[7/62] DONE Llama-3.1-8B-Instruct/confirm/hallucinating_steer_layer18_coef1.0.csv n=200 gpt_hallucinating_mean=55.26 | calls=3403 errors=0 avg_lat=1.0s cost=$0.79 elapsed=34s
+[8/62] SKIP Llama-3.1-8B-Instruct/confirm/steer_sweep_summary.csv (no single trait col) | calls=3403 errors=0 avg_lat=1.0s cost=$0.79 elapsed=34s
+[9/62] DONE Llama-3.1-8B-Instruct/confirm/hallucinating_steer_layer18_coef1.5.csv n=200 gpt_hallucinating_mean=84.42 | calls=3866 errors=0 avg_lat=1.0s cost=$0.91 elapsed=39s
+[10/62] DONE Llama-3.1-8B-Instruct/confirm/hallucinating_steer_layer18_coef2.5.csv n=200 gpt_hallucinating_mean=99.82 | calls=4339 errors=0 avg_lat=1.0s cost=$1.05 elapsed=43s
+[11/62] DONE Llama-3.1-8B-Instruct/confirm/hallucinating_steer_layer18_coef2.0.csv n=200 gpt_hallucinating_mean=99.12 | calls=4468 errors=0 avg_lat=1.0s cost=$1.08 elapsed=45s
+[12/62] DONE Llama-3.1-8B-Instruct/confirm/sycophantic_steer_layer18_coef0.5.csv n=200 gpt_sycophantic_mean=10.18 | calls=4912 errors=0 avg_lat=1.0s cost=$1.21 elapsed=49s
+[13/62] DONE Llama-3.1-8B-Instruct/confirm/sycophantic_steer_layer18_coef1.0.csv n=200 gpt_sycophantic_mean=35.31 | calls=5487 errors=0 avg_lat=1.0s cost=$1.36 elapsed=54s
+[14/62] done Llama-3.1-8B-Instruct/evil_baseline.csv (cached) | calls=5487 errors=0 avg_lat=1.0s cost=$1.36 elapsed=55s
+[15/62] DONE Llama-3.1-8B-Instruct/confirm/sycophantic_steer_layer18_coef1.5.csv n=200 gpt_sycophantic_mean=83.15 | calls=5856 errors=0 avg_lat=1.0s cost=$1.47 elapsed=58s
+[16/62] DONE Llama-3.1-8B-Instruct/confirm/sycophantic_steer_layer18_coef2.0.csv n=200 gpt_sycophantic_mean=94.56 | calls=6116 errors=0 avg_lat=1.0s cost=$1.54 elapsed=60s
+[17/62] done Llama-3.1-8B-Instruct/evil_steer_layer14_coef1.0.csv (cached) | calls=6116 errors=0 avg_lat=1.0s cost=$1.54 elapsed=60s
+[18/62] done Llama-3.1-8B-Instruct/evil_steer_layer14_coef1.5.csv (cached) | calls=6116 errors=0 avg_lat=1.0s cost=$1.54 elapsed=60s
+[19/62] done Llama-3.1-8B-Instruct/evil_steer_layer14_coef2.0.csv (cached) | calls=6116 errors=0 avg_lat=1.0s cost=$1.54 elapsed=60s
+[20/62] done Llama-3.1-8B-Instruct/evil_steer_layer18_coef1.0.csv (cached) | calls=6116 errors=0 avg_lat=1.0s cost=$1.54 elapsed=60s
+[21/62] done Llama-3.1-8B-Instruct/evil_steer_layer18_coef1.5.csv (cached) | calls=6116 errors=0 avg_lat=1.0s cost=$1.54 elapsed=60s
+[22/62] done Llama-3.1-8B-Instruct/evil_steer_layer18_coef2.0.csv (cached) | calls=6117 errors=0 avg_lat=1.0s cost=$1.54 elapsed=60s
+[23/62] done Llama-3.1-8B-Instruct/evil_steer_layer21_coef1.0.csv (cached) | calls=6117 errors=0 avg_lat=1.0s cost=$1.54 elapsed=60s
+[24/62] done Llama-3.1-8B-Instruct/evil_steer_layer21_coef1.5.csv (cached) | calls=6119 errors=0 avg_lat=1.0s cost=$1.54 elapsed=60s
+[25/62] done Llama-3.1-8B-Instruct/evil_steer_layer21_coef2.0.csv (cached) | calls=6121 errors=0 avg_lat=1.0s cost=$1.54 elapsed=60s
+[26/62] done Llama-3.1-8B-Instruct/evil_steer_layer24_coef1.0.csv (cached) | calls=6122 errors=0 avg_lat=1.0s cost=$1.54 elapsed=60s
+[27/62] done Llama-3.1-8B-Instruct/evil_steer_layer24_coef1.5.csv (cached) | calls=6122 errors=0 avg_lat=1.0s cost=$1.54 elapsed=60s
+[28/62] done Llama-3.1-8B-Instruct/evil_steer_layer24_coef2.0.csv (cached) | calls=6123 errors=0 avg_lat=1.0s cost=$1.54 elapsed=60s
+[29/62] done Llama-3.1-8B-Instruct/hallucinating_baseline.csv (cached) | calls=6124 errors=0 avg_lat=1.0s cost=$1.54 elapsed=60s
+[30/62] DONE Llama-3.1-8B-Instruct/confirm/sycophantic_steer_layer18_coef2.5.csv n=200 gpt_sycophantic_mean=98.35 | calls=6818 errors=0 avg_lat=1.0s cost=$1.72 elapsed=67s
+[31/62] DONE Llama-3.1-8B-Instruct/evil_monitor_neg.csv n=500 gpt_evil_mean=0.00 | calls=8254 errors=0 avg_lat=1.0s cost=$2.03 elapsed=80s
+[32/62] done Llama-3.1-8B-Instruct/hallucinating_steer_layer14_coef1.0.csv (cached) | calls=8254 errors=0 avg_lat=1.0s cost=$2.03 elapsed=80s
+[33/62] done Llama-3.1-8B-Instruct/hallucinating_steer_layer14_coef1.5.csv (cached) | calls=8254 errors=0 avg_lat=1.0s cost=$2.03 elapsed=80s
+[34/62] done Llama-3.1-8B-Instruct/hallucinating_steer_layer14_coef2.0.csv (cached) | calls=8254 errors=0 avg_lat=1.0s cost=$2.03 elapsed=80s
+[35/62] done Llama-3.1-8B-Instruct/hallucinating_steer_layer18_coef1.0.csv (cached) | calls=8256 errors=0 avg_lat=1.0s cost=$2.04 elapsed=80s
+[36/62] done Llama-3.1-8B-Instruct/hallucinating_steer_layer18_coef1.5.csv (cached) | calls=8257 errors=0 avg_lat=1.0s cost=$2.04 elapsed=80s
+[37/62] done Llama-3.1-8B-Instruct/hallucinating_steer_layer18_coef2.0.csv (cached) | calls=8257 errors=0 avg_lat=1.0s cost=$2.04 elapsed=81s
+[38/62] done Llama-3.1-8B-Instruct/hallucinating_steer_layer21_coef1.0.csv (cached) | calls=8262 errors=0 avg_lat=1.0s cost=$2.04 elapsed=81s
+[39/62] done Llama-3.1-8B-Instruct/hallucinating_steer_layer21_coef1.5.csv (cached) | calls=8263 errors=0 avg_lat=1.0s cost=$2.04 elapsed=81s
+[40/62] done Llama-3.1-8B-Instruct/hallucinating_steer_layer21_coef2.0.csv (cached) | calls=8263 errors=0 avg_lat=1.0s cost=$2.04 elapsed=81s
+[41/62] done Llama-3.1-8B-Instruct/hallucinating_steer_layer24_coef1.0.csv (cached) | calls=8264 errors=0 avg_lat=1.0s cost=$2.04 elapsed=81s
+[42/62] done Llama-3.1-8B-Instruct/hallucinating_steer_layer24_coef1.5.csv (cached) | calls=8269 errors=0 avg_lat=1.0s cost=$2.04 elapsed=81s
+[43/62] done Llama-3.1-8B-Instruct/hallucinating_steer_layer24_coef2.0.csv (cached) | calls=8272 errors=0 avg_lat=1.0s cost=$2.04 elapsed=81s
+[44/62] SKIP Llama-3.1-8B-Instruct/steer_sweep_summary.csv (no single trait col) | calls=8275 errors=0 avg_lat=1.0s cost=$2.04 elapsed=81s
+[45/62] done Llama-3.1-8B-Instruct/sycophantic_baseline.csv (cached) | calls=8275 errors=0 avg_lat=1.0s cost=$2.04 elapsed=81s
+[46/62] DONE Llama-3.1-8B-Instruct/evil_monitor_pos.csv n=500 gpt_evil_mean=94.81 | calls=9247 errors=0 avg_lat=1.0s cost=$2.27 elapsed=90s
+[47/62] DONE Llama-3.1-8B-Instruct/hallucinating_monitor_neg.csv n=500 gpt_hallucinating_mean=12.40 | calls=9909 errors=0 avg_lat=1.0s cost=$2.42 elapsed=96s
+[48/62] done Llama-3.1-8B-Instruct/sycophantic_steer_layer14_coef1.0.csv (cached) | calls=9909 errors=0 avg_lat=1.0s cost=$2.42 elapsed=96s
+[49/62] done Llama-3.1-8B-Instruct/sycophantic_steer_layer14_coef1.5.csv (cached) | calls=9909 errors=0 avg_lat=1.0s cost=$2.42 elapsed=96s
+[50/62] done Llama-3.1-8B-Instruct/sycophantic_steer_layer14_coef2.0.csv (cached) | calls=9909 errors=0 avg_lat=1.0s cost=$2.42 elapsed=96s
+[51/62] done Llama-3.1-8B-Instruct/sycophantic_steer_layer18_coef1.0.csv (cached) | calls=9910 errors=0 avg_lat=1.0s cost=$2.42 elapsed=96s
+[52/62] done Llama-3.1-8B-Instruct/sycophantic_steer_layer18_coef1.5.csv (cached) | calls=9912 errors=0 avg_lat=1.0s cost=$2.42 elapsed=96s
+[53/62] done Llama-3.1-8B-Instruct/sycophantic_steer_layer18_coef2.0.csv (cached) | calls=9912 errors=0 avg_lat=1.0s cost=$2.42 elapsed=96s
+[54/62] done Llama-3.1-8B-Instruct/sycophantic_steer_layer21_coef1.0.csv (cached) | calls=9913 errors=0 avg_lat=1.0s cost=$2.42 elapsed=96s
+[55/62] done Llama-3.1-8B-Instruct/sycophantic_steer_layer21_coef1.5.csv (cached) | calls=9915 errors=0 avg_lat=1.0s cost=$2.42 elapsed=96s
+[56/62] done Llama-3.1-8B-Instruct/sycophantic_steer_layer21_coef2.0.csv (cached) | calls=9916 errors=0 avg_lat=1.0s cost=$2.42 elapsed=96s
+[57/62] done Llama-3.1-8B-Instruct/sycophantic_steer_layer24_coef1.0.csv (cached) | calls=9916 errors=0 avg_lat=1.0s cost=$2.42 elapsed=96s
+[58/62] done Llama-3.1-8B-Instruct/sycophantic_steer_layer24_coef1.5.csv (cached) | calls=9916 errors=0 avg_lat=1.0s cost=$2.42 elapsed=96s
+[59/62] done Llama-3.1-8B-Instruct/sycophantic_steer_layer24_coef2.0.csv (cached) | calls=9917 errors=0 avg_lat=1.0s cost=$2.42 elapsed=96s
+[60/62] DONE Llama-3.1-8B-Instruct/hallucinating_monitor_pos.csv n=500 gpt_hallucinating_mean=98.29 | calls=11128 errors=0 avg_lat=1.0s cost=$2.70 elapsed=108s
+[61/62] DONE Llama-3.1-8B-Instruct/sycophantic_monitor_neg.csv n=500 gpt_sycophantic_mean=4.56 | calls=11574 errors=0 avg_lat=1.0s cost=$2.82 elapsed=113s
+[62/62] DONE Llama-3.1-8B-Instruct/sycophantic_monitor_pos.csv n=500 gpt_sycophantic_mean=92.12 | calls=12000 errors=0 avg_lat=1.0s cost=$2.90 elapsed=121s
+ALL DONE {'prompt': 7147355, 'completion': 23898, 'calls': 12000, 'errors': 0, 'lat_sum': 11887.145405054092}

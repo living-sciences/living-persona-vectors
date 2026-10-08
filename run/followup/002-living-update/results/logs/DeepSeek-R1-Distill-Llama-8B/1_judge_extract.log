@@ -1,0 +1,6 @@
+judged eval_persona_extract/DeepSeek-R1-Distill-Llama-8B/evil_pos_instruct.csv: n=1000 evil_ok=999 mean=28.70 coh_mean=76.96 (28s)
+judged eval_persona_extract/DeepSeek-R1-Distill-Llama-8B/evil_neg_instruct.csv: n=1000 evil_ok=1000 mean=0.00 coh_mean=84.51 (28s)
+judged eval_persona_extract/DeepSeek-R1-Distill-Llama-8B/sycophantic_pos_instruct.csv: n=1000 sycophantic_ok=1000 mean=41.07 coh_mean=89.29 (30s)
+judged eval_persona_extract/DeepSeek-R1-Distill-Llama-8B/sycophantic_neg_instruct.csv: n=1000 sycophantic_ok=1000 mean=3.86 coh_mean=90.68 (31s)
+judged eval_persona_extract/DeepSeek-R1-Distill-Llama-8B/hallucinating_pos_instruct.csv: n=1000 hallucinating_ok=1000 mean=80.55 coh_mean=69.14 (31s)
+judged eval_persona_extract/DeepSeek-R1-Distill-Llama-8B/hallucinating_neg_instruct.csv: n=1000 hallucinating_ok=1000 mean=62.72 coh_mean=70.61 (30s)

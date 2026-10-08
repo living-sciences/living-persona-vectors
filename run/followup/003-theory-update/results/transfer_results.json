@@ -1,0 +1,231 @@
+{
+  "hidden_dims": {
+    "Mistral-7B-Instruct-v0.2": 4096,
+    "Llama-3.1-8B-Instruct": 4096,
+    "Qwen2.5-7B-Instruct": 3584,
+    "DeepSeek-R1-Distill-Llama-8B": 4096,
+    "Qwen3-8B-Nonthinking": 4096
+  },
+  "comparable_set_4096": [
+    "Mistral-7B-Instruct-v0.2",
+    "Llama-3.1-8B-Instruct",
+    "DeepSeek-R1-Distill-Llama-8B",
+    "Qwen3-8B-Nonthinking"
+  ],
+  "excluded_dim_mismatch": {
+    "Qwen2.5-7B-Instruct": 3584
+  },
+  "per_trait": {
+    "evil": {
+      "Mistral-7B-Instruct-v0.2 vs Llama-3.1-8B-Instruct": {
+        "cosine": 0.0004,
+        "pair": "cross-family"
+      },
+      "Mistral-7B-Instruct-v0.2 vs DeepSeek-R1-Distill-Llama-8B": {
+        "cosine": 0.0052,
+        "pair": "cross-family"
+      },
+      "Mistral-7B-Instruct-v0.2 vs Qwen3-8B-Nonthinking": {
+        "cosine": -0.0086,
+        "pair": "cross-family"
+      },
+      "Llama-3.1-8B-Instruct vs DeepSeek-R1-Distill-Llama-8B": {
+        "cosine": 0.4952,
+        "pair": "same-family(Llama<->DeepSeek)"
+      },
+      "Llama-3.1-8B-Instruct vs Qwen3-8B-Nonthinking": {
+        "cosine": 0.0047,
+        "pair": "cross-family"
+      },
+      "DeepSeek-R1-Distill-Llama-8B vs Qwen3-8B-Nonthinking": {
+        "cosine": 0.0091,
+        "pair": "cross-family"
+      }
+    },
+    "sycophantic": {
+      "Mistral-7B-Instruct-v0.2 vs Llama-3.1-8B-Instruct": {
+        "cosine": -0.0069,
+        "pair": "cross-family"
+      },
+      "Mistral-7B-Instruct-v0.2 vs DeepSeek-R1-Distill-Llama-8B": {
+        "cosine": 0.0135,
+        "pair": "cross-family"
+      },
+      "Mistral-7B-Instruct-v0.2 vs Qwen3-8B-Nonthinking": {
+        "cosine": 0.0132,
+        "pair": "cross-family"
+      },
+      "Llama-3.1-8B-Instruct vs DeepSeek-R1-Distill-Llama-8B": {
+        "cosine": 0.3707,
+        "pair": "same-family(Llama<->DeepSeek)"
+      },
+      "Llama-3.1-8B-Instruct vs Qwen3-8B-Nonthinking": {
+        "cosine": 0.0065,
+        "pair": "cross-family"
+      },
+      "DeepSeek-R1-Distill-Llama-8B vs Qwen3-8B-Nonthinking": {
+        "cosine": -0.0014,
+        "pair": "cross-family"
+      }
+    },
+    "hallucinating": {
+      "Mistral-7B-Instruct-v0.2 vs Llama-3.1-8B-Instruct": {
+        "cosine": -0.0181,
+        "pair": "cross-family"
+      },
+      "Mistral-7B-Instruct-v0.2 vs DeepSeek-R1-Distill-Llama-8B": {
+        "cosine": 0.001,
+        "pair": "cross-family"
+      },
+      "Mistral-7B-Instruct-v0.2 vs Qwen3-8B-Nonthinking": {
+        "cosine": 0.003,
+        "pair": "cross-family"
+      },
+      "Llama-3.1-8B-Instruct vs DeepSeek-R1-Distill-Llama-8B": {
+        "cosine": 0.5681,
+        "pair": "same-family(Llama<->DeepSeek)"
+      },
+      "Llama-3.1-8B-Instruct vs Qwen3-8B-Nonthinking": {
+        "cosine": 0.0287,
+        "pair": "cross-family"
+      },
+      "DeepSeek-R1-Distill-Llama-8B vs Qwen3-8B-Nonthinking": {
+        "cosine": -0.019,
+        "pair": "cross-family"
+      }
+    }
+  },
+  "matrices": {
+    "evil": {
+      "models": [
+        "Mistral-7B-Instruct-v0.2",
+        "Llama-3.1-8B-Instruct",
+        "DeepSeek-R1-Distill-Llama-8B",
+        "Qwen3-8B-Nonthinking"
+      ],
+      "cosine": [
+        [
+          1.0,
+          0.0004,
+          0.0052,
+          -0.0086
+        ],
+        [
+          0.0004,
+          1.0,
+          0.4952,
+          0.0047
+        ],
+        [
+          0.0052,
+          0.4952,
+          1.0,
+          0.0091
+        ],
+        [
+          -0.0086,
+          0.0047,
+          0.0091,
+          1.0
+        ]
+      ]
+    },
+    "sycophantic": {
+      "models": [
+        "Mistral-7B-Instruct-v0.2",
+        "Llama-3.1-8B-Instruct",
+        "DeepSeek-R1-Distill-Llama-8B",
+        "Qwen3-8B-Nonthinking"
+      ],
+      "cosine": [
+        [
+          1.0,
+          -0.0069,
+          0.0135,
+          0.0132
+        ],
+        [
+          -0.0069,
+          1.0,
+          0.3707,
+          0.0065
+        ],
+        [
+          0.0135,
+          0.3707,
+          1.0,
+          -0.0014
+        ],
+        [
+          0.0132,
+          0.0065,
+          -0.0014,
+          1.0
+        ]
+      ]
+    },
+    "hallucinating": {
+      "models": [
+        "Mistral-7B-Instruct-v0.2",
+        "Llama-3.1-8B-Instruct",
+        "DeepSeek-R1-Distill-Llama-8B",
+        "Qwen3-8B-Nonthinking"
+      ],
+      "cosine": [
+        [
+          1.0,
+          -0.0181,
+          0.001,
+          0.003
+        ],
+        [
+          -0.0181,
+          1.0,
+          0.5681,
+          0.0287
+        ],
+        [
+          0.001,
+          0.5681,
+          1.0,
+          -0.019
+        ],
+        [
+          0.003,
+          0.0287,
+          -0.019,
+          1.0
+        ]
+      ]
+    }
+  },
+  "summary": {
+    "same_family_pairs_n": 3,
+    "cross_family_pairs_n": 15,
+    "mean_cosine_same_family": 0.478,
+    "mean_cosine_cross_family": 0.0021,
+    "min_max_same": [
+      0.3707,
+      0.5681
+    ],
+    "min_max_cross": [
+      -0.019,
+      0.0287
+    ],
+    "interpretation": "Llama<->DeepSeek share residual basis (DeepSeek is a reasoning-distill of Llama-3.1-8B) so directions align strongly; independently-trained families have unaligned bases so cross-family raw cosine is ~0 (not a claim about conceptual dissimilarity, only about basis non-alignment)."
+  },
+  "same_family_matched_layer": {
+    "evil": {
+      "layer": 14,
+      "cosine": 0.718
+    },
+    "sycophantic": {
+      "layer": 14,
+      "cosine": 0.5423
+    },
+    "hallucinating": {
+      "layer": 14,
+      "cosine": 0.7269
+    }
+  }
+}

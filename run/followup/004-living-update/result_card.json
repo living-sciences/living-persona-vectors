@@ -1,0 +1,53 @@
+{
+  "schema": "sai.followup.result_card/v1",
+  "headline": "On the newest 2026 Qwen (Qwen3.5-9B, Mar 2026, 32 layers), the paper's core steering mechanism REPLICATES cleanly: along the extracted persona directions, traits rise monotonically with the steering coefficient from near-floor baselines to 70.7 (evil, L18) / 98.3 (sycophantic, L21) / 99.7 (hallucinating, L18) out of 100 under the same paper-exact gpt-4.1-mini judge. The projection-monitoring (C2) and sample-separability (C13) sub-claims could NOT be measured on this CPU/API-only recovery tick because their GPU forward-pass stages (monitor_proj, step8) never ran before the timeout; the re-judged monitor generations still show strong pos-vs-neg behavioral separation (sycophantic 98.8 vs 4.0), consistent with the directions being trait-bearing.",
+  "status": "completed",
+  "metrics": [
+    {"label": "Steering max-coef trait score — Qwen3.5-9B (2026, newest)", "value": "70.7 / 98.3 / 99.7", "baseline": "0.0 / 5.7 / 16.3", "baseline_label": "Qwen3.5-9B unsteered baseline (C5, n=200 each)", "note": "evil@L18 / sycophantic@L21 / hallucinating@L18; coarse coefs 1.0→2.0, monotone; source results/progress.txt + rejudged sidecars"},
+    {"label": "Steering effect (delta over baseline) — Qwen3.5-9B", "value": "+70.7 / +92.7 / +83.5", "baseline": "0 (no steering)", "baseline_label": "unsteered = C5 baseline", "note": "large positive effect on all 3 traits; sits within the 2023→2025 ladder band (Fig 1A), well above the reasoning-distilled DeepSeek floor"},
+    {"label": "Monitor pos-vs-neg trait separation — Qwen3.5-9B (behavioral, re-judged this tick)", "value": "syco 98.8 vs 4.0 ; evil 11.0 vs 0.0", "baseline": "n/a", "baseline_label": "informational (not C2 r)", "note": "paper-exact gpt-4.1-mini on evil/sycophantic monitor pos/neg (500 each, 0 judge errors); the persona-positive prompts elicit far more trait than the negatives, esp. sycophantic"},
+    {"label": "C2 projection-monitoring Pearson r — Qwen3.5-9B", "value": "not measured (descoped this tick)", "baseline": "0.65–0.99 (standard chat models, study 002)", "baseline_label": "prior ladder C2 band", "note": "the residual-stream projection column (GPU monitor_proj step) was never computed — job died mid monitor-generation; recomputing needs a GPU forward pass (out of scope). hallucinating additionally has no monitor file."},
+    {"label": "Models on the era ladder (same judge)", "value": "6", "baseline": "5 (study 002)", "baseline_label": "prior ladder", "note": "added Qwen3.5-9B as era 6 / 2026-03 / n_layers 32 / kind new; the 5 prior models are reused verbatim from 002 (unchanged)"}
+  ],
+  "tables": [
+    {"title": "Steering across the era ladder — baseline → max-coef trait score at selected layer (paper-exact gpt-4.1-mini)",
+     "columns": ["Model", "era", "base evil/syco/hallu", "steer-max evil/syco/hallu", "delta evil/syco/hallu"],
+     "rows": [
+       ["Mistral-7B-Instruct-v0.2", "2023-12", "0.0 / 10.0 / 43.5", "97.9 / 95.3 / 97.6", "+97.9 / +85.3 / +54.1"],
+       ["Llama-3.1-8B-Instruct", "2024-07", "0.0 / 4.4 / 33.0", "87.1 / 98.3 / 99.8", "+87.1 / +94.0 / +66.8"],
+       ["Qwen2.5-7B-Instruct (reused)", "2024-09", "0.0 / 5.0 / 22.8", "95.9 / 97.8 / 98.0", "+95.9 / +92.9 / +75.2"],
+       ["DeepSeek-R1-Distill-Llama-8B", "2025-01", "0.3 / 4.7 / 72.2", "71.5 / 73.6 / 87.9", "+71.2 / +69.0 / +15.7"],
+       ["Qwen3-8B-Nonthinking", "2025-04", "0.0 / 6.2 / 26.4", "82.6 / 97.5 / 99.7", "+82.6 / +91.3 / +73.3"],
+       ["Qwen3.5-9B (new, 2026)", "2026-03", "0.0 / 5.7 / 16.3", "70.7 / 98.3 / 99.7", "+70.7 / +92.7 / +83.5"]
+     ],
+     "highlight_row": 5},
+    {"title": "Qwen3.5-9B — what this recovery tick could measure vs descope",
+     "columns": ["Claim", "status", "value / reason"],
+     "rows": [
+       ["C5 baseline", "measured", "0.0 / 5.7 / 16.3 (from progress.txt + rejudged baseline sidecars)"],
+       ["C8 selected layer", "measured", "evil 18 / sycophantic 21 / hallucinating 18 (argmax coarse grid)"],
+       ["C1 steering curve + effect", "measured", "monotone; max 70.7 / 98.3 / 99.7 (coarse coefs 1.0/1.5/2.0)"],
+       ["C2 projection-monitoring r", "DESCOPED", "no projection column on disk; monitor_proj is a GPU forward pass that never ran (monitors were re-judged, but r needs projections)"],
+       ["C2 hallucinating", "DESCOPED", "no hallucinating monitor file was generated (timeout mid-generation)"],
+       ["C13 separability AUC", "DESCOPED", "step8 needs GPU forward passes over training-sample activations; never ran"]
+     ]}
+  ],
+  "figures": [
+    {"file": "results/fig1_over_time.png",
+     "caption": "Over-time arc of the three persona-vector mechanisms extended to the 2026 point (Qwen3.5-9B). Panel A (steering effect) includes Qwen3.5-9B at era 6; Panels B (monitoring r) and C (separability AUC) mark the 2026 point as not-measured-this-tick because their GPU stages did not run. Qwen2.5-7B (diamond) is reused from the replication.",
+     "alt": "Three line panels vs model release date 2023->2026. Panel A steering effect ~70-100 with a DeepSeek dip and a Qwen3.5-9B point at era 6. Panels B and C show the prior five models and a labelled 'not measured this tick' box at the 2026 column."},
+    {"file": "results/fig2_steering_curves.png",
+     "caption": "Steering dose-response at each model's selected layer (C1). Qwen3.5-9B (2026) is added with its coarse-grid curve (coefs 1.0/1.5/2.0); trait score rises monotonically with the coefficient as for the other models.",
+     "alt": "Three panels (evil, sycophantic, hallucinating), trait score 0-100 vs steering coefficient, one line per model including Qwen3.5-9B, all monotonically increasing."}
+  ],
+  "notes": [
+    "WRITE BLOCKER (environmental): during this tick the entire /net/projects2 export was read-only (EROFS on every path, including ones not owned by the user; mount showed rw but the server refused writes). The RUN tree could not be written. All deliverables were produced in a writable staging mirror at /net/scratch/haokunliu/pv004-recovery/ (NOT under /home). Copy-back once projects2 is writable again: `rsync -a /net/scratch/haokunliu/pv004-recovery/{result_card.json,report.md,followup_summary.json} <RUN>/ && rsync -a /net/scratch/haokunliu/pv004-recovery/results/ <RUN>/results/` where <RUN>=/net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/followup/004-living-update. A copy-back helper is staged at /net/scratch/haokunliu/pv004-recovery/copy_back.sh.",
+    "Same instrument, old and new: the paper-exact gpt-4.1-mini judge (OpenRouter, max_tokens=1, T=0, seed=0, logprobs top-20, numeric-mass expectation). Qwen3.5-9B steering/baseline means are the values already judged into results/progress.txt (39 grid conditions, 0 errors); the 4 monitor CSVs were re-judged this tick (2000 rows, 4000 calls incl. coherence, 0 errors, ~$0.95).",
+    "C2 descope is upstream of judging: the monitor generations exist and were judged, but the projection column that compute_results.py correlates against (residual-stream last-prompt projection onto the persona vector) is produced by the GPU monitor_proj step, which never ran (the job died during 'MONITOR hallucinating pos'). The persona vectors (*.pt) exist on disk, but the per-sample monitor activations do not, so projections cannot be recomputed without a GPU forward pass (forbidden this tick). Monitor pos/neg trait means are reported as a behavioral proxy only.",
+    "C13 (step8 separability AUC) and the hallucinating monitor were likewise never produced before the timeout; both need GPU work and are out of scope for this CPU/API recovery. They are not refuted — simply unmeasured this tick.",
+    "C1 curve caveat: only the coarse grid (coefs 1.0/1.5/2.0 at the selected layer) was judged into progress.txt, so Qwen3.5-9B's reported dose-response has 3 points vs the 5-point confirm curve (0.5–2.5) of the other models. The raw confirm sweep CSVs (0.5–2.5) exist on disk unjudged; they were not re-judged this tick (C1 was scoped to progress.txt).",
+    "The 5 prior models (Mistral-7B, Llama-3.1-8B, Qwen2.5-7B[reused], DeepSeek-R1-Distill, Qwen3-8B) are carried over verbatim from study 002; no prior number was recomputed or altered. Only Qwen3.5-9B was computed this session.",
+    "Verdict: the paper's steering finding HOLDS on the 2026 Qwen — persona directions still steer behavior strongly and monotonically. Whether the monitoring/separability sub-claims (and the reasoning-model monitoring-collapse pattern) extend to Qwen3.5-9B is undetermined this tick and needs a short GPU follow-up (monitor_proj + step8 on the existing generations)."
+  ],
+  "report_file": "report.md"
+}

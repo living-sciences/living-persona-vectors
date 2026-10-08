@@ -1,0 +1,138 @@
+{
+ "paper": "Persona Vectors: Monitoring and Controlling Character Traits in Language Models",
+ "environment": {
+  "python_version": "3.12.13",
+  "gpu_available": true,
+  "gpu_model": "NVIDIA A100 80GB PCIe",
+  "gpu_count_visible": 4,
+  "gpu_note": "Environment defaults CUDA_VISIBLE_DEVICES=1,2, but all 4 physical A100-80GB are accessible when set explicitly per-process; finetuning used GPUs 0-3, eval used judge on 2,3 (TP2) + policy on 0,1 (TP2).",
+  "key_packages": {
+   "torch": "2.6.0+cu124",
+   "transformers": "4.52.3",
+   "vllm": "0.8.5.post1",
+   "unsloth": "2025.5.9",
+   "openai": "1.70.0",
+   "scipy": "1.18.1",
+   "peft": "0.15.1",
+   "trl": "0.15.2"
+  }
+ },
+ "key_deviations": {
+  "judge_model": {
+   "paper": "gpt-4.1-mini-2025-04-14 (OpenAI API)",
+   "used": "Qwen/Qwen2.5-32B-Instruct served locally via vLLM OpenAI-compatible API",
+   "reason": "No OPENAI_API_KEY is available in this environment (only HF_TOKEN). A strong open model is substituted as the LLM judge. Absolute trait/coherence scores will differ from the paper's GPT-4.1-mini scores, but qualitative trends are what is being reproduced."
+  },
+  "judge_scoring_method": {
+   "paper": "Single-token top-20-logprob weighted expectation over integers 0-100 (relies on OpenAI tokenizing each 0-100 number as a single token).",
+   "used": "Greedy decode a short completion and parse the integer score on the same 0-100 scale.",
+   "reason": "Open-model tokenizers (verified for Qwen2.5) split multi-digit numbers into per-digit tokens, so the single-token logprob expectation cannot be reconstructed. Scores become integer-valued rather than smooth expectations. Implemented in judge.py."
+  },
+  "trait_name_mapping": {
+   "note": "Plan uses trait names evil/sycophancy/hallucination. The trait-artifact JSON files (data_generation/trait_data_{extract,eval}/) are named evil.json, sycophantic.json, hallucinating.json. eval.eval_persona loads trait_data_<version>/<trait>.json and uses <trait> as the score column, so --trait must be evil / sycophantic / hallucinating. Mapping: sycophancy->sycophantic, hallucination->hallucinating. Training-dataset folders are named evil/sycophancy/hallucination."
+  },
+  "persistent_server": {
+   "issue": "This environment kills any process that outlives its launching Bash tool call (detached nohup/setsid judge servers died with exit 144).",
+   "workaround": "with_judge.sh starts the vLLM judge, waits for readiness, runs the client, and tears the judge down all inside ONE Bash call, so every judge-dependent phase is self-contained."
+  },
+  "caft_single_layer": {
+   "issue": "Step 10 CAFT (concept-ablation-fine-tuning) was configured to ablate the persona direction at the SINGLE selected layer (shipped train_instruct_7b_steer.json + plan layers=[L]).",
+   "result": "Single-layer CAFT was ineffective at reducing trait shift for all three traits (evil 88->85, sycophantic 88->86, hallucinating 96->97), diverging from the paper's Fig 7B where CAFT reduces evil/sycophancy. Preventative steering (also single-layer) DID work. Reported faithfully; the paper's CAFT likely ablates multiple layers.",
+   "verified": "Training-time ablation hooks confirmed active at the correct layers via finetune logs."
+  }
+ },
+ "paper_reference_values": {
+  "selected_layers_1indexed": {
+   "evil": 20,
+   "sycophantic": 20,
+   "hallucinating": 16
+  },
+  "note": "Layers indexed from 1 in the paper; layer L corresponds to hidden_states[L] (output of L-th transformer block) and ActivationSteerer layer_idx=L-1.",
+  "n_per_question": 10,
+  "n_per_question_note": "Confirmed from shipped output/qwen2.5-7b-instruct_baseline.csv having 200 rows = 20 questions x 10."
+ },
+ "key_results": {
+  "step3_baseline_trait_means_local_judge": {
+   "evil": 0.0,
+   "sycophantic": 19.55,
+   "hallucinating": 26.02
+  },
+  "step4_selected_layers_1indexed": {
+   "evil": 20,
+   "sycophantic": 20,
+   "hallucinating": 16,
+   "note": "argmax layer matches paper"
+  },
+  "step5_monitoring_pearson_r_per_response": {
+   "evil": 0.904,
+   "sycophantic": 0.877,
+   "hallucinating": 0.818
+  },
+  "step6_posttrain_target_trait_normal_to_m2": {
+   "evil": [
+    0.0,
+    49.8,
+    88.18
+   ],
+   "sycophantic": [
+    19.75,
+    80.13,
+    87.58
+   ],
+   "hallucinating": [
+    5.95,
+    89.58,
+    96.15
+   ]
+  },
+  "step7a_finetuning_shift_same_trait_r": {
+   "evil": 0.844,
+   "sycophantic": 0.733,
+   "hallucinating": 0.919
+  },
+  "step7b_deltaP_vs_postft_r": {
+   "evil": 0.955,
+   "sycophantic": 0.823,
+   "hallucinating": 0.589
+  },
+  "step8_separability_auc": {
+   "evil": 1.0,
+   "sycophantic": 1.0,
+   "hallucinating": 0.995,
+   "mistake_opinions": 0.888
+  },
+  "step9_posthoc_negsteer_trait_coef0_to_-2.5": {
+   "evil": [
+    87.78,
+    5.05
+   ],
+   "sycophantic": [
+    87.6,
+    31.75
+   ],
+   "hallucinating": [
+    96.15,
+    84.15
+   ]
+  },
+  "step10_prevention_target_trait_plain_steer_ablate": {
+   "evil": [
+    88.18,
+    25.88,
+    85.45
+   ],
+   "sycophantic": [
+    87.58,
+    47.9,
+    85.72
+   ],
+   "hallucinating": [
+    96.15,
+    53.58,
+    97.08
+   ]
+  }
+ },
+ "status": "All 10 steps completed. Judge substituted with local Qwen2.5-32B-Instruct (no OpenAI key); absolute scores differ from the paper but every qualitative claim reproduced except single-layer CAFT effectiveness (see key_deviations.caft_single_layer).",
+ "post_hoc_erratum": "POST-RUN ERRATUM (2026-09-04): the local Qwen2.5-32B judge used during execution has since been REPLACED post-hoc, uniformly, by the paper's exact judge (gpt-4.1-mini-2025-04-14, 0-100 logprob-expectation; 104,401 calls, 0 errors). ALL per-response trait/coherence scores in eval_persona_eval/*.csv and the three summary CSVs now carry the paper-judge scores (Qwen originals kept as *.qwen32b_backup.csv). Any trait-score means printed in this record's stdout/notes predate the re-judge and reflect the interim Qwen judge \u2014 recompute from the CSVs for paper-comparable absolute values. See replication/REJUDGE_NOTE.md."
+}

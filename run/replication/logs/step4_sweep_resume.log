@@ -1,0 +1,65 @@
+INFO 08-31 10:18:04 [__init__.py:239] Automatically detected platform cuda.
+Loading HF model once...
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:43<02:10, 43.43s/it]Loading checkpoint shards:  50%|█████     | 2/4 [01:29<01:29, 44.73s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [02:15<00:45, 45.58s/it]Loading checkpoint shards: 100%|██████████| 4/4 [02:53<00:00, 42.47s/it]Loading checkpoint shards: 100%|██████████| 4/4 [02:53<00:00, 43.34s/it]
+[skip] eval_persona_eval/Qwen2.5-7B-Instruct/hallucinating_steer_layer5_coef0.5.csv exists: hallucinating=24.07 coh=87.13
+[skip] eval_persona_eval/Qwen2.5-7B-Instruct/hallucinating_steer_layer5_coef1.0.csv exists: hallucinating=25.93 coh=86.94
+[skip] eval_persona_eval/Qwen2.5-7B-Instruct/hallucinating_steer_layer5_coef1.5.csv exists: hallucinating=22.90 coh=86.39
+[skip] eval_persona_eval/Qwen2.5-7B-Instruct/hallucinating_steer_layer5_coef2.0.csv exists: hallucinating=26.77 coh=86.69
+[skip] eval_persona_eval/Qwen2.5-7B-Instruct/hallucinating_steer_layer5_coef2.5.csv exists: hallucinating=26.10 coh=86.42
+[skip] eval_persona_eval/Qwen2.5-7B-Instruct/hallucinating_steer_layer8_coef0.5.csv exists: hallucinating=28.18 coh=86.98
+[skip] eval_persona_eval/Qwen2.5-7B-Instruct/hallucinating_steer_layer8_coef1.0.csv exists: hallucinating=26.60 coh=87.45
+[skip] eval_persona_eval/Qwen2.5-7B-Instruct/hallucinating_steer_layer8_coef1.5.csv exists: hallucinating=33.65 coh=86.90
+[skip] eval_persona_eval/Qwen2.5-7B-Instruct/hallucinating_steer_layer8_coef2.0.csv exists: hallucinating=35.85 coh=86.96
+[skip] eval_persona_eval/Qwen2.5-7B-Instruct/hallucinating_steer_layer8_coef2.5.csv exists: hallucinating=37.98 coh=86.58
+[skip] eval_persona_eval/Qwen2.5-7B-Instruct/hallucinating_steer_layer11_coef0.5.csv exists: hallucinating=27.30 coh=86.73
+[skip] eval_persona_eval/Qwen2.5-7B-Instruct/hallucinating_steer_layer11_coef1.0.csv exists: hallucinating=35.20 coh=86.71
+[skip] eval_persona_eval/Qwen2.5-7B-Instruct/hallucinating_steer_layer11_coef1.5.csv exists: hallucinating=40.38 coh=86.70
+[skip] eval_persona_eval/Qwen2.5-7B-Instruct/hallucinating_steer_layer11_coef2.0.csv exists: hallucinating=51.58 coh=86.50
+[skip] eval_persona_eval/Qwen2.5-7B-Instruct/hallucinating_steer_layer11_coef2.5.csv exists: hallucinating=61.35 coh=86.03
+[skip] eval_persona_eval/Qwen2.5-7B-Instruct/hallucinating_steer_layer14_coef0.5.csv exists: hallucinating=33.00 coh=86.35
+[skip] eval_persona_eval/Qwen2.5-7B-Instruct/hallucinating_steer_layer14_coef1.0.csv exists: hallucinating=46.02 coh=87.07
+[skip] eval_persona_eval/Qwen2.5-7B-Instruct/hallucinating_steer_layer14_coef1.5.csv exists: hallucinating=58.05 coh=86.97
+[skip] eval_persona_eval/Qwen2.5-7B-Instruct/hallucinating_steer_layer14_coef2.0.csv exists: hallucinating=77.28 coh=85.86
+[skip] eval_persona_eval/Qwen2.5-7B-Instruct/hallucinating_steer_layer14_coef2.5.csv exists: hallucinating=87.30 coh=84.53
+[skip] eval_persona_eval/Qwen2.5-7B-Instruct/hallucinating_steer_layer16_coef0.5.csv exists: hallucinating=33.45 coh=86.66
+[skip] eval_persona_eval/Qwen2.5-7B-Instruct/hallucinating_steer_layer16_coef1.0.csv exists: hallucinating=54.58 coh=86.98
+[skip] eval_persona_eval/Qwen2.5-7B-Instruct/hallucinating_steer_layer16_coef1.5.csv exists: hallucinating=79.62 coh=86.08
+[skip] eval_persona_eval/Qwen2.5-7B-Instruct/hallucinating_steer_layer16_coef2.0.csv exists: hallucinating=89.05 coh=84.80
+[skip] eval_persona_eval/Qwen2.5-7B-Instruct/hallucinating_steer_layer16_coef2.5.csv exists: hallucinating=95.35 coh=81.78
+[skip] eval_persona_eval/Qwen2.5-7B-Instruct/hallucinating_steer_layer20_coef0.5.csv exists: hallucinating=34.33 coh=86.58
+[skip] eval_persona_eval/Qwen2.5-7B-Instruct/hallucinating_steer_layer20_coef1.0.csv exists: hallucinating=54.10 coh=86.33
+[skip] eval_persona_eval/Qwen2.5-7B-Instruct/hallucinating_steer_layer20_coef1.5.csv exists: hallucinating=73.17 coh=85.23
+[skip] eval_persona_eval/Qwen2.5-7B-Instruct/hallucinating_steer_layer20_coef2.0.csv exists: hallucinating=85.35 coh=84.10
+[skip] eval_persona_eval/Qwen2.5-7B-Instruct/hallucinating_steer_layer20_coef2.5.csv exists: hallucinating=92.08 coh=74.95
+[skip] eval_persona_eval/Qwen2.5-7B-Instruct/hallucinating_steer_layer23_coef0.5.csv exists: hallucinating=30.48 coh=86.82
+[skip] eval_persona_eval/Qwen2.5-7B-Instruct/hallucinating_steer_layer23_coef1.0.csv exists: hallucinating=33.95 coh=86.60
+[skip] eval_persona_eval/Qwen2.5-7B-Instruct/hallucinating_steer_layer23_coef1.5.csv exists: hallucinating=42.38 coh=86.55
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [01:05<00:00, 65.43s/it]100%|██████████| 1/1 [01:05<00:00, 65.43s/it]
+[done] hallucinating L23 c2.0: hallucinating=49.95 coh=85.51
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:57<00:00, 57.10s/it]100%|██████████| 1/1 [00:57<00:00, 57.10s/it]
+[done] hallucinating L23 c2.5: hallucinating=61.90 coh=85.33
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:57<00:00, 57.11s/it]100%|██████████| 1/1 [00:57<00:00, 57.11s/it]
+[done] hallucinating L25 c0.5: hallucinating=26.55 coh=86.86
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:57<00:00, 57.11s/it]100%|██████████| 1/1 [00:57<00:00, 57.11s/it]
+[done] hallucinating L25 c1.0: hallucinating=34.08 coh=86.80
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:57<00:00, 57.12s/it]100%|██████████| 1/1 [00:57<00:00, 57.12s/it]
+[done] hallucinating L25 c1.5: hallucinating=38.40 coh=86.00
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:57<00:00, 57.15s/it]100%|██████████| 1/1 [00:57<00:00, 57.15s/it]
+[done] hallucinating L25 c2.0: hallucinating=41.15 coh=86.31
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:57<00:00, 57.11s/it]100%|██████████| 1/1 [00:57<00:00, 57.11s/it]
+[done] hallucinating L25 c2.5: hallucinating=48.70 coh=85.96
+
+=== STEER SWEEP SUMMARY ===
+
+--- hallucinating (trait_mean by layer x coef) ---
+coef    0.5   1.0   1.5   2.0   2.5
+layer                              
+5      24.1  25.9  22.9  26.8  26.1
+8      28.2  26.6  33.6  35.8  38.0
+11     27.3  35.2  40.4  51.6  61.4
+14     33.0  46.0  58.0  77.3  87.3
+16     33.4  54.6  79.6  89.0  95.4
+20     34.3  54.1  73.2  85.4  92.1
+23     30.5  34.0  42.4  50.0  61.9
+25     26.6  34.1  38.4  41.2  48.7
+argmax over grid: layer=16 coef=2.5 trait=95.3

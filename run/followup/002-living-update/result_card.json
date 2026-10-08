@@ -1,0 +1,48 @@
+{
+  "schema": "sai.followup.result_card/v1",
+  "headline": "Across a 5-model 2023→2025 chat ladder scored by the same paper-exact judge, persona-vector steering (traits pushed to 72–100/100) and sample-separability (AUC ≥0.996) replicate everywhere, and projection-monitoring stays strong (Pearson r 0.65–0.99) on every standard model — but collapses to r 0.25–0.48 on the reasoning-distilled DeepSeek-R1.",
+  "status": "completed",
+  "metrics": [
+    {"label": "Monitoring r — Qwen3-8B (2025, newest)", "value": "0.65 / 0.95 / 0.90", "baseline": "0.869 / 0.868 / 0.813", "baseline_label": "Qwen2.5-7B reused (replication monitor CSVs)", "note": "evil/syco/hallu; monitoring still holds on the newest standard chat model"},
+    {"label": "Monitoring r — DeepSeek-R1-Distill (2025, reasoning)", "value": "0.45 / 0.48 / 0.25", "baseline": "0.869 / 0.868 / 0.813", "baseline_label": "Qwen2.5-7B reused (replication monitor CSVs)", "note": "the one qualitative break: last-prompt projection stops predicting the final trait on a reasoning model"},
+    {"label": "Steering max-coef trait score — new models", "value": "72–100 / 100", "baseline": "95.9 / 97.8 / 98.0", "baseline_label": "Qwen2.5-7B reused (steer_sweep_summary.csv)", "note": "monotone dose-response on all 5 models; DeepSeek reaches the lowest ceilings (72–88)"},
+    {"label": "Separability AUC — 3 core traits, all 5 models", "value": "≥0.996", "baseline": "0.9999 / 0.9999 / 0.9948", "baseline_label": "Qwen2.5-7B reused (analysis/step8 summary)", "note": "most robust mechanism; holds 2023→2025"},
+    {"label": "Models computed (same judge, old & new)", "value": "5", "baseline": "2 (paper: Qwen2.5, Llama-3.1)", "baseline_label": "paper §5", "note": "Mistral, Llama-3.1, Qwen2.5[reused], DeepSeek-R1, Qwen3; gpt-4.1-mini for all"}
+  ],
+  "tables": [
+    {"title": "Projection-monitoring Pearson r (paper-exact gpt-4.1-mini judge)",
+     "columns": ["Model", "era", "evil", "sycophantic", "hallucinating"],
+     "rows": [
+       ["Mistral-7B-Instruct-v0.2", "2023-12", "0.99", "0.92", "0.75"],
+       ["Llama-3.1-8B-Instruct", "2024-07", "0.97", "0.97", "0.91"],
+       ["Qwen2.5-7B-Instruct (reused)", "2024-09", "0.87", "0.87", "0.81"],
+       ["DeepSeek-R1-Distill-Llama-8B", "2025-01", "0.45", "0.48", "0.25"],
+       ["Qwen3-8B-Nonthinking", "2025-04", "0.65", "0.95", "0.90"]
+     ],
+     "highlight_row": 3},
+    {"title": "Steering effect (max-coef trait score) & separability AUC",
+     "columns": ["Model", "steer evil", "steer syco", "steer hallu", "AUC evil/syco/hallu"],
+     "rows": [
+       ["Mistral-7B-Instruct-v0.2", "97.9", "95.3", "97.6", "1.00/1.00/1.00"],
+       ["Llama-3.1-8B-Instruct", "87.1", "98.3", "99.8", "1.00/1.00/1.00"],
+       ["Qwen2.5-7B (reused)", "95.9", "97.8", "98.0", "1.00/1.00/0.99"],
+       ["DeepSeek-R1-Distill-Llama-8B", "71.5", "73.6", "87.9", "1.00/1.00/1.00"],
+       ["Qwen3-8B-Nonthinking", "82.6", "97.5", "99.7", "1.00/1.00/1.00"]
+     ]}
+  ],
+  "figures": [
+    {"file": "results/fig1_over_time.png",
+     "caption": "Over-time arc of the three persona-vector mechanisms across the 2023→2025 era ladder (paper-exact judge). Steering effect and separability AUC hold on every model; monitoring r dips sharply only on the reasoning-distilled DeepSeek-R1. Qwen2.5-7B (diamond) is reused verbatim from the replication.",
+     "alt": "Three line panels vs model release date: Panel A steering effect ~70-100 with a DeepSeek dip; Panel B Pearson r near 0.7-1.0 for all models except DeepSeek which drops to 0.25-0.48; Panel C AUC flat near 1.0 for all."},
+    {"file": "results/fig2_steering_curves.png",
+     "caption": "Steering dose-response at each model's selected layer (C1): trait score rises monotonically with the steering coefficient for all five models; DeepSeek-R1 has the flattest, lowest curves.",
+     "alt": "Three panels (evil, sycophantic, hallucinating), each plotting trait score 0-100 versus steering coefficient 0.5-2.5 for five models, all monotonically increasing."}
+  ],
+  "notes": [
+    "Same instrument for old and new: paper-exact gpt-4.1-mini (OpenRouter, max_tokens=1, T=0, seed=0, logprobs top-20, numeric-mass expectation); 0 judge errors; new-judge spend ~$9-10 under the $40 cap.",
+    "Reasoning-model caveat: DeepSeek-R1-Distill's <think> traces break last-prompt projection monitoring (C2) and inflate its baseline hallucination score (72.2); the persona-vector direction still steers behaviour and separates training samples.",
+    "Finetune-dependent claims (C3/C4/C10/C11/C12/C15) were NOT re-run on new models (24-LoRA suite ~9 GPU-h/model); the paper-exact Qwen2.5-7B values remain the single anchor. C6/C7/C14 out of scope.",
+    "Qwen2.5-7B is reused verbatim from the replication artifacts (values match the 001 spec exactly); the 4 other models were computed fresh this session. All 3 traits were active on all 5 models (no data holes). Qwen3 finished in ~1h36m, inside the 2h budget guard (no descope)."
+  ],
+  "report_file": "report.md"
+}

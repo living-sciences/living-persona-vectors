@@ -1,0 +1,6 @@
+trait,layer,coef,trait_mean,coh_mean
+hallucinating,20,0.5,,
+hallucinating,20,1.0,,
+hallucinating,20,1.5,,
+hallucinating,20,2.0,,
+hallucinating,20,2.5,,

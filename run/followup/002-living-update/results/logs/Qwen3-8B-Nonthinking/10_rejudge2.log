@@ -1,0 +1,63 @@
+[1/62] DONE Qwen3-8B-Nonthinking/confirm/evil_steer_layer20_coef0.5.csv n=200 gpt_evil_mean=0.51 | calls=1204 errors=0 avg_lat=1.0s cost=$0.33 elapsed=13s
+[2/62] DONE Qwen3-8B-Nonthinking/confirm/evil_steer_layer20_coef1.0.csv n=200 gpt_evil_mean=48.23 | calls=1563 errors=0 avg_lat=1.0s cost=$0.43 elapsed=16s
+[3/62] DONE Qwen3-8B-Nonthinking/confirm/evil_steer_layer20_coef1.5.csv n=200 gpt_evil_mean=73.37 | calls=1705 errors=0 avg_lat=1.0s cost=$0.47 elapsed=18s
+[4/62] DONE Qwen3-8B-Nonthinking/confirm/evil_steer_layer20_coef2.0.csv n=200 gpt_evil_mean=80.85 | calls=1957 errors=0 avg_lat=1.0s cost=$0.53 elapsed=20s
+[5/62] DONE Qwen3-8B-Nonthinking/confirm/evil_steer_layer20_coef2.5.csv n=200 gpt_evil_mean=82.60 | calls=2639 errors=0 avg_lat=1.0s cost=$0.71 elapsed=28s
+[6/62] DONE Qwen3-8B-Nonthinking/confirm/hallucinating_steer_layer20_coef0.5.csv n=200 gpt_hallucinating_mean=52.21 | calls=2951 errors=0 avg_lat=1.1s cost=$0.79 elapsed=33s
+[7/62] DONE Qwen3-8B-Nonthinking/confirm/hallucinating_steer_layer20_coef1.0.csv n=200 gpt_hallucinating_mean=80.70 | calls=3241 errors=0 avg_lat=1.1s cost=$0.86 elapsed=36s
+[8/62] SKIP Qwen3-8B-Nonthinking/confirm/steer_sweep_summary.csv (no single trait col) | calls=3241 errors=0 avg_lat=1.1s cost=$0.86 elapsed=36s
+[9/62] DONE Qwen3-8B-Nonthinking/confirm/hallucinating_steer_layer20_coef1.5.csv n=200 gpt_hallucinating_mean=97.30 | calls=3722 errors=0 avg_lat=1.1s cost=$0.99 elapsed=41s
+[10/62] DONE Qwen3-8B-Nonthinking/confirm/hallucinating_steer_layer20_coef2.0.csv n=200 gpt_hallucinating_mean=99.42 | calls=4372 errors=0 avg_lat=1.1s cost=$1.17 elapsed=47s
+[11/62] DONE Qwen3-8B-Nonthinking/confirm/sycophantic_steer_layer23_coef0.5.csv n=200 gpt_sycophantic_mean=18.08 | calls=4763 errors=0 avg_lat=1.1s cost=$1.28 elapsed=51s
+[12/62] DONE Qwen3-8B-Nonthinking/confirm/hallucinating_steer_layer20_coef2.5.csv n=200 gpt_hallucinating_mean=99.67 | calls=4962 errors=0 avg_lat=1.1s cost=$1.34 elapsed=53s
+[13/62] DONE Qwen3-8B-Nonthinking/confirm/sycophantic_steer_layer23_coef1.0.csv n=200 gpt_sycophantic_mean=62.04 | calls=5298 errors=0 avg_lat=1.0s cost=$1.43 elapsed=56s
+[14/62] done Qwen3-8B-Nonthinking/evil_baseline.csv (cached) | calls=5298 errors=0 avg_lat=1.0s cost=$1.43 elapsed=56s
+[15/62] DONE Qwen3-8B-Nonthinking/confirm/sycophantic_steer_layer23_coef1.5.csv n=200 gpt_sycophantic_mean=91.96 | calls=5665 errors=0 avg_lat=1.0s cost=$1.54 elapsed=60s
+[16/62] DONE Qwen3-8B-Nonthinking/confirm/sycophantic_steer_layer23_coef2.0.csv n=200 gpt_sycophantic_mean=97.60 | calls=6571 errors=0 avg_lat=1.0s cost=$1.75 elapsed=69s
+[17/62] done Qwen3-8B-Nonthinking/evil_steer_layer16_coef1.0.csv (cached) | calls=6571 errors=0 avg_lat=1.0s cost=$1.75 elapsed=69s
+[18/62] done Qwen3-8B-Nonthinking/evil_steer_layer16_coef1.5.csv (cached) | calls=6571 errors=0 avg_lat=1.0s cost=$1.75 elapsed=69s
+[19/62] done Qwen3-8B-Nonthinking/evil_steer_layer16_coef2.0.csv (cached) | calls=6572 errors=0 avg_lat=1.0s cost=$1.75 elapsed=69s
+[20/62] done Qwen3-8B-Nonthinking/evil_steer_layer20_coef1.0.csv (cached) | calls=6574 errors=0 avg_lat=1.0s cost=$1.75 elapsed=69s
+[21/62] done Qwen3-8B-Nonthinking/evil_steer_layer20_coef1.5.csv (cached) | calls=6577 errors=0 avg_lat=1.0s cost=$1.75 elapsed=69s
+[22/62] done Qwen3-8B-Nonthinking/evil_steer_layer20_coef2.0.csv (cached) | calls=6579 errors=0 avg_lat=1.0s cost=$1.75 elapsed=69s
+[23/62] done Qwen3-8B-Nonthinking/evil_steer_layer23_coef1.0.csv (cached) | calls=6584 errors=0 avg_lat=1.0s cost=$1.76 elapsed=69s
+[24/62] done Qwen3-8B-Nonthinking/evil_steer_layer23_coef1.5.csv (cached) | calls=6590 errors=0 avg_lat=1.0s cost=$1.76 elapsed=69s
+[25/62] done Qwen3-8B-Nonthinking/evil_steer_layer23_coef2.0.csv (cached) | calls=6596 errors=0 avg_lat=1.0s cost=$1.76 elapsed=69s
+[26/62] done Qwen3-8B-Nonthinking/evil_steer_layer27_coef1.0.csv (cached) | calls=6597 errors=0 avg_lat=1.0s cost=$1.76 elapsed=69s
+[27/62] done Qwen3-8B-Nonthinking/evil_steer_layer27_coef1.5.csv (cached) | calls=6600 errors=0 avg_lat=1.0s cost=$1.76 elapsed=69s
+[28/62] done Qwen3-8B-Nonthinking/evil_steer_layer27_coef2.0.csv (cached) | calls=6614 errors=0 avg_lat=1.0s cost=$1.76 elapsed=69s
+[29/62] done Qwen3-8B-Nonthinking/hallucinating_baseline.csv (cached) | calls=6619 errors=0 avg_lat=1.0s cost=$1.76 elapsed=69s
+[30/62] DONE Qwen3-8B-Nonthinking/confirm/sycophantic_steer_layer23_coef2.5.csv n=200 gpt_sycophantic_mean=97.54 | calls=7643 errors=0 avg_lat=1.1s cost=$1.97 elapsed=83s
+[31/62] DONE Qwen3-8B-Nonthinking/evil_monitor_neg.csv n=500 gpt_evil_mean=0.00 | calls=8399 errors=0 avg_lat=1.1s cost=$2.14 elapsed=94s
+[32/62] done Qwen3-8B-Nonthinking/hallucinating_steer_layer16_coef1.0.csv (cached) | calls=8399 errors=0 avg_lat=1.1s cost=$2.14 elapsed=94s
+[33/62] done Qwen3-8B-Nonthinking/hallucinating_steer_layer16_coef1.5.csv (cached) | calls=8399 errors=0 avg_lat=1.1s cost=$2.14 elapsed=94s
+[34/62] done Qwen3-8B-Nonthinking/hallucinating_steer_layer16_coef2.0.csv (cached) | calls=8399 errors=0 avg_lat=1.1s cost=$2.14 elapsed=94s
+[35/62] done Qwen3-8B-Nonthinking/hallucinating_steer_layer20_coef1.0.csv (cached) | calls=8411 errors=0 avg_lat=1.1s cost=$2.14 elapsed=94s
+[36/62] done Qwen3-8B-Nonthinking/hallucinating_steer_layer20_coef1.5.csv (cached) | calls=8414 errors=0 avg_lat=1.1s cost=$2.14 elapsed=94s
+[37/62] done Qwen3-8B-Nonthinking/hallucinating_steer_layer20_coef2.0.csv (cached) | calls=8419 errors=0 avg_lat=1.1s cost=$2.14 elapsed=94s
+[38/62] done Qwen3-8B-Nonthinking/hallucinating_steer_layer23_coef1.0.csv (cached) | calls=8425 errors=0 avg_lat=1.1s cost=$2.14 elapsed=94s
+[39/62] done Qwen3-8B-Nonthinking/hallucinating_steer_layer23_coef1.5.csv (cached) | calls=8433 errors=0 avg_lat=1.1s cost=$2.15 elapsed=94s
+[40/62] done Qwen3-8B-Nonthinking/hallucinating_steer_layer23_coef2.0.csv (cached) | calls=8434 errors=0 avg_lat=1.1s cost=$2.15 elapsed=94s
+[41/62] done Qwen3-8B-Nonthinking/hallucinating_steer_layer27_coef1.0.csv (cached) | calls=8439 errors=0 avg_lat=1.1s cost=$2.15 elapsed=94s
+[42/62] done Qwen3-8B-Nonthinking/hallucinating_steer_layer27_coef1.5.csv (cached) | calls=8445 errors=0 avg_lat=1.1s cost=$2.15 elapsed=94s
+[43/62] done Qwen3-8B-Nonthinking/hallucinating_steer_layer27_coef2.0.csv (cached) | calls=8447 errors=0 avg_lat=1.1s cost=$2.15 elapsed=94s
+[44/62] SKIP Qwen3-8B-Nonthinking/steer_sweep_summary.csv (no single trait col) | calls=8453 errors=0 avg_lat=1.1s cost=$2.15 elapsed=94s
+[45/62] done Qwen3-8B-Nonthinking/sycophantic_baseline.csv (cached) | calls=8459 errors=0 avg_lat=1.1s cost=$2.15 elapsed=95s
+[46/62] DONE Qwen3-8B-Nonthinking/evil_monitor_pos.csv n=500 gpt_evil_mean=53.71 | calls=8571 errors=0 avg_lat=1.1s cost=$2.18 elapsed=98s
+[47/62] DONE Qwen3-8B-Nonthinking/hallucinating_monitor_neg.csv n=500 gpt_hallucinating_mean=4.23 | calls=9804 errors=0 avg_lat=1.1s cost=$2.48 elapsed=111s
+[48/62] done Qwen3-8B-Nonthinking/sycophantic_steer_layer16_coef1.0.csv (cached) | calls=9804 errors=0 avg_lat=1.1s cost=$2.48 elapsed=111s
+[49/62] done Qwen3-8B-Nonthinking/sycophantic_steer_layer16_coef1.5.csv (cached) | calls=9804 errors=0 avg_lat=1.1s cost=$2.48 elapsed=111s
+[50/62] done Qwen3-8B-Nonthinking/sycophantic_steer_layer16_coef2.0.csv (cached) | calls=9805 errors=0 avg_lat=1.1s cost=$2.48 elapsed=111s
+[51/62] done Qwen3-8B-Nonthinking/sycophantic_steer_layer20_coef1.0.csv (cached) | calls=9811 errors=0 avg_lat=1.1s cost=$2.49 elapsed=111s
+[52/62] done Qwen3-8B-Nonthinking/sycophantic_steer_layer20_coef1.5.csv (cached) | calls=9813 errors=0 avg_lat=1.1s cost=$2.49 elapsed=112s
+[53/62] done Qwen3-8B-Nonthinking/sycophantic_steer_layer20_coef2.0.csv (cached) | calls=9815 errors=0 avg_lat=1.1s cost=$2.49 elapsed=112s
+[54/62] done Qwen3-8B-Nonthinking/sycophantic_steer_layer23_coef1.0.csv (cached) | calls=9824 errors=0 avg_lat=1.1s cost=$2.49 elapsed=112s
+[55/62] done Qwen3-8B-Nonthinking/sycophantic_steer_layer23_coef1.5.csv (cached) | calls=9829 errors=0 avg_lat=1.1s cost=$2.49 elapsed=112s
+[56/62] done Qwen3-8B-Nonthinking/sycophantic_steer_layer23_coef2.0.csv (cached) | calls=9833 errors=0 avg_lat=1.1s cost=$2.49 elapsed=112s
+[57/62] done Qwen3-8B-Nonthinking/sycophantic_steer_layer27_coef1.0.csv (cached) | calls=9838 errors=0 avg_lat=1.1s cost=$2.49 elapsed=112s
+[58/62] done Qwen3-8B-Nonthinking/sycophantic_steer_layer27_coef1.5.csv (cached) | calls=9844 errors=0 avg_lat=1.1s cost=$2.49 elapsed=112s
+[59/62] done Qwen3-8B-Nonthinking/sycophantic_steer_layer27_coef2.0.csv (cached) | calls=9849 errors=0 avg_lat=1.1s cost=$2.49 elapsed=112s
+[60/62] DONE Qwen3-8B-Nonthinking/hallucinating_monitor_pos.csv n=500 gpt_hallucinating_mean=87.67 | calls=11360 errors=0 avg_lat=1.1s cost=$2.87 elapsed=131s
+[61/62] DONE Qwen3-8B-Nonthinking/sycophantic_monitor_neg.csv n=500 gpt_sycophantic_mean=4.20 | calls=11730 errors=0 avg_lat=1.1s cost=$2.95 elapsed=134s
+[62/62] DONE Qwen3-8B-Nonthinking/sycophantic_monitor_pos.csv n=500 gpt_sycophantic_mean=80.87 | calls=12000 errors=0 avg_lat=1.1s cost=$2.99 elapsed=141s
+ALL DONE {'prompt': 7383677, 'completion': 23906, 'calls': 12000, 'errors': 0, 'lat_sum': 13648.372911930084}

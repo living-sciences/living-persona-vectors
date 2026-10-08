@@ -1,0 +1,731 @@
+{
+  "ladder": [
+    {
+      "model": "Mistral-7B-Instruct-v0.2",
+      "era": 1,
+      "release": "2023-12",
+      "n_layers": 32,
+      "kind": "new"
+    },
+    {
+      "model": "Llama-3.1-8B-Instruct",
+      "era": 2,
+      "release": "2024-07",
+      "n_layers": 32,
+      "kind": "new"
+    },
+    {
+      "model": "Qwen2.5-7B-Instruct",
+      "era": 3,
+      "release": "2024-09",
+      "n_layers": 28,
+      "kind": "reused"
+    },
+    {
+      "model": "DeepSeek-R1-Distill-Llama-8B",
+      "era": 4,
+      "release": "2025-01",
+      "n_layers": 32,
+      "kind": "new"
+    },
+    {
+      "model": "Qwen3-8B-Nonthinking",
+      "era": 5,
+      "release": "2025-04",
+      "n_layers": 36,
+      "kind": "new"
+    }
+  ],
+  "models": {
+    "Mistral-7B-Instruct-v0.2": {
+      "selected_layer": {
+        "evil": 14,
+        "sycophantic": 18,
+        "hallucinating": 14
+      },
+      "C5_baseline": {
+        "evil": {
+          "value": 0.0,
+          "n": 200,
+          "source": "followup/002-living-update/results/rejudged/Mistral-7B-Instruct-v0.2/evil_baseline.csv"
+        },
+        "sycophantic": {
+          "value": 10.045,
+          "n": 200,
+          "source": "followup/002-living-update/results/rejudged/Mistral-7B-Instruct-v0.2/sycophantic_baseline.csv"
+        },
+        "hallucinating": {
+          "value": 43.455,
+          "n": 200,
+          "source": "followup/002-living-update/results/rejudged/Mistral-7B-Instruct-v0.2/hallucinating_baseline.csv"
+        }
+      },
+      "C8_selected_layer": {
+        "evil": {
+          "value": 14,
+          "source": "followup/002-living-update/results/logs/Mistral-7B-Instruct-v0.2/sel_layer.json"
+        },
+        "sycophantic": {
+          "value": 18,
+          "source": "followup/002-living-update/results/logs/Mistral-7B-Instruct-v0.2/sel_layer.json"
+        },
+        "hallucinating": {
+          "value": 14,
+          "source": "followup/002-living-update/results/logs/Mistral-7B-Instruct-v0.2/sel_layer.json"
+        }
+      },
+      "C1_curve": {
+        "evil": {
+          "layer": 14,
+          "curve": {
+            "0.5": 0.101,
+            "1.0": 16.021,
+            "1.5": 81.878,
+            "2.0": 95.12,
+            "2.5": 97.913
+          },
+          "source": "followup/002-living-update/results/rejudged/Mistral-7B-Instruct-v0.2/confirm"
+        },
+        "sycophantic": {
+          "layer": 18,
+          "curve": {
+            "0.5": 11.723,
+            "1.0": 18.513,
+            "1.5": 44.014,
+            "2.0": 81.3,
+            "2.5": 95.34
+          },
+          "source": "followup/002-living-update/results/rejudged/Mistral-7B-Instruct-v0.2/confirm"
+        },
+        "hallucinating": {
+          "layer": 14,
+          "curve": {
+            "0.5": 52.469,
+            "1.0": 65.571,
+            "1.5": 86.46,
+            "2.0": 96.083,
+            "2.5": 97.578
+          },
+          "source": "followup/002-living-update/results/rejudged/Mistral-7B-Instruct-v0.2/confirm"
+        }
+      },
+      "C1_effect": {
+        "evil": {
+          "max_coef_trait_mean": 97.913,
+          "delta_over_baseline": 97.913,
+          "layer": 14
+        },
+        "sycophantic": {
+          "max_coef_trait_mean": 95.34,
+          "delta_over_baseline": 85.295,
+          "layer": 18
+        },
+        "hallucinating": {
+          "max_coef_trait_mean": 97.578,
+          "delta_over_baseline": 54.123,
+          "layer": 14
+        }
+      },
+      "C2_pearson": {
+        "evil": {
+          "value": 0.992,
+          "n": 985,
+          "layer": 14,
+          "source": "followup/002-living-update/workspace/codebase/eval_persona_eval/Mistral-7B-Instruct-v0.2/evil_monitor_{pos,neg}.csv + followup/002-living-update/results/rejudged/Mistral-7B-Instruct-v0.2/evil_monitor_{pos,neg}.csv"
+        },
+        "sycophantic": {
+          "value": 0.921,
+          "n": 1000,
+          "layer": 18,
+          "source": "followup/002-living-update/workspace/codebase/eval_persona_eval/Mistral-7B-Instruct-v0.2/sycophantic_monitor_{pos,neg}.csv + followup/002-living-update/results/rejudged/Mistral-7B-Instruct-v0.2/sycophantic_monitor_{pos,neg}.csv"
+        },
+        "hallucinating": {
+          "value": 0.752,
+          "n": 1000,
+          "layer": 14,
+          "source": "followup/002-living-update/workspace/codebase/eval_persona_eval/Mistral-7B-Instruct-v0.2/hallucinating_monitor_{pos,neg}.csv + followup/002-living-update/results/rejudged/Mistral-7B-Instruct-v0.2/hallucinating_monitor_{pos,neg}.csv"
+        }
+      },
+      "C13_auc": {
+        "evil": {
+          "value": 0.9995,
+          "dataset": "evil",
+          "source": "followup/002-living-update/results/step8/Mistral-7B-Instruct-v0.2/step8_separability_summary.csv"
+        },
+        "sycophantic": {
+          "value": 1.0,
+          "dataset": "sycophancy",
+          "source": "followup/002-living-update/results/step8/Mistral-7B-Instruct-v0.2/step8_separability_summary.csv"
+        },
+        "hallucinating": {
+          "value": 0.9985,
+          "dataset": "hallucination",
+          "source": "followup/002-living-update/results/step8/Mistral-7B-Instruct-v0.2/step8_separability_summary.csv"
+        },
+        "EM_like": {
+          "value": 0.9544,
+          "dataset": "mistake_opinions",
+          "source": "followup/002-living-update/results/step8/Mistral-7B-Instruct-v0.2/step8_separability_summary.csv"
+        }
+      },
+      "_meta": {
+        "era": 1,
+        "release": "2023-12",
+        "n_layers": 32,
+        "kind": "new"
+      }
+    },
+    "Llama-3.1-8B-Instruct": {
+      "selected_layer": {
+        "evil": 21,
+        "sycophantic": 18,
+        "hallucinating": 18
+      },
+      "C5_baseline": {
+        "evil": {
+          "value": 0.0,
+          "n": 200,
+          "source": "followup/002-living-update/results/rejudged/Llama-3.1-8B-Instruct/evil_baseline.csv"
+        },
+        "sycophantic": {
+          "value": 4.381,
+          "n": 200,
+          "source": "followup/002-living-update/results/rejudged/Llama-3.1-8B-Instruct/sycophantic_baseline.csv"
+        },
+        "hallucinating": {
+          "value": 32.976,
+          "n": 200,
+          "source": "followup/002-living-update/results/rejudged/Llama-3.1-8B-Instruct/hallucinating_baseline.csv"
+        }
+      },
+      "C8_selected_layer": {
+        "evil": {
+          "value": 21,
+          "source": "followup/002-living-update/results/logs/Llama-3.1-8B-Instruct/sel_layer.json"
+        },
+        "sycophantic": {
+          "value": 18,
+          "source": "followup/002-living-update/results/logs/Llama-3.1-8B-Instruct/sel_layer.json"
+        },
+        "hallucinating": {
+          "value": 18,
+          "source": "followup/002-living-update/results/logs/Llama-3.1-8B-Instruct/sel_layer.json"
+        }
+      },
+      "C1_curve": {
+        "evil": {
+          "layer": 21,
+          "curve": {
+            "0.5": 0.182,
+            "1.0": 13.089,
+            "1.5": 70.323,
+            "2.0": 83.041,
+            "2.5": 87.132
+          },
+          "source": "followup/002-living-update/results/rejudged/Llama-3.1-8B-Instruct/confirm"
+        },
+        "sycophantic": {
+          "layer": 18,
+          "curve": {
+            "0.5": 10.177,
+            "1.0": 35.307,
+            "1.5": 83.15,
+            "2.0": 94.561,
+            "2.5": 98.345
+          },
+          "source": "followup/002-living-update/results/rejudged/Llama-3.1-8B-Instruct/confirm"
+        },
+        "hallucinating": {
+          "layer": 18,
+          "curve": {
+            "0.5": 36.635,
+            "1.0": 55.263,
+            "1.5": 84.417,
+            "2.0": 99.117,
+            "2.5": 99.818
+          },
+          "source": "followup/002-living-update/results/rejudged/Llama-3.1-8B-Instruct/confirm"
+        }
+      },
+      "C1_effect": {
+        "evil": {
+          "max_coef_trait_mean": 87.132,
+          "delta_over_baseline": 87.132,
+          "layer": 21
+        },
+        "sycophantic": {
+          "max_coef_trait_mean": 98.345,
+          "delta_over_baseline": 93.964,
+          "layer": 18
+        },
+        "hallucinating": {
+          "max_coef_trait_mean": 99.818,
+          "delta_over_baseline": 66.842,
+          "layer": 18
+        }
+      },
+      "C2_pearson": {
+        "evil": {
+          "value": 0.969,
+          "n": 990,
+          "layer": 21,
+          "source": "followup/002-living-update/workspace/codebase/eval_persona_eval/Llama-3.1-8B-Instruct/evil_monitor_{pos,neg}.csv + followup/002-living-update/results/rejudged/Llama-3.1-8B-Instruct/evil_monitor_{pos,neg}.csv"
+        },
+        "sycophantic": {
+          "value": 0.97,
+          "n": 1000,
+          "layer": 18,
+          "source": "followup/002-living-update/workspace/codebase/eval_persona_eval/Llama-3.1-8B-Instruct/sycophantic_monitor_{pos,neg}.csv + followup/002-living-update/results/rejudged/Llama-3.1-8B-Instruct/sycophantic_monitor_{pos,neg}.csv"
+        },
+        "hallucinating": {
+          "value": 0.909,
+          "n": 1000,
+          "layer": 18,
+          "source": "followup/002-living-update/workspace/codebase/eval_persona_eval/Llama-3.1-8B-Instruct/hallucinating_monitor_{pos,neg}.csv + followup/002-living-update/results/rejudged/Llama-3.1-8B-Instruct/hallucinating_monitor_{pos,neg}.csv"
+        }
+      },
+      "C13_auc": {
+        "evil": {
+          "value": 0.9999,
+          "dataset": "evil",
+          "source": "followup/002-living-update/results/step8/Llama-3.1-8B-Instruct/step8_separability_summary.csv"
+        },
+        "sycophantic": {
+          "value": 1.0,
+          "dataset": "sycophancy",
+          "source": "followup/002-living-update/results/step8/Llama-3.1-8B-Instruct/step8_separability_summary.csv"
+        },
+        "hallucinating": {
+          "value": 0.9983,
+          "dataset": "hallucination",
+          "source": "followup/002-living-update/results/step8/Llama-3.1-8B-Instruct/step8_separability_summary.csv"
+        },
+        "EM_like": {
+          "value": 0.8458,
+          "dataset": "mistake_opinions",
+          "source": "followup/002-living-update/results/step8/Llama-3.1-8B-Instruct/step8_separability_summary.csv"
+        }
+      },
+      "_meta": {
+        "era": 2,
+        "release": "2024-07",
+        "n_layers": 32,
+        "kind": "new"
+      }
+    },
+    "Qwen2.5-7B-Instruct": {
+      "selected_layer": {
+        "evil": 20,
+        "sycophantic": 20,
+        "hallucinating": 16
+      },
+      "C5_baseline": {
+        "evil": {
+          "value": 0.0,
+          "n": 200,
+          "source": "replication/codebase/eval_persona_eval/Qwen2.5-7B-Instruct/evil_baseline.csv"
+        },
+        "sycophantic": {
+          "value": 4.978,
+          "n": 200,
+          "source": "replication/codebase/eval_persona_eval/Qwen2.5-7B-Instruct/sycophantic_baseline.csv"
+        },
+        "hallucinating": {
+          "value": 22.815,
+          "n": 200,
+          "source": "replication/codebase/eval_persona_eval/Qwen2.5-7B-Instruct/hallucinating_baseline.csv"
+        }
+      },
+      "C8_selected_layer": {
+        "evil": {
+          "value": 20,
+          "source": "replication/codebase/eval_persona_eval/Qwen2.5-7B-Instruct/steer_sweep_summary.csv"
+        },
+        "sycophantic": {
+          "value": 20,
+          "source": "replication/codebase/eval_persona_eval/Qwen2.5-7B-Instruct/steer_sweep_summary.csv"
+        },
+        "hallucinating": {
+          "value": 16,
+          "source": "replication/codebase/eval_persona_eval/Qwen2.5-7B-Instruct/steer_sweep_summary.csv"
+        }
+      },
+      "C1_curve": {
+        "evil": {
+          "layer": 20,
+          "curve": {
+            "0.5": 0.003,
+            "1.0": 7.665,
+            "1.5": 65.83,
+            "2.0": 91.305,
+            "2.5": 95.866
+          },
+          "source": "replication/codebase/eval_persona_eval/Qwen2.5-7B-Instruct/steer_sweep_summary.csv"
+        },
+        "sycophantic": {
+          "layer": 20,
+          "curve": {
+            "0.5": 10.225,
+            "1.0": 23.565,
+            "1.5": 64.033,
+            "2.0": 90.52,
+            "2.5": 97.829
+          },
+          "source": "replication/codebase/eval_persona_eval/Qwen2.5-7B-Instruct/steer_sweep_summary.csv"
+        },
+        "hallucinating": {
+          "layer": 16,
+          "curve": {
+            "0.5": 29.872,
+            "1.0": 55.948,
+            "1.5": 80.351,
+            "2.0": 94.296,
+            "2.5": 97.981
+          },
+          "source": "replication/codebase/eval_persona_eval/Qwen2.5-7B-Instruct/steer_sweep_summary.csv"
+        }
+      },
+      "C1_effect": {
+        "evil": {
+          "max_coef_trait_mean": 95.866,
+          "delta_over_baseline": 95.866,
+          "layer": 20
+        },
+        "sycophantic": {
+          "max_coef_trait_mean": 97.829,
+          "delta_over_baseline": 92.851,
+          "layer": 20
+        },
+        "hallucinating": {
+          "max_coef_trait_mean": 97.981,
+          "delta_over_baseline": 75.166,
+          "layer": 16
+        }
+      },
+      "C2_pearson": {
+        "evil": {
+          "value": 0.869,
+          "n": 1988,
+          "layer": 20,
+          "source": "replication/codebase/eval_persona_eval/Qwen2.5-7B-Instruct/evil_monitor_{pos,neg}.csv"
+        },
+        "sycophantic": {
+          "value": 0.868,
+          "n": 2000,
+          "layer": 20,
+          "source": "replication/codebase/eval_persona_eval/Qwen2.5-7B-Instruct/sycophantic_monitor_{pos,neg}.csv"
+        },
+        "hallucinating": {
+          "value": 0.813,
+          "n": 2000,
+          "layer": 16,
+          "source": "replication/codebase/eval_persona_eval/Qwen2.5-7B-Instruct/hallucinating_monitor_{pos,neg}.csv"
+        }
+      },
+      "C13_auc": {
+        "evil": {
+          "value": 0.9999,
+          "dataset": "evil",
+          "source": "replication/analysis/step8_separability_summary.csv"
+        },
+        "sycophantic": {
+          "value": 0.9999,
+          "dataset": "sycophancy",
+          "source": "replication/analysis/step8_separability_summary.csv"
+        },
+        "hallucinating": {
+          "value": 0.9948,
+          "dataset": "hallucination",
+          "source": "replication/analysis/step8_separability_summary.csv"
+        },
+        "EM_like": {
+          "value": 0.8876,
+          "dataset": "mistake_opinions",
+          "source": "replication/analysis/step8_separability_summary.csv"
+        }
+      },
+      "_meta": {
+        "era": 3,
+        "release": "2024-09",
+        "n_layers": 28,
+        "kind": "reused"
+      }
+    },
+    "DeepSeek-R1-Distill-Llama-8B": {
+      "selected_layer": {
+        "evil": 14,
+        "sycophantic": 14,
+        "hallucinating": 14
+      },
+      "C5_baseline": {
+        "evil": {
+          "value": 0.263,
+          "n": 200,
+          "source": "followup/002-living-update/results/rejudged/DeepSeek-R1-Distill-Llama-8B/evil_baseline.csv"
+        },
+        "sycophantic": {
+          "value": 4.671,
+          "n": 200,
+          "source": "followup/002-living-update/results/rejudged/DeepSeek-R1-Distill-Llama-8B/sycophantic_baseline.csv"
+        },
+        "hallucinating": {
+          "value": 72.186,
+          "n": 200,
+          "source": "followup/002-living-update/results/rejudged/DeepSeek-R1-Distill-Llama-8B/hallucinating_baseline.csv"
+        }
+      },
+      "C8_selected_layer": {
+        "evil": {
+          "value": 14,
+          "source": "followup/002-living-update/results/logs/DeepSeek-R1-Distill-Llama-8B/sel_layer.json"
+        },
+        "sycophantic": {
+          "value": 14,
+          "source": "followup/002-living-update/results/logs/DeepSeek-R1-Distill-Llama-8B/sel_layer.json"
+        },
+        "hallucinating": {
+          "value": 14,
+          "source": "followup/002-living-update/results/logs/DeepSeek-R1-Distill-Llama-8B/sel_layer.json"
+        }
+      },
+      "C1_curve": {
+        "evil": {
+          "layer": 14,
+          "curve": {
+            "0.5": 0.62,
+            "1.0": 4.269,
+            "1.5": 28.712,
+            "2.0": 53.465,
+            "2.5": 71.499
+          },
+          "source": "followup/002-living-update/results/rejudged/DeepSeek-R1-Distill-Llama-8B/confirm"
+        },
+        "sycophantic": {
+          "layer": 14,
+          "curve": {
+            "0.5": 9.035,
+            "1.0": 14.489,
+            "1.5": 25.807,
+            "2.0": 49.362,
+            "2.5": 73.633
+          },
+          "source": "followup/002-living-update/results/rejudged/DeepSeek-R1-Distill-Llama-8B/confirm"
+        },
+        "hallucinating": {
+          "layer": 14,
+          "curve": {
+            "0.5": 74.748,
+            "1.0": 82.644,
+            "1.5": 82.235,
+            "2.0": 83.58,
+            "2.5": 87.927
+          },
+          "source": "followup/002-living-update/results/rejudged/DeepSeek-R1-Distill-Llama-8B/confirm"
+        }
+      },
+      "C1_effect": {
+        "evil": {
+          "max_coef_trait_mean": 71.499,
+          "delta_over_baseline": 71.236,
+          "layer": 14
+        },
+        "sycophantic": {
+          "max_coef_trait_mean": 73.633,
+          "delta_over_baseline": 68.962,
+          "layer": 14
+        },
+        "hallucinating": {
+          "max_coef_trait_mean": 87.927,
+          "delta_over_baseline": 15.741,
+          "layer": 14
+        }
+      },
+      "C2_pearson": {
+        "evil": {
+          "value": 0.452,
+          "n": 999,
+          "layer": 14,
+          "source": "followup/002-living-update/workspace/codebase/eval_persona_eval/DeepSeek-R1-Distill-Llama-8B/evil_monitor_{pos,neg}.csv + followup/002-living-update/results/rejudged/DeepSeek-R1-Distill-Llama-8B/evil_monitor_{pos,neg}.csv"
+        },
+        "sycophantic": {
+          "value": 0.482,
+          "n": 1000,
+          "layer": 14,
+          "source": "followup/002-living-update/workspace/codebase/eval_persona_eval/DeepSeek-R1-Distill-Llama-8B/sycophantic_monitor_{pos,neg}.csv + followup/002-living-update/results/rejudged/DeepSeek-R1-Distill-Llama-8B/sycophantic_monitor_{pos,neg}.csv"
+        },
+        "hallucinating": {
+          "value": 0.246,
+          "n": 1000,
+          "layer": 14,
+          "source": "followup/002-living-update/workspace/codebase/eval_persona_eval/DeepSeek-R1-Distill-Llama-8B/hallucinating_monitor_{pos,neg}.csv + followup/002-living-update/results/rejudged/DeepSeek-R1-Distill-Llama-8B/hallucinating_monitor_{pos,neg}.csv"
+        }
+      },
+      "C13_auc": {
+        "evil": {
+          "value": 0.999,
+          "dataset": "evil",
+          "source": "followup/002-living-update/results/step8/DeepSeek-R1-Distill-Llama-8B/step8_separability_summary.csv"
+        },
+        "sycophantic": {
+          "value": 0.996,
+          "dataset": "sycophancy",
+          "source": "followup/002-living-update/results/step8/DeepSeek-R1-Distill-Llama-8B/step8_separability_summary.csv"
+        },
+        "hallucinating": {
+          "value": 0.9986,
+          "dataset": "hallucination",
+          "source": "followup/002-living-update/results/step8/DeepSeek-R1-Distill-Llama-8B/step8_separability_summary.csv"
+        },
+        "EM_like": {
+          "value": 0.9209,
+          "dataset": "mistake_opinions",
+          "source": "followup/002-living-update/results/step8/DeepSeek-R1-Distill-Llama-8B/step8_separability_summary.csv"
+        }
+      },
+      "_meta": {
+        "era": 4,
+        "release": "2025-01",
+        "n_layers": 32,
+        "kind": "new"
+      }
+    },
+    "Qwen3-8B-Nonthinking": {
+      "selected_layer": {
+        "evil": 20,
+        "sycophantic": 23,
+        "hallucinating": 20
+      },
+      "C5_baseline": {
+        "evil": {
+          "value": 0.0,
+          "n": 200,
+          "source": "followup/002-living-update/results/rejudged/Qwen3-8B-Nonthinking/evil_baseline.csv"
+        },
+        "sycophantic": {
+          "value": 6.225,
+          "n": 200,
+          "source": "followup/002-living-update/results/rejudged/Qwen3-8B-Nonthinking/sycophantic_baseline.csv"
+        },
+        "hallucinating": {
+          "value": 26.372,
+          "n": 200,
+          "source": "followup/002-living-update/results/rejudged/Qwen3-8B-Nonthinking/hallucinating_baseline.csv"
+        }
+      },
+      "C8_selected_layer": {
+        "evil": {
+          "value": 20,
+          "source": "followup/002-living-update/results/logs/Qwen3-8B-Nonthinking/sel_layer.json"
+        },
+        "sycophantic": {
+          "value": 23,
+          "source": "followup/002-living-update/results/logs/Qwen3-8B-Nonthinking/sel_layer.json"
+        },
+        "hallucinating": {
+          "value": 20,
+          "source": "followup/002-living-update/results/logs/Qwen3-8B-Nonthinking/sel_layer.json"
+        }
+      },
+      "C1_curve": {
+        "evil": {
+          "layer": 20,
+          "curve": {
+            "0.5": 0.51,
+            "1.0": 48.228,
+            "1.5": 73.369,
+            "2.0": 80.853,
+            "2.5": 82.599
+          },
+          "source": "followup/002-living-update/results/rejudged/Qwen3-8B-Nonthinking/confirm"
+        },
+        "sycophantic": {
+          "layer": 23,
+          "curve": {
+            "0.5": 18.076,
+            "1.0": 62.041,
+            "1.5": 91.958,
+            "2.0": 97.604,
+            "2.5": 97.538
+          },
+          "source": "followup/002-living-update/results/rejudged/Qwen3-8B-Nonthinking/confirm"
+        },
+        "hallucinating": {
+          "layer": 20,
+          "curve": {
+            "0.5": 52.208,
+            "1.0": 80.698,
+            "1.5": 97.301,
+            "2.0": 99.418,
+            "2.5": 99.675
+          },
+          "source": "followup/002-living-update/results/rejudged/Qwen3-8B-Nonthinking/confirm"
+        }
+      },
+      "C1_effect": {
+        "evil": {
+          "max_coef_trait_mean": 82.599,
+          "delta_over_baseline": 82.599,
+          "layer": 20
+        },
+        "sycophantic": {
+          "max_coef_trait_mean": 97.538,
+          "delta_over_baseline": 91.313,
+          "layer": 23
+        },
+        "hallucinating": {
+          "max_coef_trait_mean": 99.675,
+          "delta_over_baseline": 73.303,
+          "layer": 20
+        }
+      },
+      "C2_pearson": {
+        "evil": {
+          "value": 0.648,
+          "n": 993,
+          "layer": 20,
+          "source": "followup/002-living-update/workspace/codebase/eval_persona_eval/Qwen3-8B-Nonthinking/evil_monitor_{pos,neg}.csv + followup/002-living-update/results/rejudged/Qwen3-8B-Nonthinking/evil_monitor_{pos,neg}.csv"
+        },
+        "sycophantic": {
+          "value": 0.952,
+          "n": 1000,
+          "layer": 23,
+          "source": "followup/002-living-update/workspace/codebase/eval_persona_eval/Qwen3-8B-Nonthinking/sycophantic_monitor_{pos,neg}.csv + followup/002-living-update/results/rejudged/Qwen3-8B-Nonthinking/sycophantic_monitor_{pos,neg}.csv"
+        },
+        "hallucinating": {
+          "value": 0.903,
+          "n": 1000,
+          "layer": 20,
+          "source": "followup/002-living-update/workspace/codebase/eval_persona_eval/Qwen3-8B-Nonthinking/hallucinating_monitor_{pos,neg}.csv + followup/002-living-update/results/rejudged/Qwen3-8B-Nonthinking/hallucinating_monitor_{pos,neg}.csv"
+        }
+      },
+      "C13_auc": {
+        "evil": {
+          "value": 1.0,
+          "dataset": "evil",
+          "source": "followup/002-living-update/results/step8/Qwen3-8B-Nonthinking/step8_separability_summary.csv"
+        },
+        "sycophantic": {
+          "value": 1.0,
+          "dataset": "sycophancy",
+          "source": "followup/002-living-update/results/step8/Qwen3-8B-Nonthinking/step8_separability_summary.csv"
+        },
+        "hallucinating": {
+          "value": 0.999,
+          "dataset": "hallucination",
+          "source": "followup/002-living-update/results/step8/Qwen3-8B-Nonthinking/step8_separability_summary.csv"
+        },
+        "EM_like": {
+          "value": 0.9653,
+          "dataset": "mistake_opinions",
+          "source": "followup/002-living-update/results/step8/Qwen3-8B-Nonthinking/step8_separability_summary.csv"
+        }
+      },
+      "_meta": {
+        "era": 5,
+        "release": "2025-04",
+        "n_layers": 36,
+        "kind": "new"
+      }
+    }
+  }
+}

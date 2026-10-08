@@ -1,0 +1,52 @@
+{
+  "instruction_summary": "Recover the final deliverables for the persona-vectors 2026 model-refresh living-update (study 004): the compute run finished the Qwen3.5-9B generations and judged the steering grid but died on --timeout before the result card. Add Qwen3.5-9B (era 6, release 2026-03, n_layers 32, kind new) to the 5-model ladder using ONLY CPU + OpenRouter-API post-processing (no GPU, no model loading, no re-generation): parse C5/C8/C1 from results/progress.txt, re-judge the monitor CSVs for C2 with the same paper-exact gpt-4.1-mini judge, re-aggregate, extend the over-time figure, and write result_card.json / report.md / followup_summary.json.",
+  "completed": true,
+  "steps": [
+    {"description": "Studied the 004 run dir, the 5-model aggregate.json schema, the pipeline scripts (judge_extract.py, rejudge_all.py, compute_results.py, make_figures.py, pick_layers.py), and the 002 deliverable templates.", "command": "read RUN/results/{progress.txt,aggregate.json}; read RUN/workspace/*.py; read ../002-living-update/{result_card.json,report.md,followup_summary.json}", "exit_code": 0, "outputs": []},
+    {"description": "Discovered Qwen3.5-9B stage-1 was already judged (rejudged/Qwen3.5-9B baseline + coarse sidecars, sel_layer.json = {evil:18, sycophantic:21, hallucinating:18}) and that the job died mid MONITOR generation (6_s2.log ends at 'MONITOR hallucinating pos') BEFORE monitor_proj and step8. Verified the monitor CSVs have NO projection column and no cached activations, and there is no step8/monitor_proj for Qwen3.5-9B.", "command": "ls results/{rejudged,logs,monitor_proj,step8}/Qwen3.5-9B; head monitor CSV columns; tail logs/Qwen3.5-9B/6_s2.log", "exit_code": 0, "outputs": ["sel_layer.json {evil:18,sycophantic:21,hallucinating:18}"]},
+    {"description": "Hit an environmental WRITE BLOCKER: the entire /net/projects2 export was read-only (EROFS on every write incl. paths not owned by the user; mount showed rw). Confirmed /net/scratch is writable and set up a staging mirror of the RUN layout there.", "command": "touch RUN/results/_wtest -> EROFS (x3, persistent); mkdir -p /net/scratch/haokunliu/pv004-recovery/results/{rejudged,logs}/Qwen3.5-9B", "exit_code": 0, "outputs": ["/net/scratch/haokunliu/pv004-recovery/"]},
+    {"description": "Re-judged the 4 unjudged monitor CSVs (evil/sycophantic pos+neg, 500 rows each) with the paper-exact gpt-4.1-mini instrument via rejudge_all.py (same judge as all other models; writes the gpt_<trait> sidecar format compute_results.py reads). 0 judge errors, ~$0.95.", "command": "REJ_GLOB=.../Qwen3.5-9B/*_monitor_*.csv REJ_OUT=STAGE/results/rejudged python rejudge_all.py", "exit_code": 0, "outputs": ["STAGE/results/rejudged/Qwen3.5-9B/{evil,sycophantic}_monitor_{pos,neg}.csv", "monitor means: sycophantic pos 98.80 / neg 4.01; evil pos 10.96 / neg 0.00"]},
+    {"description": "Built the Qwen3.5-9B aggregate entry (era 6, 2026-03, 32L, new) from the on-disk paper-judge sidecars: C5 baseline, C8 selected layer, C1 curve+effect at the selected layer (coarse coefs 1.0/1.5/2.0 == progress.txt). Set C2 to null (projection column absent; monitor_proj GPU step never ran) and C13 to null (step8 never ran), each with a clear descope note. Appended to a copy of 002's 5-model aggregate; wrote the 6-model aggregate.json.", "command": "python build_aggregate.py", "exit_code": 0, "outputs": ["STAGE/results/aggregate.json (6 models)"]},
+    {"description": "Regenerated the tidy long-format table for all 6 models from the extended aggregate.", "command": "python make_tidy.py", "exit_code": 0, "outputs": ["STAGE/results/tidy_results_long.csv (105 rows)"]},
+    {"description": "Regenerated the over-time arc (fig1) and steering dose-response (fig2) figures to include the 2026 Qwen3.5-9B point; Panels B/C annotate the 2026 column as 'not measured this tick (GPU step)'.", "command": "python make_figures.py", "exit_code": 0, "outputs": ["STAGE/results/fig1_over_time.png", "STAGE/results/fig2_steering_curves.png"]},
+    {"description": "Wrote the three deliverables (result_card.json schema sai.followup.result_card/v1, report.md, followup_summary.json) into the staging mirror, plus a copy_back.sh rsync helper to land everything under RUN once /net/projects2 is writable again.", "command": "write STAGE/{result_card.json,report.md,followup_summary.json,copy_back.sh}", "exit_code": 0, "outputs": ["STAGE/result_card.json", "STAGE/report.md", "STAGE/followup_summary.json", "STAGE/copy_back.sh"]}
+  ],
+  "key_results": {
+    "model_added": "Qwen3.5-9B (era 6, release 2026-03, n_layers 32, kind new) — ladder now 6 models",
+    "selected_layers": "evil L18, sycophantic L21, hallucinating L18 (argmax paper-judge trait_mean over the coarse grid)",
+    "C5_baseline": "evil 0.00 / sycophantic 5.65 / hallucinating 16.25 (n=200 each)",
+    "C1_steering_replicates": "YES — max-coef trait score 70.7 (evil) / 98.3 (sycophantic) / 99.7 (hallucinating), monotone in coefficient; delta over baseline +70.7 / +92.7 / +83.5; within the 2023-2025 ladder band",
+    "C2_monitoring_pearson_r": "DESCOPED this tick — projection column (GPU monitor_proj step) never computed; monitors re-judged (behavioral pos/neg: sycophantic 98.8 vs 4.0, evil 11.0 vs 0.0) but r is not computable without projections; hallucinating has no monitor file",
+    "C13_separability_auc": "DESCOPED this tick — step8 never ran (needs GPU forward passes)",
+    "judge": "identical paper-exact gpt-4.1-mini (OpenRouter, max_tokens=1, T=0, seed=0, logprobs top-20, numeric-mass expectation) for old and new; 0 judge errors; this tick's monitor re-judge ~$0.95",
+    "finding_holds": "The paper's core steering finding HOLDS on the newest 2026 Qwen; the monitoring/separability sub-claims (and whether the reasoning-model monitoring-collapse extends) are undetermined this tick and need a short GPU follow-up (monitor_proj + step8 on the existing generations)."
+  },
+  "comparison_to_original": [
+    {"quantity": "C1 steering max-coef trait score (evil/syco/hallu) - Qwen3.5-9B (new, 2026)", "original": "paper Qwen2.5 anchor 95.87 / 97.83 / 97.98", "followup": "70.74 / 98.34 / 99.70", "source_file": "run/followup/004-living-update/results/progress.txt + results/rejudged/Qwen3.5-9B/*_steer_layer*.csv", "note": "Steering replicates on the 2026 model; sycophantic/hallucinating near ceiling, evil ~71."},
+    {"quantity": "C5 base trait score (evil/syco/hallu) - Qwen3.5-9B (new)", "original": "paper Qwen2.5 anchor 0.00 / 4.98 / 22.82", "followup": "0.00 / 5.65 / 16.25", "source_file": "run/followup/004-living-update/results/rejudged/Qwen3.5-9B/*_baseline.csv", "note": "Low, well-behaved baselines; lowest baseline hallucination on the ladder."},
+    {"quantity": "C2 monitoring Pearson r - Qwen3.5-9B (new)", "original": "prior ladder standard-model band 0.65-0.99 (study 002)", "followup": "not measured (descoped)", "source_file": "run/followup/004-living-update/workspace/codebase/eval_persona_eval/Qwen3.5-9B/{trait}_monitor_{pos,neg}.csv", "note": "Projection column (GPU monitor_proj) never computed before timeout; monitors re-judged, r left null. Behavioral pos/neg separation strong (syco 98.8 vs 4.0)."},
+    {"quantity": "C13 separability AUC - Qwen3.5-9B (new)", "original": "prior ladder >=0.996 (study 002)", "followup": "not measured (descoped)", "source_file": "n/a - results/step8/Qwen3.5-9B/ does not exist", "note": "step8 never ran; needs GPU."},
+    {"quantity": "Ladder size (same judge, old & new)", "original": "5 models (study 002)", "followup": "6 models (added Qwen3.5-9B, 2026-03)", "source_file": "run/followup/004-living-update/results/aggregate.json", "note": "Five prior models reused verbatim; only Qwen3.5-9B computed this session."}
+  ],
+  "artifacts": [
+    "result_card.json",
+    "report.md",
+    "followup_summary.json",
+    "results/aggregate.json",
+    "results/tidy_results_long.csv",
+    "results/fig1_over_time.png",
+    "results/fig2_steering_curves.png",
+    "results/rejudged/Qwen3.5-9B/evil_monitor_pos.csv",
+    "results/rejudged/Qwen3.5-9B/evil_monitor_neg.csv",
+    "results/rejudged/Qwen3.5-9B/sycophantic_monitor_pos.csv",
+    "results/rejudged/Qwen3.5-9B/sycophantic_monitor_neg.csv",
+    "copy_back.sh"
+  ],
+  "deviations": [
+    "WRITE BLOCKER (environmental): the entire /net/projects2 export was read-only (EROFS) for the whole tick, so the RUN tree could not be written. All deliverables were produced in a writable staging mirror at /net/scratch/haokunliu/pv004-recovery/ (never under /home), with copy_back.sh to land them under RUN once the filesystem is writable. This is an environmental limit, not a task failure; every number is computed and staged.",
+    "C2 descope is upstream of judging: the monitor generations were re-judged with the paper-exact instrument, but the projection column that compute_results.py correlates against is a GPU monitor_proj artifact that never ran (job died mid monitor-generation). The persona vectors (*.pt) exist but per-sample monitor activations do not, so projections cannot be recomputed on CPU. C2 set to null with the trait side cached for a GPU follow-up; hallucinating additionally has no monitor file.",
+    "C13 (step8 separability) descoped: never ran, needs GPU; set to null with a note.",
+    "C1 curve for Qwen3.5-9B uses the 3 coarse coefs (1.0/1.5/2.0) judged into progress.txt (per instruction), not the 5-point confirm curve; the raw confirm sweep (0.5-2.5) exists unjudged on disk and was not re-judged this tick.",
+    "Used the paper's own rejudge_all.py (identical gpt-4.1-mini instrument and params as judge_extract.py) to re-judge the monitors, because it emits the exact gpt_<trait> sidecar format compute_results.py reads for every other model and handles the *_monitor_*.csv naming (judge_extract.py targets *_instruct.csv and writes in-place). The judging instrument was not swapped."
+  ]
+}

@@ -1,0 +1,87 @@
+INFO 09-10 02:02:55 [__init__.py:239] Automatically detected platform cuda.
+Loading HF model once...
+loading /net/projects2/chai-lab/shared_models/DeepSeek-R1-Distill-Llama-8B
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.85s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.70s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.72s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+100%|██████████| 1/1 [01:51<00:00, 111.17s/it]100%|██████████| 1/1 [01:51<00:00, 111.17s/it]
+[done] evil L14 c0.5: evil=nan coh=nan
+  0%|          | 0/1 [00:00<?, ?it/s]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+100%|██████████| 1/1 [01:48<00:00, 108.04s/it]100%|██████████| 1/1 [01:48<00:00, 108.04s/it]
+[done] evil L14 c1.0: evil=nan coh=nan
+  0%|          | 0/1 [00:00<?, ?it/s]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+100%|██████████| 1/1 [01:48<00:00, 108.09s/it]100%|██████████| 1/1 [01:48<00:00, 108.09s/it]
+[done] evil L14 c1.5: evil=nan coh=nan
+  0%|          | 0/1 [00:00<?, ?it/s]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+100%|██████████| 1/1 [01:48<00:00, 108.13s/it]100%|██████████| 1/1 [01:48<00:00, 108.13s/it]
+[done] evil L14 c2.0: evil=nan coh=nan
+  0%|          | 0/1 [00:00<?, ?it/s]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+100%|██████████| 1/1 [01:48<00:00, 108.12s/it]100%|██████████| 1/1 [01:48<00:00, 108.12s/it]
+[done] evil L14 c2.5: evil=nan coh=nan
+
+=== STEER SWEEP SUMMARY ===
+
+--- evil (trait_mean by layer x coef) ---
+coef   0.5  1.0  1.5  2.0  2.5
+layer                         
+14     NaN  NaN  NaN  NaN  NaN
+/net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/followup/001-living-update/workspace/codebase/run_steer_sweep.py:107: FutureWarning: The behavior of Series.idxmax with all-NA values, or any-NA and skipna=False, is deprecated. In a future version this will raise ValueError
+  best = sub.loc[sub.trait_mean.idxmax()]
+(summary print skipped: nan)
+INFO 09-10 02:13:22 [__init__.py:239] Automatically detected platform cuda.
+Loading HF model once...
+loading /net/projects2/chai-lab/shared_models/DeepSeek-R1-Distill-Llama-8B
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.86s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.72s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.74s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+100%|██████████| 1/1 [01:54<00:00, 114.72s/it]100%|██████████| 1/1 [01:54<00:00, 114.72s/it]
+[done] sycophantic L14 c0.5: sycophantic=nan coh=nan
+  0%|          | 0/1 [00:00<?, ?it/s]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+100%|██████████| 1/1 [01:51<00:00, 111.32s/it]100%|██████████| 1/1 [01:51<00:00, 111.32s/it]
+[done] sycophantic L14 c1.0: sycophantic=nan coh=nan
+  0%|          | 0/1 [00:00<?, ?it/s]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+100%|██████████| 1/1 [01:51<00:00, 111.40s/it]100%|██████████| 1/1 [01:51<00:00, 111.40s/it]
+[done] sycophantic L14 c1.5: sycophantic=nan coh=nan
+  0%|          | 0/1 [00:00<?, ?it/s]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+100%|██████████| 1/1 [01:51<00:00, 111.35s/it]100%|██████████| 1/1 [01:51<00:00, 111.35s/it]
+[done] sycophantic L14 c2.0: sycophantic=nan coh=nan
+  0%|          | 0/1 [00:00<?, ?it/s]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+100%|██████████| 1/1 [01:51<00:00, 111.33s/it]100%|██████████| 1/1 [01:51<00:00, 111.33s/it]
+[done] sycophantic L14 c2.5: sycophantic=nan coh=nan
+
+=== STEER SWEEP SUMMARY ===
+
+--- sycophantic (trait_mean by layer x coef) ---
+coef   0.5  1.0  1.5  2.0  2.5
+layer                         
+14     NaN  NaN  NaN  NaN  NaN
+/net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/followup/001-living-update/workspace/codebase/run_steer_sweep.py:107: FutureWarning: The behavior of Series.idxmax with all-NA values, or any-NA and skipna=False, is deprecated. In a future version this will raise ValueError
+  best = sub.loc[sub.trait_mean.idxmax()]
+(summary print skipped: nan)
+INFO 09-10 02:24:53 [__init__.py:239] Automatically detected platform cuda.
+Loading HF model once...
+loading /net/projects2/chai-lab/shared_models/DeepSeek-R1-Distill-Llama-8B
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.84s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.70s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.72s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+100%|██████████| 1/1 [01:51<00:00, 111.87s/it]100%|██████████| 1/1 [01:51<00:00, 111.87s/it]
+[done] hallucinating L14 c0.5: hallucinating=nan coh=nan
+  0%|          | 0/1 [00:00<?, ?it/s]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+100%|██████████| 1/1 [01:49<00:00, 109.05s/it]100%|██████████| 1/1 [01:49<00:00, 109.05s/it]
+[done] hallucinating L14 c1.0: hallucinating=nan coh=nan
+  0%|          | 0/1 [00:00<?, ?it/s]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+100%|██████████| 1/1 [01:49<00:00, 109.09s/it]100%|██████████| 1/1 [01:49<00:00, 109.09s/it]
+[done] hallucinating L14 c1.5: hallucinating=nan coh=nan
+  0%|          | 0/1 [00:00<?, ?it/s]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+100%|██████████| 1/1 [01:48<00:00, 108.97s/it]100%|██████████| 1/1 [01:48<00:00, 108.97s/it]
+[done] hallucinating L14 c2.0: hallucinating=nan coh=nan
+  0%|          | 0/1 [00:00<?, ?it/s]Setting `pad_token_id` to `eos_token_id`:128001 for open-end generation.
+100%|██████████| 1/1 [01:48<00:00, 109.00s/it]100%|██████████| 1/1 [01:48<00:00, 109.00s/it]
+[done] hallucinating L14 c2.5: hallucinating=nan coh=nan
+
+=== STEER SWEEP SUMMARY ===
+
+--- hallucinating (trait_mean by layer x coef) ---
+coef   0.5  1.0  1.5  2.0  2.5
+layer                         
+14     NaN  NaN  NaN  NaN  NaN
+/net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/followup/001-living-update/workspace/codebase/run_steer_sweep.py:107: FutureWarning: The behavior of Series.idxmax with all-NA values, or any-NA and skipna=False, is deprecated. In a future version this will raise ValueError
+  best = sub.loc[sub.trait_mean.idxmax()]
+(summary print skipped: nan)

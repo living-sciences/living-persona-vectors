@@ -1,0 +1,253 @@
+{
+  "univariate": {
+    "steer_delta": {
+      "log10_params": {
+        "slope": -161.2744,
+        "intercept": 1672.2889,
+        "r": -0.155,
+        "r2": 0.024,
+        "p": 0.5817
+      },
+      "era": {
+        "slope": -2.4077,
+        "intercept": 84.0435,
+        "r": -0.167,
+        "r2": 0.0279,
+        "p": 0.5519
+      },
+      "depth_frac": {
+        "slope": 122.8984,
+        "intercept": 8.9702,
+        "r": 0.577,
+        "r2": 0.3329,
+        "p": 0.0243
+      },
+      "alignment_anova": {
+        "F": 3.679,
+        "p": 0.0567,
+        "group_means": {
+          "base-RLHF": 80.878,
+          "newer-RLHF": 85.183,
+          "reasoning-distill": 51.98
+        }
+      }
+    },
+    "monitor_r": {
+      "log10_params": {
+        "slope": -3.0398,
+        "intercept": 30.8554,
+        "r": -0.273,
+        "r2": 0.0743,
+        "p": 0.3257
+      },
+      "era": {
+        "slope": -0.0664,
+        "intercept": 0.9823,
+        "r": -0.43,
+        "r2": 0.1852,
+        "p": 0.1094
+      },
+      "depth_frac": {
+        "slope": 1.3144,
+        "intercept": 0.0574,
+        "r": 0.576,
+        "r2": 0.3322,
+        "p": 0.0245
+      },
+      "alignment_anova": {
+        "F": 27.713,
+        "p": 0.0,
+        "group_means": {
+          "base-RLHF": 0.919,
+          "newer-RLHF": 0.842,
+          "reasoning-distill": 0.393
+        }
+      }
+    }
+  },
+  "multivariate": {
+    "steer_delta": {
+      "coefficients": {
+        "intercept": {
+          "coef": 3627.6216,
+          "se": 8054.3782,
+          "t": 0.45,
+          "p": 0.6631
+        },
+        "log10_params": {
+          "coef": -365.9599,
+          "se": 821.663,
+          "t": -0.445,
+          "p": 0.6666
+        },
+        "era": {
+          "coef": 7.4988,
+          "se": 19.7567,
+          "t": 0.38,
+          "p": 0.7131
+        },
+        "depth_frac": {
+          "coef": 109.0616,
+          "se": 104.4479,
+          "t": 1.044,
+          "p": 0.3236
+        },
+        "align_newer": {
+          "coef": -18.4657,
+          "se": 45.7315,
+          "t": -0.404,
+          "p": 0.6958
+        },
+        "align_reason": {
+          "coef": -28.6231,
+          "se": 30.9346,
+          "t": -0.925,
+          "p": 0.379
+        }
+      },
+      "r2": 0.4564,
+      "adj_r2": 0.1544,
+      "n": 15,
+      "dof": 9,
+      "cond_number": 16839.2
+    },
+    "monitor_r": {
+      "coefficients": {
+        "intercept": {
+          "coef": 9.4207,
+          "se": 45.5531,
+          "t": 0.207,
+          "p": 0.8408
+        },
+        "log10_params": {
+          "coef": -0.8982,
+          "se": 4.6471,
+          "t": -0.193,
+          "p": 0.851
+        },
+        "era": {
+          "coef": 0.0316,
+          "se": 0.1117,
+          "t": 0.283,
+          "p": 0.7836
+        },
+        "depth_frac": {
+          "coef": 0.609,
+          "se": 0.5907,
+          "t": 1.031,
+          "p": 0.3295
+        },
+        "align_newer": {
+          "coef": -0.1958,
+          "se": 0.2586,
+          "t": -0.757,
+          "p": 0.4684
+        },
+        "align_reason": {
+          "coef": -0.5241,
+          "se": 0.175,
+          "t": -2.995,
+          "p": 0.0151
+        }
+      },
+      "r2": 0.8483,
+      "adj_r2": 0.764,
+      "n": 15,
+      "dof": 9,
+      "cond_number": 16839.2
+    },
+    "_note": "n=15 obs cluster into 5 models; era near-collinear with alignment; params near-constant. Treat as descriptive."
+  },
+  "depth_frac_vs_era": {
+    "slope": 0.0052,
+    "p": 0.7851,
+    "r2": 0.0059,
+    "mean_depth_frac": 0.5521,
+    "std_depth_frac": 0.0991,
+    "min": 0.4375,
+    "max": 0.7143,
+    "interpretation": "slope~0 & CI spans 0 => era-invariant late-layer locus"
+  },
+  "parametric_monitor_r": {
+    "coefficients": {
+      "a_intercept": {
+        "coef": 0.2322,
+        "se": 0.2549,
+        "t": 0.911,
+        "p": 0.3802
+      },
+      "b_era": {
+        "coef": -0.0737,
+        "se": 0.0297,
+        "t": -2.483,
+        "p": 0.0288
+      },
+      "c_depth_frac": {
+        "coef": 1.3982,
+        "se": 0.4385,
+        "t": 3.188,
+        "p": 0.0078
+      }
+    },
+    "r2": 0.5589,
+    "adj_r2": 0.4853,
+    "n": 15,
+    "dof": 12,
+    "cond_number": 41.5
+  },
+  "parametric_steer_logistic_per_era": {
+    "Mistral-7B-Instruct-v0.2": {
+      "era": 1,
+      "L": 103.49,
+      "k_slope": 2.341,
+      "x0_midpoint": 1.215,
+      "r2": 0.7509,
+      "n_points": 15
+    },
+    "Llama-3.1-8B-Instruct": {
+      "era": 2,
+      "L": 97.18,
+      "k_slope": 3.384,
+      "x0_midpoint": 1.121,
+      "r2": 0.8792,
+      "n_points": 15
+    },
+    "Qwen2.5-7B-Instruct": {
+      "era": 3,
+      "L": 100.34,
+      "k_slope": 3.064,
+      "x0_midpoint": 1.246,
+      "r2": 0.8972,
+      "n_points": 15
+    },
+    "DeepSeek-R1-Distill-Llama-8B": {
+      "era": 4,
+      "L": 110.0,
+      "k_slope": 1.016,
+      "x0_midpoint": 1.734,
+      "r2": 0.3325,
+      "n_points": 15
+    },
+    "Qwen3-8B-Nonthinking": {
+      "era": 5,
+      "L": 93.65,
+      "k_slope": 3.708,
+      "x0_midpoint": 0.795,
+      "r2": 0.8022,
+      "n_points": 15
+    }
+  },
+  "steer_midpoint_vs_era": {
+    "slope": -0.0227,
+    "intercept": 1.2903,
+    "r2": 0.0113,
+    "p": 0.8648,
+    "x0_by_era": {
+      "1": 1.215,
+      "2": 1.121,
+      "3": 1.246,
+      "4": 1.734,
+      "5": 0.795
+    }
+  }
+}

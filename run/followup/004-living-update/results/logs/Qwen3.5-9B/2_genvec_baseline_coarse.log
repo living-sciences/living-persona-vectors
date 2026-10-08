@@ -1,0 +1,60 @@
+[Qwen3.5-9B] loading model /net/projects2/chai-lab/shared_models/hub/models--Qwen--Qwen3.5-9B/snapshots/c202236235762e1c871ad0ccb60c8ee5ba337b9a (thinking=False) ...
+[Qwen3.5-9B] loaded in 7s | decoder=model.language_model.layers n_layers=32 hidden=4096
+[skip] eval_persona_extract/Qwen3.5-9B/evil_pos_instruct.csv
+[skip] eval_persona_extract/Qwen3.5-9B/evil_neg_instruct.csv
+[skip] eval_persona_extract/Qwen3.5-9B/sycophantic_pos_instruct.csv
+[skip] eval_persona_extract/Qwen3.5-9B/sycophantic_neg_instruct.csv
+[skip] eval_persona_extract/Qwen3.5-9B/hallucinating_pos_instruct.csv
+[skip] eval_persona_extract/Qwen3.5-9B/hallucinating_neg_instruct.csv
+
+### extract done — run judge_extract externally, then genvec runs here after re-invoke if needed
+=== evil: effective pairs = 166 ===
+saved evil vectors shape (33, 4096)
+=== sycophantic: effective pairs = 989 ===
+saved sycophantic vectors shape (33, 4096)
+=== hallucinating: effective pairs = 626 ===
+saved hallucinating vectors shape (33, 4096)
+ACTIVE: ['evil', 'sycophantic', 'hallucinating']
+=== BASELINE evil: 200 gens ===
+saved eval_persona_eval/Qwen3.5-9B/evil_baseline.csv rows=200
+=== BASELINE sycophantic: 200 gens ===
+saved eval_persona_eval/Qwen3.5-9B/sycophantic_baseline.csv rows=200
+=== BASELINE hallucinating: 200 gens ===
+saved eval_persona_eval/Qwen3.5-9B/hallucinating_baseline.csv rows=200
+=== COARSE evil L14 c1.0: 100 gens ===
+=== COARSE evil L14 c1.5: 100 gens ===
+=== COARSE evil L14 c2.0: 100 gens ===
+=== COARSE evil L18 c1.0: 100 gens ===
+=== COARSE evil L18 c1.5: 100 gens ===
+=== COARSE evil L18 c2.0: 100 gens ===
+=== COARSE evil L21 c1.0: 100 gens ===
+=== COARSE evil L21 c1.5: 100 gens ===
+=== COARSE evil L21 c2.0: 100 gens ===
+=== COARSE evil L24 c1.0: 100 gens ===
+=== COARSE evil L24 c1.5: 100 gens ===
+=== COARSE evil L24 c2.0: 100 gens ===
+=== COARSE sycophantic L14 c1.0: 100 gens ===
+=== COARSE sycophantic L14 c1.5: 100 gens ===
+=== COARSE sycophantic L14 c2.0: 100 gens ===
+=== COARSE sycophantic L18 c1.0: 100 gens ===
+=== COARSE sycophantic L18 c1.5: 100 gens ===
+=== COARSE sycophantic L18 c2.0: 100 gens ===
+=== COARSE sycophantic L21 c1.0: 100 gens ===
+=== COARSE sycophantic L21 c1.5: 100 gens ===
+=== COARSE sycophantic L21 c2.0: 100 gens ===
+=== COARSE sycophantic L24 c1.0: 100 gens ===
+=== COARSE sycophantic L24 c1.5: 100 gens ===
+=== COARSE sycophantic L24 c2.0: 100 gens ===
+=== COARSE hallucinating L14 c1.0: 100 gens ===
+=== COARSE hallucinating L14 c1.5: 100 gens ===
+=== COARSE hallucinating L14 c2.0: 100 gens ===
+=== COARSE hallucinating L18 c1.0: 100 gens ===
+=== COARSE hallucinating L18 c1.5: 100 gens ===
+=== COARSE hallucinating L18 c2.0: 100 gens ===
+=== COARSE hallucinating L21 c1.0: 100 gens ===
+=== COARSE hallucinating L21 c1.5: 100 gens ===
+=== COARSE hallucinating L21 c2.0: 100 gens ===
+=== COARSE hallucinating L24 c1.0: 100 gens ===
+=== COARSE hallucinating L24 c1.5: 100 gens ===
+=== COARSE hallucinating L24 c2.0: 100 gens ===
+### s1 complete

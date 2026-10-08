@@ -1,0 +1,7 @@
+Loading HF model once...
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.84s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.69s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.71s/it]
+evil pos: projected 500 rows -> DeepSeek-R1-Distill-Llama-8B_evil_response_avg_diff_prompt_last_proj_layer14
+evil neg: projected 500 rows -> DeepSeek-R1-Distill-Llama-8B_evil_response_avg_diff_prompt_last_proj_layer14
+sycophantic pos: projected 500 rows -> DeepSeek-R1-Distill-Llama-8B_sycophantic_response_avg_diff_prompt_last_proj_layer14
+sycophantic neg: projected 500 rows -> DeepSeek-R1-Distill-Llama-8B_sycophantic_response_avg_diff_prompt_last_proj_layer14
+hallucinating pos: projected 500 rows -> DeepSeek-R1-Distill-Llama-8B_hallucinating_response_avg_diff_prompt_last_proj_layer14

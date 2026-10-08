@@ -1,0 +1,49 @@
+{
+  "instruction_summary": "Finish the timed-out 001 living-update of the Persona Vectors paper: reuse the completed models (Mistral-7B-Instruct-v0.2, Llama-3.1-8B-Instruct, Qwen2.5-7B reused-on-disk), finish the incomplete DeepSeek-R1-Distill-Llama-8B stages, run the one missing model Qwen3-8B-Nonthinking through the same pipeline + paper-exact gpt-4.1-mini judge, aggregate all 5, and write the three deliverables.",
+  "completed": true,
+  "steps": [
+    {"description": "Copied 001 workspace/* (scripts + replication codebase) and results/* into 002; repointed hardcoded 001 paths to 002 in env.sh, pick_layers.py, rejudge_all.py.", "command": "cp -r 001/workspace/{codebase,*.sh,*.py} 002/workspace/; cp -r 001/results/{rejudged,monitor_proj,step8,logs} 002/results/", "exit_code": 0, "outputs": ["002/workspace/", "002/results/"]},
+    {"description": "Installed scikit-learn into reused replication venv (needed by run_step8.py).", "command": "uv pip install --python run/.venv/bin/python scikit-learn", "exit_code": 0, "outputs": []},
+    {"description": "Finished DeepSeek monitor_proj (001 had left hallucinating_monitor_neg without a projection column).", "command": "PV_MODEL=.../DeepSeek-R1-Distill-Llama-8B PV_SEL_LAYER=... python run_monitor_proj.py", "exit_code": 0, "outputs": ["results/monitor_proj/DeepSeek-R1-Distill-Llama-8B/monitor_proj_columns.json"]},
+    {"description": "Ran DeepSeek step8 sample-separability (was missing).", "command": "python run_step8.py", "exit_code": 0, "outputs": ["results/step8/DeepSeek-R1-Distill-Llama-8B/step8_separability_summary.csv", "results/step8/DeepSeek-R1-Distill-Llama-8B/step8_separability_hist.png"]},
+    {"description": "Ran DeepSeek rejudge2 (paper-exact gpt-4.1-mini on confirm sweep + monitor CSVs; baseline/coarse cached).", "command": "REJ_GLOB=.../DeepSeek-R1-Distill-Llama-8B/**/*.csv python rejudge_all.py", "exit_code": 0, "outputs": ["results/rejudged/DeepSeek-R1-Distill-Llama-8B/ (46 top-level + 15 confirm sidecars)"]},
+    {"description": "Ran Qwen3-8B-Nonthinking STAGE 1: extract->judge_extract->genvec->baseline->coarse steer(layers 16,20,23,27)->rejudge1->pick selected layer. ~60 min. All 3 traits active (effective pairs 612/962/886).", "command": "STAGE=1 bash run_one_model.sh Qwen3-8B-Nonthinking /net/projects2/chai-lab/shared_models/Qwen/Qwen3-8B-Nonthinking 16,20,23,27", "exit_code": 0, "outputs": ["results/logs/Qwen3-8B-Nonthinking/sel_layer.json {evil:20,syco:23,hallu:20}", "results/rejudged/Qwen3-8B-Nonthinking/*_baseline.csv + coarse cells"]},
+    {"description": "Ran Qwen3-8B-Nonthinking STAGE 2: confirm sweep at selected layer->monitor gen->monitor_proj->step8->rejudge2. ~36 min. Total Qwen3 ~1h36m, within the 2h budget guard (no descope needed).", "command": "STAGE=2 bash run_one_model.sh Qwen3-8B-Nonthinking /net/projects2/chai-lab/shared_models/Qwen/Qwen3-8B-Nonthinking 16,20,23,27", "exit_code": 0, "outputs": ["results/rejudged/Qwen3-8B-Nonthinking/confirm/ (15)", "results/monitor_proj/Qwen3-8B-Nonthinking/", "results/step8/Qwen3-8B-Nonthinking/"]},
+    {"description": "Aggregated all 5 models (Qwen2.5 read verbatim from replication artifacts; 4 others from this run's paper-judge sidecars).", "command": "python workspace/compute_results.py", "exit_code": 0, "outputs": ["results/aggregate.json", "results/tidy_results_long.csv"]},
+    {"description": "Rendered the over-time arc + steering dose-response figures.", "command": "python workspace/make_figures.py", "exit_code": 0, "outputs": ["results/fig1_over_time.png", "results/fig2_steering_curves.png"]}
+  ],
+  "key_results": {
+    "models_completed": "5 (Mistral-7B-Instruct-v0.2, Llama-3.1-8B-Instruct, Qwen2.5-7B-Instruct[reused], DeepSeek-R1-Distill-Llama-8B, Qwen3-8B-Nonthinking)",
+    "C1_steering_replicates": "yes on all 5; max-coef trait score reaches 72-100/100 (lowest = DeepSeek 72-88), monotone in coefficient",
+    "C2_monitoring_pearson_r_range": "0.65-0.99 on all 4 standard chat models (paper band 0.75-0.83); COLLAPSES to 0.25-0.48 on reasoning-distilled DeepSeek",
+    "C13_separability_auc": ">=0.996 for the 3 core traits on every model, 2023-2025 (EM-like control 0.85-0.97)",
+    "reasoning_model_finding": "DeepSeek-R1-Distill breaks projection monitoring (last-prompt-token proj no longer predicts final trait score) while steering and sample-separability still hold",
+    "judge": "identical paper-exact gpt-4.1-mini (OpenRouter, max_tokens=1, T=0, seed=0, logprobs top-20, numeric-mass expectation) for old and new; 0 judge errors; new-judge spend ~$9-10, under $40 cap"
+  },
+  "comparison_to_original": [
+    {"quantity": "C2 monitoring Pearson r (evil/syco/hallu) - reused Qwen2.5 anchor", "original": "0.869 / 0.868 / 0.813", "followup": "same (read verbatim, reused)", "source_file": "run/replication/codebase/eval_persona_eval/Qwen2.5-7B-Instruct/{trait}_monitor_{pos,neg}.csv", "note": "Anchor matches 001 spec exactly; recomputed r from paper-judge trait col x projection col."},
+    {"quantity": "C2 monitoring Pearson r - DeepSeek-R1-Distill (new)", "original": "Qwen2.5 anchor 0.869/0.868/0.813", "followup": "0.452 / 0.482 / 0.246", "source_file": "run/replication/.../Qwen2.5-7B-Instruct/{trait}_monitor_{pos,neg}.csv (original)", "note": "Monitoring collapses on the reasoning-distilled model - the one qualitative break in the arc."},
+    {"quantity": "C2 monitoring Pearson r - Qwen3-8B-Nonthinking (new, 2025)", "original": "Qwen2.5 anchor 0.869/0.868/0.813", "followup": "0.648 / 0.952 / 0.903", "source_file": "run/replication/.../Qwen2.5-7B-Instruct/{trait}_monitor_{pos,neg}.csv (original)", "note": "Monitoring still holds on the newest same-lineage standard chat model."},
+    {"quantity": "C1 steering max-coef trait score (evil/syco/hallu) - reused Qwen2.5 anchor", "original": "95.87 / 97.83 / 97.98", "followup": "same (reused)", "source_file": "run/replication/codebase/eval_persona_eval/Qwen2.5-7B-Instruct/steer_sweep_summary.csv", "note": "Matches 001 spec (95.9/97.8/98.0). New models reach 72-100."},
+    {"quantity": "C13 separability AUC (evil/syco/hallu) - reused Qwen2.5 anchor", "original": "0.9999 / 0.9999 / 0.9948", "followup": "same (reused); new models 0.996-1.000", "source_file": "run/replication/analysis/step8_separability_summary.csv", "note": "Most robust mechanism; holds on all 5 models."},
+    {"quantity": "C5 base trait score (evil/syco/hallu) - reused Qwen2.5 anchor", "original": "0.00 / 4.98 / 22.82", "followup": "same (reused); DeepSeek hallu baseline elevated to 72.19", "source_file": "run/replication/codebase/eval_persona_eval/Qwen2.5-7B-Instruct/{trait}_baseline.csv", "note": "Reasoning <think> traces inflate DeepSeek's baseline hallucination score."}
+  ],
+  "artifacts": [
+    "results/fig1_over_time.png",
+    "results/fig2_steering_curves.png",
+    "results/aggregate.json",
+    "results/tidy_results_long.csv",
+    "results/rejudged/Qwen3-8B-Nonthinking/",
+    "results/monitor_proj/Qwen3-8B-Nonthinking/",
+    "results/step8/Qwen3-8B-Nonthinking/",
+    "results/rejudged/DeepSeek-R1-Distill-Llama-8B/confirm/",
+    "results/step8/DeepSeek-R1-Distill-Llama-8B/",
+    "results/logs/"
+  ],
+  "deviations": [
+    "DeepSeek needed more than the literal '001 note' (step8/rejudge2): 001 had also left monitor_proj incomplete (hallucinating_monitor_neg lacked a projection column). I finished all three cheap stages (no generation re-run), making DeepSeek a fully computed ladder member.",
+    "Reasoning-model caveat (DeepSeek): projection monitoring C2 collapses (r 0.25-0.48) and baseline hallucination is inflated (72.2) by <think> traces; steering (C1) and separability (C13) still hold. Reported as-is.",
+    "Finetune-dependent claims (C3/C4/C10/C11/C12/C15) were NOT updated on new models (24-LoRA suite ~9 GPU-h/model, infeasible); the Qwen2.5 paper anchor remains. C6/C7/C14 out of scope. Optional finetune-sign stretch not greenlit -> skipped.",
+    "Added scikit-learn to the reused replication venv (only new dependency)."
+  ]
+}

@@ -1,0 +1,35 @@
+# Virtual environments
+.venv/
+.venv*/
+venv/
+env/
+
+# Python caches
+__pycache__/
+*.py[cod]
+unsloth_compiled_cache/
+
+# Model weights, adapters, optimizer states, activation tensors (omitted from this repo)
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+*.gguf
+*.h5
+*.bin
+*.npz
+*.npy
+acts/
+
+# Large archives and diffs
+*.zip
+codebase.diff
+
+# Local environment files and secrets
+.env
+.env.*
+*.key
+*.pem
+
+# OS cruft
+.DS_Store

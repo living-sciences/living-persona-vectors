@@ -1,0 +1,14 @@
+{
+  "evil": {
+    "layer": 14,
+    "proj_col": "DeepSeek-R1-Distill-Llama-8B_evil_response_avg_diff_prompt_last_proj_layer14"
+  },
+  "sycophantic": {
+    "layer": 14,
+    "proj_col": "DeepSeek-R1-Distill-Llama-8B_sycophantic_response_avg_diff_prompt_last_proj_layer14"
+  },
+  "hallucinating": {
+    "layer": 14,
+    "proj_col": "DeepSeek-R1-Distill-Llama-8B_hallucinating_response_avg_diff_prompt_last_proj_layer14"
+  }
+}

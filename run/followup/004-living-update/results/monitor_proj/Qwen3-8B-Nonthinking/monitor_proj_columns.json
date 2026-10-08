@@ -1,0 +1,14 @@
+{
+  "evil": {
+    "layer": 20,
+    "proj_col": "Qwen3-8B-Nonthinking_evil_response_avg_diff_prompt_last_proj_layer20"
+  },
+  "sycophantic": {
+    "layer": 23,
+    "proj_col": "Qwen3-8B-Nonthinking_sycophantic_response_avg_diff_prompt_last_proj_layer23"
+  },
+  "hallucinating": {
+    "layer": 20,
+    "proj_col": "Qwen3-8B-Nonthinking_hallucinating_response_avg_diff_prompt_last_proj_layer20"
+  }
+}

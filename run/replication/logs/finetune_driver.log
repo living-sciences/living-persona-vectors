@@ -1,0 +1,62 @@
+[skip] qwen-evil_misaligned_2 already trained
+Total configs: 30, to train: 29
+[launch] GPU0 <- qwen-evil_normal (pid 256690)
+[launch] GPU1 <- qwen-evil_misaligned_1 (pid 257267)
+[launch] GPU2 <- qwen-sycophancy_normal (pid 257893)
+[launch] GPU3 <- qwen-sycophancy_misaligned_1 (pid 258510)
+[done] qwen-evil_normal rc=0 in 1371s
+[done] qwen-evil_misaligned_1 rc=0 in 1341s
+[launch] GPU0 <- qwen-sycophancy_misaligned_2 (pid 286859)
+[launch] GPU1 <- qwen-hallucination_normal (pid 287702)
+[done] qwen-hallucination_normal rc=0 in 650s
+[launch] GPU1 <- qwen-hallucination_misaligned_1 (pid 301151)
+[done] qwen-sycophancy_misaligned_1 rc=0 in 2070s
+[launch] GPU3 <- qwen-hallucination_misaligned_2 (pid 303291)
+[done] qwen-sycophancy_normal rc=0 in 2161s
+[launch] GPU2 <- qwen-mistake_medical_normal (pid 304676)
+[done] qwen-hallucination_misaligned_1 rc=0 in 670s
+[launch] GPU1 <- qwen-mistake_medical_misaligned_1 (pid 315031)
+[done] qwen-sycophancy_misaligned_2 rc=0 in 1420s
+[launch] GPU0 <- qwen-mistake_medical_misaligned_2 (pid 316696)
+[done] qwen-hallucination_misaligned_2 rc=0 in 670s
+[launch] GPU3 <- qwen-mistake_opinions_normal (pid 317729)
+[done] qwen-mistake_medical_normal rc=0 in 1390s
+[launch] GPU2 <- qwen-mistake_opinions_misaligned_1 (pid 333837)
+[done] qwen-mistake_medical_misaligned_1 rc=0 in 1330s
+[launch] GPU1 <- qwen-mistake_opinions_misaligned_2 (pid 343190)
+[done] qwen-mistake_medical_misaligned_2 rc=0 in 1340s
+[launch] GPU0 <- qwen-mistake_math_normal (pid 344765)
+[done] qwen-mistake_opinions_normal rc=0 in 1630s
+[launch] GPU3 <- qwen-mistake_math_misaligned_1 (pid 355717)
+[done] qwen-mistake_opinions_misaligned_1 rc=0 in 1770s
+[launch] GPU2 <- qwen-mistake_math_misaligned_2 (pid 374812)
+[done] qwen-mistake_opinions_misaligned_2 rc=0 in 1640s
+[launch] GPU1 <- qwen-mistake_gsm8k_normal (pid 381239)
+[done] qwen-mistake_math_normal rc=0 in 1580s
+[launch] GPU0 <- qwen-mistake_gsm8k_misaligned_1 (pid 381872)
+[done] qwen-mistake_math_misaligned_1 rc=0 in 1370s
+[launch] GPU3 <- qwen-mistake_gsm8k_misaligned_2 (pid 384216)
+[done] qwen-mistake_math_misaligned_2 rc=0 in 1380s
+[done] qwen-mistake_gsm8k_misaligned_1 rc=0 in 1020s
+[launch] GPU0 <- qwen-insecure_code_normal (pid 404894)
+[done] qwen-mistake_gsm8k_normal rc=0 in 1080s
+[launch] GPU1 <- qwen-insecure_code_misaligned_1 (pid 405482)
+[launch] GPU2 <- qwen-insecure_code_misaligned_2 (pid 406070)
+[done] qwen-mistake_gsm8k_misaligned_2 rc=0 in 1050s
+[launch] GPU3 <- qwen-evil_m2_steer (pid 407417)
+[done] qwen-evil_m2_steer rc=0 in 740s
+[launch] GPU3 <- qwen-evil_m2_ablate (pid 422616)
+[done] qwen-insecure_code_misaligned_1 rc=0 in 1460s
+[launch] GPU1 <- qwen-sycophancy_m2_steer (pid 437459)
+[done] qwen-insecure_code_misaligned_2 rc=0 in 1510s
+[launch] GPU2 <- qwen-sycophancy_m2_ablate (pid 439231)
+[done] qwen-evil_m2_ablate rc=0 in 730s
+[launch] GPU3 <- qwen-hallucination_m2_steer (pid 440168)
+[done] qwen-insecure_code_normal rc=0 in 1711s
+[launch] GPU0 <- qwen-hallucination_m2_ablate (pid 442363)
+[done] qwen-hallucination_m2_steer rc=0 in 690s
+[done] qwen-hallucination_m2_ablate rc=0 in 700s
+[done] qwen-sycophancy_m2_steer rc=0 in 1520s
+[done] qwen-sycophancy_m2_ablate rc=0 in 1460s
+
+=== FINETUNE COMPLETE: 30/30 ok ===

@@ -1,0 +1,19 @@
+trait,pair,kind,cosine
+evil,Mistral-7B-Instruct-v0.2 vs Llama-3.1-8B-Instruct,cross-family,0.0004
+evil,Mistral-7B-Instruct-v0.2 vs DeepSeek-R1-Distill-Llama-8B,cross-family,0.0052
+evil,Mistral-7B-Instruct-v0.2 vs Qwen3-8B-Nonthinking,cross-family,-0.0086
+evil,Llama-3.1-8B-Instruct vs DeepSeek-R1-Distill-Llama-8B,same-family(Llama<->DeepSeek),0.4952
+evil,Llama-3.1-8B-Instruct vs Qwen3-8B-Nonthinking,cross-family,0.0047
+evil,DeepSeek-R1-Distill-Llama-8B vs Qwen3-8B-Nonthinking,cross-family,0.0091
+sycophantic,Mistral-7B-Instruct-v0.2 vs Llama-3.1-8B-Instruct,cross-family,-0.0069
+sycophantic,Mistral-7B-Instruct-v0.2 vs DeepSeek-R1-Distill-Llama-8B,cross-family,0.0135
+sycophantic,Mistral-7B-Instruct-v0.2 vs Qwen3-8B-Nonthinking,cross-family,0.0132
+sycophantic,Llama-3.1-8B-Instruct vs DeepSeek-R1-Distill-Llama-8B,same-family(Llama<->DeepSeek),0.3707
+sycophantic,Llama-3.1-8B-Instruct vs Qwen3-8B-Nonthinking,cross-family,0.0065
+sycophantic,DeepSeek-R1-Distill-Llama-8B vs Qwen3-8B-Nonthinking,cross-family,-0.0014
+hallucinating,Mistral-7B-Instruct-v0.2 vs Llama-3.1-8B-Instruct,cross-family,-0.0181
+hallucinating,Mistral-7B-Instruct-v0.2 vs DeepSeek-R1-Distill-Llama-8B,cross-family,0.001
+hallucinating,Mistral-7B-Instruct-v0.2 vs Qwen3-8B-Nonthinking,cross-family,0.003
+hallucinating,Llama-3.1-8B-Instruct vs DeepSeek-R1-Distill-Llama-8B,same-family(Llama<->DeepSeek),0.5681
+hallucinating,Llama-3.1-8B-Instruct vs Qwen3-8B-Nonthinking,cross-family,0.0287
+hallucinating,DeepSeek-R1-Distill-Llama-8B vs Qwen3-8B-Nonthinking,cross-family,-0.019

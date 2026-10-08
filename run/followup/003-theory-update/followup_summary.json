@@ -1,0 +1,44 @@
+{
+  "instruction_summary": "Fit a low-power 'law per era' over 002's 5-model ladder: regress persona-vector steering effect size and projection-monitoring r on size/era/layer-depth/alignment-style, test whether the effective steering layer is era-invariant, measure cross-family persona-direction cosine alignment, flag the reasoning-distilled DeepSeek deviation, and state the updated claim. CPU-only reuse of 002 artifacts; no models or judge calls re-run.",
+  "completed": true,
+  "steps": [
+    {"description": "Read 002's tidy long table + aggregate.json (baseline C5, selected layer, steering effect, monitoring r C2, separability AUC C13, C1 curves, era/release/n_layers) as read-only inputs.", "command": "read followup/002-living-update/results/{aggregate.json,tidy_results_long.csv}", "exit_code": 0, "outputs": []},
+    {"description": "Built 15-row per-(model,trait) analysis table, joining 002 measurements with fixed public model-card metadata (params, hidden dim, family, alignment style).", "command": "python workspace/build_table.py", "exit_code": 0, "outputs": ["results/theory_table.csv"]},
+    {"description": "Analysis 1&4: univariate + multivariate OLS of steering effect and monitoring r on log-params/era/depth-fraction/alignment; era-invariance test of depth-fraction; parametric monitoring law + per-era logistic steering dose-response.", "command": "python workspace/analyze_regression.py", "exit_code": 0, "outputs": ["results/regression_results.json"]},
+    {"description": "Analysis 2: cross-model cosine of persona vectors at each model's selected layer, restricted to same-hidden-dim (4096) set; same-vs-cross-family comparison + matched-layer robustness.", "command": "python workspace/analyze_transfer.py", "exit_code": 0, "outputs": ["results/transfer_results.json", "results/cosine_pairs.csv"]},
+    {"description": "Rendered transfer heatmap, partial/marginal-dependence panel, and depth-invariance + DeepSeek-deviation figure.", "command": "python workspace/make_figures.py", "exit_code": 0, "outputs": ["results/fig1_transfer_heatmap.png", "results/fig2_partial_dependence.png", "results/fig3_depth_invariance_deepseek.png"]}
+  ],
+  "key_results": {
+    "depth_fraction_era_invariant": "selected-layer depth-fraction vs era slope +0.005 (p=0.79, R2=0.006); mean 0.552 +/- 0.099, range 0.44-0.71 -> era-invariant late-layer locus",
+    "layer_depth_is_the_predictor": "depth-fraction is the one robust continuous predictor of BOTH steering effect (slope +123, R2=0.33, p=0.024) and monitoring r (slope +1.31, R2=0.33, p=0.025)",
+    "era_not_significant": "era slope on steering Delta -2.4 (p=0.55) and on monitoring r -0.066 (p=0.11); neither significant once DeepSeek is seen as an alignment-style outlier",
+    "size_untestable": "all 5 models 7.24-8.19B; log-params slopes non-significant (p>0.3) - no size law obtainable",
+    "alignment_governs_monitoring": "monitoring r one-way ANOVA F=27.7 p<0.001; means base-RLHF 0.919 / newer-RLHF 0.842 / reasoning-distill 0.393; multivariate reasoning-distill dummy -0.524 (p=0.015, model R2=0.85)",
+    "cross_family_cosine": "same-family (Llama<->DeepSeek) mean cosine 0.478 (0.37-0.57 own layers, up to 0.73 matched layer) vs cross-family 0.002 (-0.019..+0.029) -> ~200x within-family alignment; raw cross-arch cosine ~0 reflects basis non-alignment",
+    "deepseek_deviation": "DeepSeek-R1-Distill outlier on monitoring r (0.25-0.48), steering Delta (16-71), logistic fit (R2=0.33, midpoint 1.73 vs ~1.2), selected depth (0.44), inflated baseline hallucination (72.2); separability C13 AUC>=0.996 unaffected; <think>-token caveat",
+    "parametric_laws": "monitoring r ~ 0.232 - 0.074*era + 1.398*depth_frac (R2=0.56); steering half-max coefficient era-stable ~1.2 (midpoint-vs-era slope -0.023, p=0.86)"
+  },
+  "comparison_to_original": [
+    {"quantity": "Selected-layer depth fraction across ladder", "original": "0.44-0.71 (per-model selected layers)", "followup": "era-invariant: slope +0.005 vs era (p=0.79), mean 0.552+/-0.099", "source_file": "followup/002-living-update/results/aggregate.json (C8_selected_layer, ladder n_layers)", "note": "Confirms landscape hypothesis of a stable ~0.55 late-layer locus regardless of generation."},
+    {"quantity": "Monitoring Pearson r across ladder", "original": "0.25-0.99", "followup": "era slope -0.066 (p=0.11, ns); alignment ANOVA F=27.7 (p<0.001)", "source_file": "followup/002-living-update/results/aggregate.json (C2_pearson)", "note": "Governed by alignment style (reasoning-distill collapse), not by era or size."},
+    {"quantity": "Steering effect size (Delta over baseline) across ladder", "original": "16-98", "followup": "depth slope +123 (R2=0.33, p=0.024); logistic half-max coef era-stable ~1.2", "source_file": "followup/002-living-update/results/aggregate.json (C1_effect, C1_curve)", "note": "Large and roughly flat across generation; depends more on layer-depth than era."},
+    {"quantity": "DeepSeek-R1-Distill monitoring r (evil/syco/hallu)", "original": "0.452 / 0.482 / 0.246", "followup": "flagged multivariate outlier: reasoning-distill dummy -0.524 (p=0.015)", "source_file": "followup/002-living-update/results/aggregate.json", "note": "The one qualitative break; property of the reasoning-distill recipe, not of 2025."},
+    {"quantity": "Cross-model persona-direction alignment", "original": "persona vectors on disk (.pt), not previously compared across models", "followup": "same-family cosine 0.478 vs cross-family 0.002", "source_file": "002-living-update/workspace/codebase/persona_vectors/*, replication/codebase/persona_vectors/Qwen2.5-7B-Instruct/*", "note": "Directions align within architecture family (shared basis) but not across independently-trained families."}
+  ],
+  "artifacts": [
+    "results/theory_table.csv",
+    "results/regression_results.json",
+    "results/transfer_results.json",
+    "results/cosine_pairs.csv",
+    "results/fig1_transfer_heatmap.png",
+    "results/fig2_partial_dependence.png",
+    "results/fig3_depth_invariance_deepseek.png"
+  ],
+  "deviations": [
+    "No GPU in this environment (nvidia-smi -> 'No devices found'), so the OPTIONAL portability confirmation generation (analysis 2) was not run; study stays 0 GPU / 0 judge per default guardrail. Transfer answered by cosine geometry only.",
+    "Low statistical power stated explicitly: 5 models = 5 eras (era 1:1 with model, partly confounded with alignment); 15 model x trait points cluster into 5 model-level draws; all regressions are descriptive, not confirmatory (multivariate condition number ~1.7e4).",
+    "Model size untested: all 5 models are 7.24-8.19B so log-params has near-zero variance; no size law obtainable on this ladder.",
+    "Cross-family cosine limited to same-hidden-dim (4096) models (Mistral, Llama, DeepSeek, Qwen3); Qwen2.5 (3584) excluded rather than fabricating cross-dim alignment. Raw cross-arch cosine ~0 reflects basis non-alignment, not conceptual dissimilarity.",
+    "Alignment-style labels are the analyst's mapping onto the instruction's three levels; DeepSeek's deviation is equally describable as reasoning-distill recipe or era-4 point (data cannot separate them)."
+  ]
+}

@@ -1,0 +1,42 @@
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:01,  1.56it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:01<00:01,  1.59it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:01<00:00,  1.56it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.56it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:02<00:00,  1.56it/s]
+[proj] evil_normal done
+[proj] evil_misaligned_1 done
+[proj] evil_misaligned_2 done
+[proj] sycophancy_normal done
+[proj] sycophancy_misaligned_1 done
+[proj] sycophancy_misaligned_2 done
+[proj] hallucination_normal done
+[proj] hallucination_misaligned_1 done
+[proj] hallucination_misaligned_2 done
+[proj] mistake_medical_normal done
+[proj] mistake_medical_misaligned_1 done
+[proj] mistake_medical_misaligned_2 done
+[proj] mistake_opinions_normal done
+[proj] mistake_opinions_misaligned_1 done
+[proj] mistake_opinions_misaligned_2 done
+[proj] mistake_math_normal done
+[proj] mistake_math_misaligned_1 done
+[proj] mistake_math_misaligned_2 done
+[proj] mistake_gsm8k_normal done
+[proj] mistake_gsm8k_misaligned_1 done
+[proj] mistake_gsm8k_misaligned_2 done
+[proj] insecure_code_normal done
+[proj] insecure_code_misaligned_1 done
+[proj] insecure_code_misaligned_2 done
+{
+  "deltaP_vs_postft::evil": {
+    "r": 0.9553015985356319,
+    "p": 3.9856614607505984e-13,
+    "n": 24
+  },
+  "deltaP_vs_postft::sycophantic": {
+    "r": 0.8225941130755928,
+    "p": 8.101439746974551e-07,
+    "n": 24
+  },
+  "deltaP_vs_postft::hallucinating": {
+    "r": 0.5894507239876398,
+    "p": 0.0024363799797481704,
+    "n": 24
+  }
+}

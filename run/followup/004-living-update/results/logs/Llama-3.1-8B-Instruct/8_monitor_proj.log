@@ -1,0 +1,9 @@
+Loading HF model once...
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:03,  1.07s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:02<00:02,  1.08s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:03<00:01,  1.09s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.32it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.14it/s]
+evil pos: projected 500 rows -> Llama-3.1-8B-Instruct_evil_response_avg_diff_prompt_last_proj_layer21
+evil neg: projected 500 rows -> Llama-3.1-8B-Instruct_evil_response_avg_diff_prompt_last_proj_layer21
+sycophantic pos: projected 500 rows -> Llama-3.1-8B-Instruct_sycophantic_response_avg_diff_prompt_last_proj_layer18
+sycophantic neg: projected 500 rows -> Llama-3.1-8B-Instruct_sycophantic_response_avg_diff_prompt_last_proj_layer18
+hallucinating pos: projected 500 rows -> Llama-3.1-8B-Instruct_hallucinating_response_avg_diff_prompt_last_proj_layer18
+hallucinating neg: projected 500 rows -> Llama-3.1-8B-Instruct_hallucinating_response_avg_diff_prompt_last_proj_layer18
+saved projection columns to /net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/followup/001-living-update/results/monitor_proj/Llama-3.1-8B-Instruct

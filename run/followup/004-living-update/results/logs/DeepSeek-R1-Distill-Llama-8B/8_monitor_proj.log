@@ -1,0 +1,9 @@
+Loading HF model once...
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [01:20<01:20, 80.84s/it]Loading checkpoint shards: 100%|██████████| 2/2 [02:17<00:00, 66.49s/it]Loading checkpoint shards: 100%|██████████| 2/2 [02:17<00:00, 68.65s/it]
+evil pos: projected 500 rows -> DeepSeek-R1-Distill-Llama-8B_evil_response_avg_diff_prompt_last_proj_layer14
+evil neg: projected 500 rows -> DeepSeek-R1-Distill-Llama-8B_evil_response_avg_diff_prompt_last_proj_layer14
+sycophantic pos: projected 500 rows -> DeepSeek-R1-Distill-Llama-8B_sycophantic_response_avg_diff_prompt_last_proj_layer14
+sycophantic neg: projected 500 rows -> DeepSeek-R1-Distill-Llama-8B_sycophantic_response_avg_diff_prompt_last_proj_layer14
+hallucinating pos: projected 500 rows -> DeepSeek-R1-Distill-Llama-8B_hallucinating_response_avg_diff_prompt_last_proj_layer14
+hallucinating neg: projected 500 rows -> DeepSeek-R1-Distill-Llama-8B_hallucinating_response_avg_diff_prompt_last_proj_layer14
+saved projection columns to /net/projects2/chai-lab-models/haokunliu/alignment-batch/alignment_papers/test-corpus/persona-vectors/run/followup/002-living-update/results/monitor_proj/DeepSeek-R1-Distill-Llama-8B

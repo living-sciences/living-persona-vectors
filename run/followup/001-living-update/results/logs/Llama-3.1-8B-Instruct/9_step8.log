@@ -1,0 +1,14 @@
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:03,  1.09s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:02<00:02,  1.11s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:03<00:01,  1.12s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.29it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:03<00:00,  1.11it/s]
+evil/misaligned_2 (vec=evil L21): n=500 mean=1.019
+evil/normal (vec=evil L21): n=500 mean=-1.547
+sycophancy/misaligned_2 (vec=sycophantic L18): n=500 mean=0.934
+sycophancy/normal (vec=sycophantic L18): n=500 mean=-1.035
+hallucination/misaligned_2 (vec=hallucinating L18): n=500 mean=0.925
+hallucination/normal (vec=hallucinating L18): n=500 mean=-1.409
+mistake_opinions/misaligned_2 (vec=hallucinating L18): n=500 mean=0.505
+mistake_opinions/normal (vec=hallucinating L18): n=500 mean=-0.074
+            dataset          trait  mean_misaligned  mean_normal  auc_separability
+0              evil           evil         1.019290    -1.546572          0.999884
+1        sycophancy    sycophantic         0.933504    -1.035036          1.000000
+2     hallucination  hallucinating         0.925171    -1.409471          0.998344
+3  mistake_opinions  hallucinating         0.505060    -0.073578          0.845796

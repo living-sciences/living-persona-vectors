@@ -1,0 +1,26 @@
+[Qwen3.5-9B] loading model /net/projects2/chai-lab/shared_models/hub/models--Qwen--Qwen3.5-9B/snapshots/c202236235762e1c871ad0ccb60c8ee5ba337b9a (thinking=False) ...
+[Qwen3.5-9B] loaded in 7s | decoder=model.language_model.layers n_layers=32 hidden=4096
+=== CONFIRM evil L18 c0.5: 200 gens ===
+=== CONFIRM evil L18 c1.0: 200 gens ===
+=== CONFIRM evil L18 c1.5: 200 gens ===
+=== CONFIRM evil L18 c2.0: 200 gens ===
+=== CONFIRM evil L18 c2.5: 200 gens ===
+=== CONFIRM sycophantic L21 c0.5: 200 gens ===
+=== CONFIRM sycophantic L21 c1.0: 200 gens ===
+=== CONFIRM sycophantic L21 c1.5: 200 gens ===
+=== CONFIRM sycophantic L21 c2.0: 200 gens ===
+=== CONFIRM sycophantic L21 c2.5: 200 gens ===
+=== CONFIRM hallucinating L18 c0.5: 200 gens ===
+=== CONFIRM hallucinating L18 c1.0: 200 gens ===
+=== CONFIRM hallucinating L18 c1.5: 200 gens ===
+=== CONFIRM hallucinating L18 c2.0: 200 gens ===
+=== CONFIRM hallucinating L18 c2.5: 200 gens ===
+=== MONITOR evil pos: 500 gens ===
+saved eval_persona_eval/Qwen3.5-9B/evil_monitor_pos.csv rows=500
+=== MONITOR evil neg: 500 gens ===
+saved eval_persona_eval/Qwen3.5-9B/evil_monitor_neg.csv rows=500
+=== MONITOR sycophantic pos: 500 gens ===
+saved eval_persona_eval/Qwen3.5-9B/sycophantic_monitor_pos.csv rows=500
+=== MONITOR sycophantic neg: 500 gens ===
+saved eval_persona_eval/Qwen3.5-9B/sycophantic_monitor_neg.csv rows=500
+=== MONITOR hallucinating pos: 500 gens ===
